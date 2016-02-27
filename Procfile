@@ -1,0 +1,1 @@
+web: gunicorn codyscapes.wsgi --log-file -
