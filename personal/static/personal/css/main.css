@@ -170,6 +170,11 @@ width: 100%;
 /*.option:hover .option-text { top: 45%; font-size: 55px; }*/
 .option:hover .option-btn { top: 60%; top: calc(50% + 80px); opacity: 1; -webkit-transform: translate(-50%,-50%) scale(1,1); transform: translate(-50%,-50%) scale(1,1); }
 
+.option-mobile:hover { background-size: 110% 110%; }
+.option-mobile:hover .option-shadow { opacity: 0.3; }
+/*.option:hover .option-text { top: 45%; font-size: 55px; }*/
+.option-mobile:hover .option-btn { top: 60%; top: calc(50% + 80px); opacity: 1; -webkit-transform: translate(-50%,-50%) scale(1,1); transform: translate(-50%,-50%) scale(1,1); }
+
 
 .gallery-thumbnails {
 	width: 60%;
