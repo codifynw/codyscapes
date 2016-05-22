@@ -8,6 +8,9 @@ html, body { margin: 0px; padding: 0px; font-family: 'Roboto', Arial, sans-serif
 
 .options-container-desktop { position: relative; display: block; font-size: 0px; height: 90%; height: calc(100% - 45px); top: 45px; z-index: 2;}
 
+.options-container-mobile { position: relative; display: none; font-size: 0px; height: 90%; height: calc(100% - 45px); top: 45px; z-index: 2;}
+
+
 .option {
 	position: relative; display: inline-block; vertical-align: middle; box-sizing: border-box; width: 33.333%; height: 100%;
 	background-image: url("../img/aurora.jpg"); background-repeat: no-repeat; background-size: 100% 100%;
@@ -29,11 +32,17 @@ html, body { margin: 0px; padding: 0px; font-family: 'Roboto', Arial, sans-serif
   .options-container-desktop {
     display: none;
   }
+  .option-container-mobile {
+  	display: block;
+  }
 }
 
 @media (max-height: 575px) {
   .options-container-desktop {
     display: none;
+  }
+  .option-container-mobile {
+  	display: block;
   }
 }
 
