@@ -6,7 +6,7 @@ html, body { margin: 0px; padding: 0px; font-family: 'Roboto', Arial, sans-serif
 	position: fixed; height: 45px; width: 100%; top: 0px; left: 0px; background-color: #060607; z-index: 99;
 }	
 
-.options-container { position: relative; display: block; font-size: 0px; height: 90%; height: calc(100% - 45px); top: 45px; z-index: 2;}
+.options-container-desktop { position: relative; display: block; font-size: 0px; height: 90%; height: calc(100% - 45px); top: 45px; z-index: 2;}
 
 .option {
 	position: relative; display: inline-block; vertical-align: middle; box-sizing: border-box; width: 33.333%; height: 100%;
@@ -24,6 +24,19 @@ html, body { margin: 0px; padding: 0px; font-family: 'Roboto', Arial, sans-serif
 	border-right: none;
 	background-image: url("../img/stars.jpg");
 }
+
+@media (max-width: 950px) {
+  .options-container-desktop {
+    display: none;
+  }
+}
+
+@media (max-height: 575px) {
+  .options-container-desktop {
+    display: none;
+  }
+}
+
 
 .option-wrapper {
 width: 100%;
