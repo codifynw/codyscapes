@@ -1,21 +1,67 @@
 html {background-color: #060607;}
 
-html, body { margin: 0px; padding: 0px; font-family: 'Roboto', Arial, sans-serif; height: 100%;  }
+html, body { margin: 0px; 
+			padding: 0px; 
+			font-family: 'Roboto', Arial, sans-serif; 
+			height: 100%;  }
 
 .page-header {
-	position: fixed; height: 45px; width: 100%; top: 0px; left: 0px; background-color: #060607; z-index: 99;
+	position: fixed; 
+	height: 45px; 
+	width: 100%; 
+	top: 0px; 
+	left: 0px; 
+	background-color: #060607; 
+	z-index: 99;
 }	
 
-.options-container-desktop { position: relative; display: block; font-size: 0px; height: 90%; height: calc(100% - 45px); top: 45px; z-index: 2;}
+.options-container-desktop { 
+	position: relative; 
+	display: block; 
+	font-size: 0px; 
+	height: 90%; 
+	height: calc(100% - 45px); 
+	top: 45px; 
+	z-index: 2;
+}
 
 .options-container-mobile { position: relative; display: none; font-size: 0px; height: 90%; height: calc(100% - 45px); top: 45px; z-index: 2;}
 
 
 .option {
-	position: relative; display: inline-block; vertical-align: middle; box-sizing: border-box; width: 33.333%; height: 100%;
-	background-image: url("../img/aurora.jpg"); background-repeat: no-repeat; background-size: 100% 100%;
-    -moz-transition: all 3s; -webkit-transition: all 3s; transition: all 3s; background-position: center center;
-    border-right: solid 5px #060607; cursor: default;
+	position: relative; 
+	display: inline-block; 
+	vertical-align: middle; 
+	box-sizing: border-box; 
+	width: 33.333%; 
+	height: 100%;
+	background-image: url("../img/aurora.jpg"); 
+	background-repeat: no-repeat; 
+	background-size: 100% 100%;
+    -moz-transition: all 3s; 
+    -webkit-transition: all 3s; 
+    transition: all 3s; 
+    background-position: center center;
+    border-right: solid 5px #060607; 
+    cursor: default;
+}
+
+.option-mobile {
+	position: relative; 
+	display: inline-block; 
+	vertical-align: middle; 
+	box-sizing: border-box; 
+	width: 33.333%; 
+	height: 100%;
+	background-image: url("../img/aurora.jpg"); 
+	background-repeat: no-repeat; 
+	background-size: 100% 100%;
+    -moz-transition: all 3s; 
+    -webkit-transition: all 3s; 
+    transition: all 3s; 
+    background-position: center center;
+    border-right: solid 5px #060607; 
+    cursor: default;
 }
 
 .option-two {
@@ -28,12 +74,30 @@ html, body { margin: 0px; padding: 0px; font-family: 'Roboto', Arial, sans-serif
 	background-image: url("../img/stars.jpg");
 }
 
+@media (min-width: 950px) {
+  .options-container-desktop {
+    display: block;
+  }
+  .option-container-mobile {
+  	display: none;
+  }
+}
+
 @media (max-width: 950px) {
   .options-container-desktop {
     display: none;
   }
   .option-container-mobile {
   	display: block;
+  }
+}
+
+@media (min-height: 575px) {
+  .options-container-desktop {
+    display: block;
+  }
+  .option-container-mobile {
+  	display: none;
   }
 }
 
@@ -45,7 +109,6 @@ html, body { margin: 0px; padding: 0px; font-family: 'Roboto', Arial, sans-serif
   	display: block;
   }
 }
-
 
 .option-wrapper {
 width: 100%;
@@ -61,6 +124,7 @@ width: 100%;
 	-webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%); z-index: 3;
 	-moz-transition: all 2s; -webkit-transition: all 2s; transition: all 2s; text-align: center;
 }
+
 .option-btn { 
 	position: absolute; display: inline-block; top: 55%; left: 50%; font-size: 16px; color: #ffffff; box-sizing: border-box;
 	-webkit-transform: translate(-50%,-50%) scale(0.5,0.5); transform: translate(-50%,-50%) scale(0.5,0.5); 
