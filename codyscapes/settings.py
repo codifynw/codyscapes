@@ -29,6 +29,7 @@ DEBUG = True
 # Application definition
 
 INSTALLED_APPS = (
+    'photos',
     'polls',
     'personal',
     'blog',
