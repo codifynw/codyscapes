@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^polls/', include('polls.urls')),
     url(r'^personal/', include('personal.urls')),
     url(r'^blog/', include('blog.urls')),
+    url(r'^photos/', include('photos.urls')),
     url(r'^', include('personal.urls')),
 ]
