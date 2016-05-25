@@ -7,5 +7,3 @@ The app will serve as a homepage for my photography.  There will be three main a
 1. Gallery
 2. Live Map
 3. About me
-
-
