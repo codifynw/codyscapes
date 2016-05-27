@@ -9,7 +9,7 @@ class Photo(models.Model):
     latitude = models.FloatField(default=32.7833333)
     longitude = models.FloatField(default=-96.7970)
     date = models.DateTimeField()
-    photo_file = models.FileField(upload_to='photos/upload/photos')
+    photo_file = models.FileField(upload_to='photos/static/photos/upload')
 
     def __str__(self):
         return self.title
