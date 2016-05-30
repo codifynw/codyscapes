@@ -1,5 +1,7 @@
 {% extends "photos/header.html" %}
 
+
+
 {% block content %}
 
 <div id="googlemaps"></div>
@@ -13,6 +15,9 @@
 		</div>
 		<div class='photo_date'>
 			{{photo.date|date:"Y-m-d"}}
+		</div>
+		<div class='photo_photo'>
+			<img src="{{photo.photo_file.url}}">
 		</div>
 	{% endfor %}
 </div>
