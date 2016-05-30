@@ -1,36 +1,3 @@
-#googlemaps {
-  height: 100%;
-  width: 100%;
-  position:absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
-
-#index {
-  position: fixed;
-  z-index: 1;
-  width: 32%;
-  margin: 60px auto 0;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, .85);
-  height: auto;
-  opacity: .45;
-  color: white;
-  margin-left: 0px;
-  display: flex;
-  flex-direction: column;
-  min-height: 80vh;
-}
-
-#index_nav {
-  display: block;
-  width: 100%;
-  height: 20px;
-  background-color: rgba(0, 0, 0, 1);
-  opacity: 1 !important;
-}
-
 #top_header {
   z-index: 2;
   position: fixed;
@@ -58,5 +25,59 @@
   display: inline-block;
   width: 20%;
 }
+
+#index {
+  position: fixed;
+  z-index: 1;
+  width: 32%;
+  margin: 60px auto 0;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, .7);
+  height: auto;
+  color: white;
+  margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+#index_nav {
+  display: block;
+  width: 105%;
+  height: 20px;
+  background-color: rgba(0, 0, 0, .9);
+  opacity: 1;
+  text-align: center;
+  margin-top: -10px;
+  margin-right: -6px;
+  margin-left: -10px;
+  padding-top: 0px;
+}
+
+.photo_title {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.photo_date {
+  font-size: 11px;
+  text-align: center;
+}
+
+#googlemaps {
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+
+
+
 
 

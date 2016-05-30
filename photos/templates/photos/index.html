@@ -5,16 +5,16 @@
 <div id="googlemaps"></div>
 <div id="index">
 	<div id="index_nav">
-		PICK A YEAR
+		2016
 	</div>
-		{% for photo in photos %}
-			<div class='photo_title'>
-				{{photo.title}}
-			</div>
-			<div class='photo_date'>
-				{{photo.date|date:"Y-m-d"}}
-			</div>
-		{% endfor %}
+	{% for photo in photos %}
+		<div class='photo_title'>
+			{{photo.title}}
+		</div>
+		<div class='photo_date'>
+			{{photo.date|date:"Y-m-d"}}
+		</div>
+	{% endfor %}
 </div>
 
 
