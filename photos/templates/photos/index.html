@@ -16,7 +16,10 @@
 	<script type="text/javascript">
 
 	// The latitude and longitude of your business / place
-	var position = [45.532065, -122.684635];
+	{% for photo in photos %}
+		var position = [{{photo.latitude}}, {{photo.longitude}}];
+	{% endfor %}
+
 
 	function showGoogleMaps() {
 

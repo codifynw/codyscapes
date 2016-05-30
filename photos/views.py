@@ -5,5 +5,5 @@ from .models import Photo
 
 def index(request):
 	photos = Photo.objects.all()
-	return render(request, 'photos/index.html')
+	return render(request, 'photos/index.html', {'photos': photos})
 
