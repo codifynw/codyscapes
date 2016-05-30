@@ -4,9 +4,17 @@
 
 <div id="googlemaps"></div>
 <div id="index">
-	{% for photo in photos %}
-		<h5>{{photo.title}}</h5>
-	{% endfor %}
+	<div id="index_nav">
+		PICK A YEAR
+	</div>
+		{% for photo in photos %}
+			<div class='photo_title'>
+				{{photo.title}}
+			</div>
+			<div class='photo_date'>
+				{{photo.date|date:"Y-m-d"}}
+			</div>
+		{% endfor %}
 </div>
 
 
@@ -24,9 +32,10 @@
 	function showGoogleMaps() {
 
 	    var latLng = new google.maps.LatLng(position[0], position[1]);
+	    var latLng2 = new google.maps.LatLng(45.330441, -117.205382);
 
 	    var mapOptions = {
-	        zoom: 16, // initialize zoom level - the max value is 21
+	        zoom: 11, // initialize zoom level - the max value is 21
 	        streetViewControl: false, // hide the yellow Street View pegman
 	        scaleControl: true, // allow users to zoom the Google Map
 	        mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -39,6 +48,13 @@
 	    // Show the default red marker at the location
 	    marker = new google.maps.Marker({
 	        position: latLng,
+	        map: map,
+	        draggable: false,
+	        animation: google.maps.Animation.DROP
+	    });
+
+	    marker1 = new google.maps.Marker({
+	        position: latLng2,
 	        map: map,
 	        draggable: false,
 	        animation: google.maps.Animation.DROP
