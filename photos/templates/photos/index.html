@@ -3,7 +3,11 @@
 {% block content %}
 
 <div id="googlemaps"></div>
-<div id="index"></div>
+<div id="index">
+	{% for photo in photos %}
+		<h5>{{photo.title}}</h5>
+	{% endfor %}
+</div>
 
 
 <footer>
