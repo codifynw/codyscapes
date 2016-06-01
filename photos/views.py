@@ -5,5 +5,5 @@ from .models import Photo
 
 def index(request):
 	photos = Photo.objects.all().order_by('-date')
-	return render(request, 'photos/index.html', {'photos': photos,'mystring':'poop'})
+	return render(request, 'photos/index.html', {'photos': photos})
 

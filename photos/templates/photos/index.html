@@ -10,38 +10,34 @@
 		<div id="index_nav_year">2016</div>
 	</div>
 	{% for photo in photos %}
-		<div class='photo_title'>
-			<div id='{{photo.title}}_{{photo.id}}'>{{photo.title}}</div>
-		</div>
-		<div class='photo_date'>
-			{{photo.date|date:"Y-m-d"}}
-		</div>
-		<div class='photo_holder'>
-			<img class='photo_photo' src="{{photo.photo_file.url}}">
+		<div class='photo-{{ forloop.counter }}'>
+			<div class='photo_title'>
+				<div id='{{photo.title}}_{{photo.id}}'>{{photo.title}}</div>
+			</div>
+			<div class='photo_date'>
+				{{photo.date|date:"Y-m-d"}}
+			</div>
+			<div class='photo_holder'>
+				<img class='photo_photo' src="{{photo.photo_file.url}}">
+			</div>
 		</div>
 	{% endfor %}
 </div>
 
 
 <footer>
-<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
 
 	<script type="text/javascript">
 
-	// The latitude and longitude of your business / place
-
-
 	var position = [ '{{ photos.0.latitude }}', '{{ photos.0.longitude }}'];
-
-
-
 
 	function showGoogleMaps() {
 
 	    var latLng = new google.maps.LatLng(position[0], position[1]);
 
 	    var mapOptions = {
-	        zoom: 3, // initialize zoom level - the max value is 21
+	        zoom: 10, // initialize zoom level - the max value is 21
 	        streetViewControl: false, // hide the yellow Street View pegman
 	        scaleControl: true, // allow users to zoom the Google Map
 	        mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -62,21 +58,31 @@
 	    });
 
 
-	{% for photo in photos %}
-	    var latLng_{{photo.id}} = new google.maps.LatLng({{photo.latitude}}, {{photo.longitude}});
+		{% for photo in photos %}
+		    var latLng_{{photo.id}} = new google.maps.LatLng({{photo.latitude}}, {{photo.longitude}});
 
-	    marker{{loop.index}} = new google.maps.Marker({
-	        position: latLng_{{photo.id}},
-	        map: map,
-	        draggable: false,
-	        animation: google.maps.Animation.DROP
-	    });
-	{% endfor %}
-
-
+		    marker{{loop.index}} = new google.maps.Marker({
+		        position: latLng_{{photo.id}},
+		        map: map,
+		        draggable: false,
+		        animation: google.maps.Animation.DROP
+		    });
+		{% endfor %}
 	}
 
 	google.maps.event.addDomListener(window, 'load', showGoogleMaps);
+
+
+	    	<!-- //Amount Scrolled: console.log($(this).scrollTop()) -->
+
+	jQuery(function($) {
+	    $('#index').on('scroll', function() {
+	        if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+	            alert('end reached');
+	        }
+	    })
+	});
+
 	</script>
 </footer>
 
