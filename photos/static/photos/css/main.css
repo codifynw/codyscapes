@@ -1,14 +1,16 @@
 #top_header {
   z-index: 2;
   position: fixed;
-  width: 100%;
+  width: 95%;
   height: 50px;
   margin:0px;
   margin-left: -8px;
   padding:0px;
   top:0;
-  background-color: #333333;
+  background-color: rgba(132, 132, 132, 1);
   color: white;
+  left: 2.5%;
+  border-radius: 25px;
 }
 
 #header_inner {
@@ -18,21 +20,33 @@
 
 #header_left {
   display: inline-block;
-  width: 70%;
+  width: 50%;
+  padding-left: 5%;
+  float: left;
+}
+
+#lot_logo {
+  height:100%;
 }
 
 #header_right {
   display: inline-block;
-  width: 20%;
+  text-align: right;
+  padding-right: 5%;
+  width: 40%;
+  height:100%;
+  float: right;
+  margin-top: 15px;
 }
 
 #index {
   position: fixed;
+  border-radius: 25px;
   z-index: 1;
-  width: 32%;
+  width: 31%;
   margin: 60px auto 0;
   padding: 10px;
-  background-color: rgba(0, 0, 0, .7);
+  background-color: rgba(132, 132, 132, 1);
   height: auto;
   color: white;
   margin-left: 0px;
@@ -41,14 +55,17 @@
   min-height: 80vh;
   max-height: 80vh;
   overflow: auto;
+  left: 2%;
 }
 
 #index_nav {
   position:fixed;
+  border-radius: 25px;
   display: block;
-  width: 35%;
-  height: 20px;
-  background-color: rgba(0, 0, 0, .9);
+  width: 32.7%;
+  height: 40px;
+  /*background-color: rgba(64,4,132,1);*/
+  background-color: rgba(181,202,133,1);
   opacity: 1;
   text-align: center;
   margin-top: -10px;
@@ -56,6 +73,7 @@
   margin-left: -10px;
   padding-top: 0px;
   color: white;
+  vertical-align: middle;
 }
 
 .photo_title {
@@ -86,6 +104,19 @@
   padding-top: 15px;
   text-align: center;
 }
+
+a:visited {
+  color: white;
+}
+
+.nav_link {
+  color: white;
+}
+
+a:hover {
+  color: rgba(181,202,133,1);
+}
+
 
 
 
