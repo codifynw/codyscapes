@@ -44,8 +44,9 @@
 }
 
 #index_nav {
+  position:fixed;
   display: block;
-  width: 105%;
+  width: 35%;
   height: 20px;
   background-color: rgba(0, 0, 0, .9);
   opacity: 1;
@@ -54,6 +55,7 @@
   margin-right: -6px;
   margin-left: -10px;
   padding-top: 0px;
+  color: white;
 }
 
 .photo_title {
@@ -76,7 +78,14 @@
   z-index: 0;
 }
 
+.photo_photo {
+  width: 300px;
+}
 
+.photo_holder {
+  padding-top: 15px;
+  text-align: center;
+}
 
 
 

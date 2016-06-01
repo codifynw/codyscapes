@@ -1,5 +1,7 @@
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf.urls.static import  static
+from django.conf import settings
 
 urlpatterns = [
     # Examples:
@@ -13,3 +15,5 @@ urlpatterns = [
     url(r'^photos/', include('photos.urls')),
     url(r'^', include('personal.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -7,7 +7,7 @@
 <div id="googlemaps"></div>
 <div id="index">
 	<div id="index_nav">
-		2016
+		Years Options
 	</div>
 	{% for photo in photos %}
 		<div class='photo_title'>
@@ -16,8 +16,8 @@
 		<div class='photo_date'>
 			{{photo.date|date:"Y-m-d"}}
 		</div>
-		<div class='photo_photo'>
-			<img src="{{photo.photo_file.url}}">
+		<div class='photo_holder'>
+			<img class='photo_photo' src="{{photo.photo_file.url}}">
 		</div>
 	{% endfor %}
 </div>

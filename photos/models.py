@@ -2,9 +2,6 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-def upload_location(filename):
-	return "%s/%s" %("gallery"/filename)
-
 class Photo(models.Model):
     title = models.CharField(max_length=140)
     location_string = models.CharField(max_length=50, default="The World")
@@ -12,7 +9,7 @@ class Photo(models.Model):
     latitude = models.FloatField(default=32.7833333)
     longitude = models.FloatField(default=-96.7970)
     date = models.DateTimeField()
-    photo_file = models.ImageField(upload_to=upload_location,
+    photo_file = models.ImageField(upload_to="photos/media/",
     	null=False,
     	blank=False,
     	height_field="height_field",
