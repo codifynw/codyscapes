@@ -104,12 +104,11 @@
 				        icon: icon_incative
 				    });
 				    google.maps.event.addListener(marker, 'click', function() {
-				       // top position relative to the document
-
-				       var child = $('#photo-2');
+				       var child = $('#photo-4');
 				       var parent = $('#index');
 
 				       document.getElementById('index').scrollTop += child.offset().top-parent.offset().top - 45;
+				       marker.setIcon(icon_active);
 
 				       //console.log(child.offset().top-parent.offset().top)
 				       //console.log(document.getElementById('index').scrollTop);
