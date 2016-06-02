@@ -13,7 +13,7 @@
 			<div id="index_nav_year">2016</div>
 		</div>
 		{% for photo in photos %}
-			<div class='photo photo-{{ forloop.counter }}'>
+			<div class='photo' id='photo-{{ forloop.counter }}'>
 				<div class='photo_title'>
 					<div id='{{photo.title}}_{{photo.id}}'>{{photo.title}}</div>
 				</div>
@@ -39,12 +39,13 @@
 
 	var position = [ '{{ photos.0.latitude }}', '{{ photos.0.longitude }}'];
 
+
 	function showGoogleMaps() {
 
 	    var latLng = new google.maps.LatLng(position[0], position[1]);
 
 	    var mapOptions = {
-	        zoom: 10, // initialize zoom level - the max value is 21
+	        zoom: 2, // initialize zoom level - the max value is 21
 	        streetViewControl: false, // hide the yellow Street View pegman
 	        scaleControl: true, // allow users to zoom the Google Map
 	        mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -56,21 +57,29 @@
 	    map = new google.maps.Map(document.getElementById('googlemaps'),
 	        mapOptions);
 
+	    //Make a marker with a click
+	    //map.addListener('click', function(e) {
+	    //	placeMarkerAndPanTo(e.latLng, map);
+	  	//});
+
 	    var icon_active = {
 		    url: "{% static "photos/img/map_marker_active.png" %}", // url
 		    scaledSize: new google.maps.Size(30, 30), // scaled size
 		    origin: new google.maps.Point(0,0), // origin
-		    anchor: new google.maps.Point(0,0) // anchor
+		    anchor: new google.maps.Point(0,0), // anchor
+		    description: '{{photos.0.title}}',
+    		//url: "{{photos.0.url}}"
 		};
 
-	    // Show the default red marker at the location
-	    marker = new google.maps.Marker({
-	        position: latLng,
-	        map: map,
-	        draggable: false,
-	        animation: google.maps.Animation.DROP,
-	        icon: icon_active
-	    });
+		// Show the default marker at the location
+		marker = new google.maps.Marker({
+		    position: latLng,
+		    map: map,
+		    draggable: false,
+		    animation: google.maps.Animation.DROP,
+		    icon: icon_active
+		});
+
 
 	    var icon_incative = {
 		    url: "{% static "photos/img/map_marker_inactive.png" %}", // url
@@ -82,41 +91,52 @@
 
 		{% for photo in photos %}
 			{% if not forloop.first %}
-		    var latLng_{{photo.id}} = new google.maps.LatLng({{photo.latitude}}, {{photo.longitude}});
 
-		    marker{{loop.index}} = new google.maps.Marker({
-		        position: latLng_{{photo.id}},
-		        map: map,
-		        draggable: false,
-		        animation: google.maps.Animation.DROP,
-		        icon: icon_incative
-		    });
+				createMarker('{{photo.title}}')
+				console.log('{{photo.title}}')
+
+				function createMarker(t) {
+				    var marker = new google.maps.Marker({
+				        position: new google.maps.LatLng({{photo.latitude}}, {{photo.longitude}}),
+				        map: map,
+				        title: t,
+				        draggable: false,
+				        icon: icon_incative
+				    });
+				    google.maps.event.addListener(marker, 'click', function() {
+				       // top position relative to the document
+
+				       var child = $('#photo-2');
+				       var parent = $('#index');
+
+				       document.getElementById('index').scrollTop += child.offset().top-parent.offset().top - 45;
+
+				       //console.log(child.offset().top-parent.offset().top)
+				       //console.log(document.getElementById('index').scrollTop);
+
+				    });
+				    return marker;
+				}
+
+
 		    {%	endif %}
 		{% endfor %}
+
+
+
 	}
 
 	google.maps.event.addDomListener(window, 'load', showGoogleMaps);
 
 
-	$( document ).ready(function() {
 
-		window.active_pin = 1
-		<!-- //Amount Scrolled: console.log($(this).scrollTop()) -->
-		console.log($('#photo-1').innerHeight())
-		console.log($('#photo-'+active_pin).innerHeight())
-
-		jQuery(function($) {
-		    $('#index').on('scroll', function() {
-		    	console.log($(this).scrollTop())
-		    	console.log($('#photo-'+window.active_pin).innerHeight())
-
-		        if($(this).scrollTop() >= $('#photo-'+window.active_pin).innerHeight()) {
-		        	console.log(window.active_pin)
-		            window.active_pin = window.active_pin += 1;
-		        }
-		    })
-		});
-	});
+	function placeMarkerAndPanTo(latLng, map) {
+	  var marker = new google.maps.Marker({
+	    position: latLng,
+	    map: map
+	  });
+	  map.panTo(latLng);
+	}
 
 	</script>
 </footer>
