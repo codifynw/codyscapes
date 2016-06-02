@@ -6,29 +6,23 @@
 {% load staticfiles %}
 
 <div id="googlemaps"></div>
-
 <div id="index">
-	<div class="photo_container">
-		<div id="index_nav">
-			<div id="index_nav_year">2016</div>
-		</div>
-		{% for photo in photos %}
-			<div class='photo photo-{{ forloop.counter }}'>
-				<div class='photo_title'>
-					<div id='{{photo.title}}_{{photo.id}}'>{{photo.title}}</div>
-				</div>
-				<div class='photo_date'>
-					{{photo.date|date:"Y-m-d"}}
-				</div>
-				<div class='photo_holder'>
-					<img class='photo_photo' src="{{photo.url}}">
-				</div>
-				<div class='purchase_link'>
-					<a href='{{photo.purchase_link}}'>Buy this photo</a>
-				</div>
-			</div>
-		{% endfor %}
+	<div id="index_nav">
+		<div id="index_nav_year">2016</div>
 	</div>
+	{% for photo in photos %}
+		<div id='photo-{{ forloop.counter }}'>
+			<div class='photo_title'>
+				<div id='{{photo.title}}_{{photo.id}}'>{{photo.title}}</div>
+			</div>
+			<div class='photo_date'>
+				{{photo.date|date:"Y-m-d"}}
+			</div>
+			<div class='photo_holder'>
+				<img class='photo_photo' src="{{photo.url}}">
+			</div>
+		</div>
+	{% endfor %}
 </div>
 
 
@@ -96,27 +90,6 @@
 	}
 
 	google.maps.event.addDomListener(window, 'load', showGoogleMaps);
-
-
-	$( document ).ready(function() {
-
-		window.active_pin = 1
-		<!-- //Amount Scrolled: console.log($(this).scrollTop()) -->
-		console.log($('#photo-1').innerHeight())
-		console.log($('#photo-'+active_pin).innerHeight())
-
-		jQuery(function($) {
-		    $('#index').on('scroll', function() {
-		    	console.log($(this).scrollTop())
-		    	console.log($('#photo-'+window.active_pin).innerHeight())
-
-		        if($(this).scrollTop() >= $('#photo-'+window.active_pin).innerHeight()) {
-		        	console.log(window.active_pin)
-		            window.active_pin = window.active_pin += 1;
-		        }
-		    })
-		});
-	});
 
 	</script>
 </footer>

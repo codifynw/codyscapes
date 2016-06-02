@@ -40,51 +40,39 @@
 }
 
 #index {
-  top: 75px;
   position: fixed;
   border-radius: 25px;
   z-index: 1;
   width: 31%;
-  margin: auto 0;
+  margin: 60px auto 0;
+  padding: 10px;
+  background-color: rgba(132, 132, 132, 1);
+  height: auto;
   color: white;
   margin-left: 0px;
-  background-color: rgba(0,0,0,0);
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  max-height: 80vh;
+  overflow: auto;
   left: 2%;
   font-family: 'Oxygen', sans-serif;
   font-weight: 700;
-  overflow: auto;
-  height: 500px;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-.photo_container {
-  position: relative;
-  z-index: 1;
-}
-
-.photo {
-  border-radius: 25px;
-  background-color: rgba(132, 132, 132, .5);
-  width: 100%;
-  margin-top: 50px;
-  margin-bottom: -30px;
-  padding-bottom: 25px;
 }
 
 #index_nav {
-  top: 75px;
   position:fixed;
   border-radius: 25px;
   display: block;
-  width: 31%;
+  width: 32.4%;
   height: 40px;
   /*background-color: rgba(64,4,132,1);*/
   background-color: rgba(181,202,133,1);
   opacity: 1;
   text-align: center;
+  margin-top: -10px;
+  margin-right: -6px;
+  margin-left: -9px;
   padding-top: 0px;
   color: white;
   font-family: 'Oxygen', sans-serif;
@@ -114,6 +102,7 @@
 .photo_title {
   font-size: 20px;
   text-align: center;
+  margin-top: 40px;
 }
 
 .photo_date {
@@ -134,11 +123,6 @@
   width: 300px;
 }
 
-.purchase_link {
-  text-align: center;
-  font-size: 10px;
-}
-
 .photo_holder {
   padding-top: 15px;
   text-align: center;
@@ -155,6 +139,7 @@ a:visited {
 a:hover {
   color: rgba(181,202,133,1);
 }
+
 
 
 
