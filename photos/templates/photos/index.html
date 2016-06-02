@@ -3,6 +3,7 @@
 
 
 {% block content %}
+{% load staticfiles %}
 
 <div id="googlemaps"></div>
 <div id="index">
@@ -10,7 +11,7 @@
 		<div id="index_nav_year">2016</div>
 	</div>
 	{% for photo in photos %}
-		<div class='photo-{{ forloop.counter }}'>
+		<div id='photo-{{ forloop.counter }}'>
 			<div class='photo_title'>
 				<div id='{{photo.title}}_{{photo.id}}'>{{photo.title}}</div>
 			</div>
@@ -49,38 +50,66 @@
 	    map = new google.maps.Map(document.getElementById('googlemaps'),
 	        mapOptions);
 
+	    var icon_active = {
+		    url: "{% static "photos/img/map_marker_active.png" %}", // url
+		    scaledSize: new google.maps.Size(30, 30), // scaled size
+		    origin: new google.maps.Point(0,0), // origin
+		    anchor: new google.maps.Point(0,0) // anchor
+		};
+
 	    // Show the default red marker at the location
 	    marker = new google.maps.Marker({
 	        position: latLng,
 	        map: map,
 	        draggable: false,
-	        animation: google.maps.Animation.DROP
+	        animation: google.maps.Animation.DROP,
+	        icon: icon_active
 	    });
+
+	    var icon_incative = {
+		    url: "{% static "photos/img/map_marker_inactive.png" %}", // url
+		    scaledSize: new google.maps.Size(30, 30), // scaled size
+		    origin: new google.maps.Point(0,0), // origin
+		    anchor: new google.maps.Point(0,0) // anchor
+		};
 
 
 		{% for photo in photos %}
+			{% if not forloop.first %}
 		    var latLng_{{photo.id}} = new google.maps.LatLng({{photo.latitude}}, {{photo.longitude}});
 
 		    marker{{loop.index}} = new google.maps.Marker({
 		        position: latLng_{{photo.id}},
 		        map: map,
 		        draggable: false,
-		        animation: google.maps.Animation.DROP
+		        animation: google.maps.Animation.DROP,
+		        icon: icon_incative
 		    });
+		    {%	endif %}
 		{% endfor %}
 	}
 
 	google.maps.event.addDomListener(window, 'load', showGoogleMaps);
 
 
-	    	<!-- //Amount Scrolled: console.log($(this).scrollTop()) -->
+	$( document ).ready(function() {
 
-	jQuery(function($) {
-	    $('#index').on('scroll', function() {
-	        if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
-	            alert('end reached');
-	        }
-	    })
+		window.active_pin = 1
+		<!-- //Amount Scrolled: console.log($(this).scrollTop()) -->
+		console.log($('#photo-1').innerHeight())
+		console.log($('#photo-'+active_pin).innerHeight())
+
+		jQuery(function($) {
+		    $('#index').on('scroll', function() {
+		    	console.log($(this).scrollTop())
+		    	console.log($('#photo-'+window.active_pin).innerHeight())
+
+		        if($(this).scrollTop() >= $('#photo-'+window.active_pin).innerHeight()) {
+		        	console.log(window.active_pin)
+		            window.active_pin = window.active_pin += 1;
+		        }
+		    })
+		});
 	});
 
 	</script>
