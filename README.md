@@ -27,6 +27,7 @@ Later Date:
 3. Add Blog Post ID for an image
 4. CLick photo on live map index column, show bigger image
 5. Scale google maps pin icon to zoom level
+6. Move map JS to own js file
 
 Done:
 1. Landing Page

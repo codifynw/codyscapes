@@ -76,6 +76,15 @@
 			var zoomlevel = 5
 			var scale_size = 30
 
+			function set_the_one_true_marker(marker) {
+				for (i = 0; i < markers.length; i++) {
+					markers[i].setIcon(make_icon('inactive',map));
+					markers[i].setZIndex(1);
+				}
+				marker.setZIndex(10);
+				marker.setIcon(make_icon('active',map));
+			}
+
 		    var mapOptions = {
 		        zoom: zoomlevel, // initialize zoom level - the max value is 21
 		        streetViewControl: false, // hide the yellow Street View pegman
@@ -94,7 +103,6 @@
 
 			{% for photo in photos %}
 
-				var loan = "{{photo.title}}"
 				var lat = {{photo.latitude}}
 				var long = {{photo.longitude}}
 				var add = "{{photo.location_string}}"
@@ -103,7 +111,7 @@
 
 				var marker = new google.maps.Marker({
 				    map: map,
-				    title: loan,
+				    title: "{{photo.title}}",
 				    position: latlngset,
 					icon: {% if forloop.first %}make_icon('active',map){% else %}make_icon('inactive',map){% endif %},
 					description: {{forloop.counter}},
@@ -154,13 +162,40 @@
 				    }
 				}
 			});
+
+			var elms = document.querySelectorAll(".photo"),
+			    elmOffsets = {};
+			for (var i = 0, j = elms.length; i < j; ++i) {
+				var offset = elms[i].offsetTop + elms[i].clientHeight;
+			  elmOffsets[offset] = elms[i];
+			}
+
+			console.log(elmOffsets)
+
+			// listen for scroll events. might want to throttle this
+			var parent = document.getElementById('index')
+			parent.addEventListener("scroll", function(){
+		  	var offset = parent.scrollTop,
+	 			minOffset = Object.keys(elmOffsets).reduceRight(function(prev,current){
+		      		return offset < current - 150 ? current : prev;
+	      		});
+		  		map.setCenter(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )].getPosition());
+
+		  		set_the_one_true_marker(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )]);
+			});
+
+
 		}
 
 		google.maps.event.addDomListener(window, 'load', showGoogleMaps);
 
+
+
+
+
+
 	</script>
 </footer>
-
 
 {% endblock %}
 
