@@ -43,7 +43,7 @@
 	function showGoogleMaps() {
 
 	    var mapOptions = {
-	        zoom: 2, // initialize zoom level - the max value is 21
+	        zoom: 5, // initialize zoom level - the max value is 21
 	        streetViewControl: false, // hide the yellow Street View pegman
 	        scaleControl: true, // allow users to zoom the Google Map
 	        mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -78,25 +78,44 @@
 
 
 		{% for photo in photos %}
-			console.log('{{photo.title}}')
-			console.log({{photo.latitude}}, {{photo.longitude}})
 
-			    	marker = new google.maps.Marker({
-				        position: new google.maps.LatLng({{photo.latitude}}, {{photo.longitude}}),
-				        map: map,
-				        title: "{{photo.title}}",
-				        draggable: false,
-				        icon: {% if not forloop.first %}icon_incative{% else %}icon_active{%	endif %}
-			    	});
 
-			    	google.maps.event.addListener(marker, 'click', function() {
-			       		var child = $('#photo-4');
-			       		var parent = $('#index');
+	    	 var loan = "{{photo.title}}"
+	    	 var lat = {{photo.latitude}}
+	    	 var long = {{photo.longitude}}
+	    	 var add = "{{photo.location_string}}"
 
-			       		document.getElementById('index').scrollTop += child.offset().top-parent.offset().top - 45;
-			       		marker.setIcon(icon_active);
-			       		map.setCenter(marker.getPosition());
-			    	});
+	    	 latlngset = new google.maps.LatLng(lat, long);
+
+	    	  var marker = new google.maps.Marker({
+	    	          map: map,
+	    	          title: loan,
+	    	          position: latlngset,
+		        	  icon: icon_incative,
+		        	  description: {{forloop.counter}}
+	    	        });
+
+
+
+	    	        var content = "Loan Number: " + loan +  '</h3>' + "Address: " + add
+
+	    	  var infowindow = new google.maps.InfoWindow()
+
+	    	google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
+	    	        return function() {
+	    	           infowindow.setContent(content);
+	    	           infowindow.open(map,marker);
+	    	           var child = $('#photo-4');
+	    	           var parent = $('#index');
+
+	    	           document.getElementById('index').scrollTop += child.offset().top-parent.offset().top - 45;
+	    	           marker.setIcon(icon_active);
+	    	           map.setCenter(marker.getPosition());
+	    	        };
+	    	    })(marker,content,infowindow));
+
+
+
 		{% endfor %}
 	}
 

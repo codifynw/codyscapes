@@ -91,6 +91,11 @@
   font-weight: 700;
 }
 
+#header_right {
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+}
+
 #index_nav_year {
   height:100%;
   /* Internet Explorer 10 */
