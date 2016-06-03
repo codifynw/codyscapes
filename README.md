@@ -15,10 +15,11 @@ MVP:
 4. Enter Data
 5. Backup database
 6. "Live Map" - if link contains 'youtube' logic to show videos
-7. Show Purchase link on "Live Map"
+
 8. Purchase Link Logic and layout
-9. Click Photo on map, show image
+
 10. Filter Years
+11. Add Facebook / Insta icons / links
 
 Later Date:
 1. Automatic URL upload to S3
@@ -37,3 +38,6 @@ Done:
 7. Load Lat/Long on map
 8. Find suitable map scheme
 9. About Me place holder
+10. Show Purchase link on "Live Map"
+11. Click Photo on map, show image
+12. Active / Inactive map icons
