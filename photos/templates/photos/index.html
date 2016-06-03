@@ -43,7 +43,7 @@
 	function showGoogleMaps() {
 
 	    var mapOptions = {
-	        zoom: 5, // initialize zoom level - the max value is 21
+	        zoom: 10, // initialize zoom level - the max value is 21
 	        streetViewControl: false, // hide the yellow Street View pegman
 	        scaleControl: true, // allow users to zoom the Google Map
 	        mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -69,53 +69,76 @@
     		//url: "{{photos.0.url}}"
 		};
 
-	    var icon_incative = {
+	    var icon_inactive = {
 		    url: "{% static "photos/img/map_marker_inactive.png" %}", // url
 		    scaledSize: new google.maps.Size(30, 30), // scaled size
 		    origin: new google.maps.Point(0,0), // origin
 		    anchor: new google.maps.Point(0,0) // anchor
 		};
 
+		var markers = [];
 
 		{% for photo in photos %}
 
+			var loan = "{{photo.title}}"
+			var lat = {{photo.latitude}}
+			var long = {{photo.longitude}}
+			var add = "{{photo.location_string}}"
 
-	    	 var loan = "{{photo.title}}"
-	    	 var lat = {{photo.latitude}}
-	    	 var long = {{photo.longitude}}
-	    	 var add = "{{photo.location_string}}"
+    	 	latlngset = new google.maps.LatLng(lat, long);
 
-	    	 latlngset = new google.maps.LatLng(lat, long);
+			var marker = new google.maps.Marker({
+			    map: map,
+			    title: loan,
+			    position: latlngset,
+				icon: {% if not forloop.first %}icon_inactive{% else %}icon_active{% endif %},
+				description: {{forloop.counter}}
+			});
 
-	    	  var marker = new google.maps.Marker({
-	    	          map: map,
-	    	          title: loan,
-	    	          position: latlngset,
-		        	  icon: icon_incative,
-		        	  description: {{forloop.counter}}
-	    	        });
+			markers.push(marker);
 
 
+	    	google.maps.event.addListener(marker,'click', (function(marker){
+    	        return function() {
 
-	    	        var content = "Loan Number: " + loan +  '</h3>' + "Address: " + add
+					var child = $('#photo-' + marker.description);
+					var parent = $('#index');
 
-	    	  var infowindow = new google.maps.InfoWindow()
+					for (i = 0; i < markers.length; i++) {
+					    markers[i].setIcon(icon_inactive);
+
+					}
+
+					document.getElementById('index').scrollTop += child.offset().top-parent.offset().top - 45;
+					marker.setIcon(icon_active);
+					map.setCenter(marker.getPosition());
+    	        };
+    	    })(marker));
+
+/* if I ever want to add InfoWindow
+			var content = add
+    	  	var infowindow = new google.maps.InfoWindow()
 
 	    	google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){
-	    	        return function() {
-	    	           infowindow.setContent(content);
-	    	           infowindow.open(map,marker);
-	    	           var child = $('#photo-4');
-	    	           var parent = $('#index');
+    	        return function() {
 
-	    	           document.getElementById('index').scrollTop += child.offset().top-parent.offset().top - 45;
-	    	           marker.setIcon(icon_active);
-	    	           map.setCenter(marker.getPosition());
-	    	        };
-	    	    })(marker,content,infowindow));
+					var child = $('#photo-' + marker.description);
+					var parent = $('#index');
+					infowindow.close();
 
+					for (i = 0; i < markers.length; i++) {
+					    markers[i].setIcon(icon_inactive);
 
+					}
 
+					infowindow.setContent(content);
+					infowindow.open(map,marker);
+
+					document.getElementById('index').scrollTop += child.offset().top-parent.offset().top - 45;
+					marker.setIcon(icon_active);
+					map.setCenter(marker.getPosition());
+    	        };
+    	    })(marker,content,infowindow));  */
 		{% endfor %}
 	}
 
