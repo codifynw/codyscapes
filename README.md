@@ -11,7 +11,7 @@ The app will serve as a homepage for my photography.  There will be three main a
 MVP:
 1. Mobile Layout for "Live Map" page
 2. Build out "About Me"
-3. Scroll listeners in "Live Map"
+
 4. Enter Data
 5. Backup database
 6. "Live Map" - if link contains 'youtube' logic to show videos
@@ -20,6 +20,8 @@ MVP:
 
 10. Filter Years
 11. Add Facebook / Insta icons / links
+12. Update "Live Map" buffer at bottom
+13. Clean up static files
 
 Later Date:
 1. Automatic URL upload to S3
@@ -42,3 +44,4 @@ Done:
 10. Show Purchase link on "Live Map"
 11. Click Photo on map, show image
 12. Active / Inactive map icons
+13. Scroll listeners in "Live Map"

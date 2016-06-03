@@ -161,6 +161,10 @@ a:hover {
   color: rgba(181,202,133,1);
 }
 
-
+#photo-buffer {
+  padding-top: 50px;
+  height: 200px;
+  text-align: middle;
+}
 
 
