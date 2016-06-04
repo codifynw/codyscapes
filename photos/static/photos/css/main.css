@@ -107,7 +107,8 @@
   font-family: 'Oxygen', sans-serif;
 }
 
-#index_nav_year {
+.index_nav_year {
+  font-size: 20px;
   height:100%;
   /* Internet Explorer 10 */
   display:-ms-flexbox;
@@ -136,7 +137,6 @@
   font-size: 11px;
   text-align: center;
 }
-
 
 .photo_photo {
   width: 95%;
@@ -186,38 +186,39 @@ a:hover {
 
 @media (max-width: 750px) {
   #index {
-      width: 100%;
-      top: 30%;
-      left: 0;
-      text-align: center;
-      background-color: rgba(100, 100, 100, 1);
-    }
-    #index_nav {
-      width: 100%;
-      top: 30%;
-      border-radius: 0px;
-    }
-    #googlemaps {
-      height: 35%;
-      width: 100%;
-      position:fixed;
-      left: 0;
-      left: 0;
-      z-index: 0;
-    }
-    #top_header {
-      margin-left: 0;
-      left: 0;
-      border-radius: 0px;
-      width: 100%;
-      background-color: rgba(132, 132, 132, 1);
-    }
-    .photo {
-      display: inline-block;
-      width: 80%;
-      left: 15%;
-      background-color: rgba(70, 70, 70, 1);
-    }
+    width: 100%;
+    top: 40%;
+    left: 0;
+    text-align: center;
+    background-color: rgba(100, 100, 100, 1);
+    height: 60%;
+  }
+  #index_nav {
+    width: 100%;
+    top: 40%;
+    border-radius: 0px;
+  }
+  #googlemaps {
+    height: 45%;
+    width: 100%;
+    position:fixed;
+    left: 0;
+    left: 0;
+    z-index: 0;
+  }
+  #top_header {
+    margin-left: 0;
+    left: 0;
+    border-radius: 0px;
+    width: 100%;
+    background-color: rgba(132, 132, 132, 1);
+  }
+  .photo {
+    display: inline-block;
+    width: 90%;
+    left: 5%;
+    background-color: rgba(70, 70, 70, 1);
+  }
 }
 
 
@@ -232,20 +233,34 @@ a:hover {
       left: 0;
       text-align: center;
       background-color: rgba(100, 100, 100, 1);
-      height: calc(70% - 200px);
+      height: 70%;
+      z-index: 100;
     }
     #index_nav {
       width: 100%;
       top: 30%;
       border-radius: 0px;
+      height: 50px;
     }
     #googlemaps {
       height: 35%;
-      width: 100%;
+      width: 105%;
+      left: -3%;
       position:fixed;
       left: 0;
       left: 0;
       z-index: 0;
+    }
+
+    .photo_title {
+      font-size: 30px;
+    }
+
+    .photo_date {
+      font-size: 20px;
+    }
+    .index_nav_year {
+      font-size: 40px;
     }
     #top_header {
       margin-left: 0;
@@ -256,8 +271,9 @@ a:hover {
     }
     .photo {
       display: inline-block;
-      width: 80%;
-      left: 15%;
+      width: 90%;
+      margin-top: 70px;
+      left: 5%;
       background-color: rgba(70, 70, 70, 1);
     }
 }
