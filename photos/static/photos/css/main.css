@@ -201,7 +201,6 @@ a:hover {
   #googlemaps {
     height: 45%;
     width: 100%;
-    position:fixed;
     left: 0;
     left: 0;
     z-index: 0;
@@ -245,8 +244,7 @@ a:hover {
     #googlemaps {
       height: 35%;
       width: 105%;
-      left: -3%;
-      position:fixed;
+      left: -10px;
       left: 0;
       left: 0;
       z-index: 0;
