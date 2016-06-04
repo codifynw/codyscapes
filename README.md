@@ -21,7 +21,7 @@ Requred MVP:
 10. Filter Years
 11. Add Facebook / Insta icons / links
 12. Update "Live Map" buffer at bottom
-13. Clean up static files
+13.
 
 Later Date:
 1. Automatic URL upload to S3
@@ -47,3 +47,4 @@ Done:
 12. Active / Inactive map icons
 13. Scroll listeners in "Live Map"
 14. "Live Map" - if link contains 'youtube' logic to show videos
+15. Clean up static files
