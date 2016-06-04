@@ -73,14 +73,30 @@
   font-weight: 700;
 }
 
+@media (max-width: 751px) {
+  #index {
+    width: 95%;
+    top: 50%;
+  }
+  #index_nav {
+    width: 95%;
+    top: 50%;
+  }
+}
 
-#googlemaps {
-  height: 100%;
-  width: 100%;
-  position:absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #index {
+      width: 95%;
+      top: 50%;
+    }
+    #index_nav {
+      width: 95%;
+      top: 50%;
+    }
 }
 
 ::-webkit-scrollbar {
@@ -137,6 +153,14 @@
   text-align: center;
 }
 
+#googlemaps {
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
 
 .photo_photo {
   width: 300px;
@@ -171,82 +195,3 @@ a:hover {
 }
 
 
-@media (max-width: 750px) {
-  #index {
-    width: 100%;
-    top: 50%;
-    left: 0;
-    text-align: center;
-    background-color: rgba(100, 100, 100, 1);
-  }
-  #index_nav {
-    width: 100%;
-    top: 50%;
-  }
-  #googlemaps {
-    height: 60%;
-    width: 100%;
-    position:fixed;
-    left: 0;
-    left: 0;
-    z-index: 0;
-  }
-  #index_nav {
-    border-radius: 0px;
-  }
-  #top_header {
-    margin-left: 0;
-    left: 0;
-    border-radius: 0px;
-    width: 100%;
-    background-color: rgba(132, 132, 132, 1);
-  }
-  .photo {
-    display: inline-block;
-    width: 70%;
-    left: 15%;
-    background-color: rgba(70, 70, 70, 1);
-  }
-}
-
-
-@media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-    #index {
-      width: 100%;
-      top: 50%;
-      left: 0;
-      text-align: center;
-      background-color: rgba(100, 100, 100, 1);
-    }
-    #index_nav {
-      width: 100%;
-      top: 50%;
-    }
-    #googlemaps {
-      height: 60%;
-      width: 100%;
-      position:fixed;
-      left: 0;
-      left: 0;
-      z-index: 0;
-    }
-    #index_nav {
-      border-radius: 0px;
-    }
-    #top_header {
-      margin-left: 0;
-      left: 0;
-      border-radius: 0px;
-      width: 100%;
-      background-color: rgba(132, 132, 132, 1);
-    }
-    .photo {
-      display: inline-block;
-      width: 70%;
-      left: 15%;
-      background-color: rgba(70, 70, 70, 1);
-    }
-}
