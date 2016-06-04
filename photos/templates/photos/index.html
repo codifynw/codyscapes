@@ -95,6 +95,7 @@
 				}
 				marker.setZIndex(10);
 				marker.setIcon(make_icon('active',map));
+				check_width()
 			}
 
 		    var mapOptions = {
@@ -194,10 +195,19 @@
 		  		set_the_one_true_marker(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )]);
 			});
 
+			function check_width() {
+				if ($(window).width() < 960) {
+					map.panBy(0, 100)
+				}
+			}
+
+			check_width()
+
 
 		}
 
 		google.maps.event.addDomListener(window, 'load', showGoogleMaps);
+
 
 
 
