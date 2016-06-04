@@ -17,6 +17,7 @@ class Photo(models.Model):
     #height_field = models.IntegerField(default=0)
     #width_field = models.IntegerField(default=0)
     url = models.CharField(max_length=200, default="http://www.codyscapes.com/gallery/")
+    isphoto = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title

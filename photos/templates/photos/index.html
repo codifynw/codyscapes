@@ -21,7 +21,13 @@
 					{{photo.date|date:"Y-m-d"}}
 				</div>
 				<div class='photo_holder'>
-					<img class='photo_photo' src="{{photo.url}}">
+					{% if photo.isphoto %}
+						<img class='photo_photo' src="{{photo.url}}">
+					{% else %}
+						<iframe width="300" height="169" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>
+					{% endif %}
+
+
 				</div>
 				<div class='purchase_link'>
 					<a href='{{photo.purchase_link}}'>Buy this photo</a>
@@ -175,8 +181,6 @@
 				var offset = elms[i].offsetTop + elms[i].clientHeight;
 			  elmOffsets[offset] = elms[i];
 			}
-
-			console.log(elmOffsets)
 
 			// listen for scroll events. might want to throttle this
 			var parent = document.getElementById('index')
