@@ -232,6 +232,7 @@ a:hover {
       left: 0;
       text-align: center;
       background-color: rgba(100, 100, 100, 1);
+      height: calc(70% - 200px);
     }
     #index_nav {
       width: 100%;
