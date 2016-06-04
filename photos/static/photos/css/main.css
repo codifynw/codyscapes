@@ -186,40 +186,38 @@ a:hover {
 
 @media (max-width: 750px) {
   #index {
-    width: 100%;
-    top: 50%;
-    left: 0;
-    text-align: center;
-    background-color: rgba(100, 100, 100, 1);
-  }
-  #index_nav {
-    width: 100%;
-    top: 50%;
-  }
-  #googlemaps {
-    height: 60%;
-    width: 100%;
-    position:fixed;
-    left: 0;
-    left: 0;
-    z-index: 0;
-  }
-  #index_nav {
-    border-radius: 0px;
-  }
-  #top_header {
-    margin-left: 0;
-    left: 0;
-    border-radius: 0px;
-    width: 100%;
-    background-color: rgba(132, 132, 132, 1);
-  }
-  .photo {
-    display: inline-block;
-    width: 70%;
-    left: 15%;
-    background-color: rgba(70, 70, 70, 1);
-  }
+      width: 100%;
+      top: 30%;
+      left: 0;
+      text-align: center;
+      background-color: rgba(100, 100, 100, 1);
+    }
+    #index_nav {
+      width: 100%;
+      top: 30%;
+      border-radius: 0px;
+    }
+    #googlemaps {
+      height: 35%;
+      width: 100%;
+      position:fixed;
+      left: 0;
+      left: 0;
+      z-index: 0;
+    }
+    #top_header {
+      margin-left: 0;
+      left: 0;
+      border-radius: 0px;
+      width: 100%;
+      background-color: rgba(132, 132, 132, 1);
+    }
+    .photo {
+      display: inline-block;
+      width: 80%;
+      left: 15%;
+      background-color: rgba(70, 70, 70, 1);
+    }
 }
 
 
