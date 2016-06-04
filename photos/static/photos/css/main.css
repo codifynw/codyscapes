@@ -84,6 +84,21 @@
   }
 }
 
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #index {
+      width: 95%;
+      top: 50%;
+    }
+    #index_nav {
+      width: 95%;
+      top: 50%;
+    }
+}
+
 ::-webkit-scrollbar {
     display: none;
 }

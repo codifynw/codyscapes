@@ -196,8 +196,10 @@
 			});
 
 			function check_width() {
-				if ($(window).width() < 751) {
-					map.panBy(0, 100)
+				if ( ($(window).width() < 751) || (!!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)) ){
+					map.panBy(0, 100);
+				} else {
+					map.panBy(-75,0);
 				}
 			}
 
