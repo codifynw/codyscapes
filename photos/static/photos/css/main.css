@@ -73,7 +73,7 @@
   font-weight: 700;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 751px) {
   #index {
     width: 95%;
     top: 50%;
