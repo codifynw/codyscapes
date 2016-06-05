@@ -9,7 +9,7 @@ The app will serve as a homepage for my photography.  There will be three main a
 3. About me
 
 Requred MVP:
-1. Mobile Layout for "Live Map" page
+1.
 2. Build out "About Me"
 
 4. Enter Data
@@ -30,7 +30,8 @@ Later Date:
 4. CLick photo on live map index column, show bigger image
 5. Scale google maps pin icon to zoom level
 6. Move map JS to own js file
-7. Use a better way to scale video iframe (http://stackoverflow.com/questions/11122249/scale-iframe-css-width-100-like-an-image)
+
+8. Make the mobile version of the photos page scroll like a slideshow instead of vertically.
 
 Done:
 1. Landing Page
@@ -48,3 +49,5 @@ Done:
 13. Scroll listeners in "Live Map"
 14. "Live Map" - if link contains 'youtube' logic to show videos
 15. Clean up static files
+16. Use a better way to scale video iframe (http://stackoverflow.com/questions/11122249/scale-iframe-css-width-100-like-an-image)
+17. Initial Mobile Layout for "Live Map" page

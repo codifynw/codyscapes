@@ -9,10 +9,8 @@
 
 <div id="index">
 	<div class="photo_container">
-		<div id="index_nav_container">
-			<div class="index_nav" id="index_nav_left_arrow"><</div>
-			<div class="index_nav" id="index_nav_year">2016</div>
-			<div class="index_nav" id="index_nav_right_arrow">></div>
+		<div id="index_nav">
+			<div class="index_nav_year">2016</div>
 		</div>
 		{% for photo in photos %}
 			<div class='photo' id='photo-{{ forloop.counter }}'>

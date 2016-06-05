@@ -55,15 +55,13 @@
   overflow: auto;
   height: calc(100% - 100px);
 }
-
-#index_nav {
+#index_nav_container {
   top: 75px;
   position:fixed;
   border-radius: 25px;
   display: block;
   width: 31%;
   height: 40px;
-  /*background-color: rgba(64,4,132,1);*/
   background-color: rgba(181,202,133,1);
   opacity: 1;
   text-align: center;
@@ -72,8 +70,6 @@
   font-family: 'Oxygen', sans-serif;
   font-weight: 700;
 }
-
-
 #googlemaps {
   height: 100%;
   width: 100%;
@@ -100,39 +96,29 @@
   margin-bottom: -30px;
   padding-bottom: 25px;
 }
-
-
 #header_right {
   color: white;
   font-family: 'Oxygen', sans-serif;
 }
-
-.index_nav_year {
-  font-size: 20px;
-  height:100%;
-  /* Internet Explorer 10 */
-  display:-ms-flexbox;
-  -ms-flex-pack:center;
-  -ms-flex-align:center;
-  /* Firefox */
-  display:-moz-box;
-  -moz-box-pack:center;
-  -moz-box-align:center;
-  /* Safari, Opera, and Chrome */
-  display:-webkit-box;
-  -webkit-box-pack:center;
-  -webkit-box-align:center;
-  /* W3C */
-  display:box;
-  box-pack:center;
-  box-align:center;
+.index_nav {
+  display: inline-block;
+  top: 25%;
+  position: relative;
+}
+#index_nav_left_arrow {
+  width: 15%;
 }
 
+#index_nav_right_arrow {
+  width: 15%;
+}
+#index_nav_year {
+  width: 60%;
+}
 .photo_title {
   font-size: 20px;
   text-align: center;
 }
-
 .photo_date {
   font-size: 11px;
   text-align: center;
@@ -193,7 +179,7 @@ a:hover {
     background-color: rgba(100, 100, 100, 1);
     height: 60%;
   }
-  #index_nav {
+  #index_nav_container {
     width: 100%;
     top: 40%;
     border-radius: 0px;
@@ -228,49 +214,51 @@ a:hover {
   and (-webkit-min-device-pixel-ratio: 2) {
     #index {
       width: 100%;
-      top: 30%;
+      top: 38%;
       left: 0;
       text-align: center;
       background-color: rgba(100, 100, 100, 1);
       height: 70%;
       z-index: 100;
     }
-    #index_nav {
+    #index_nav_container {
       width: 100%;
-      top: 30%;
+      top: 38%;
       border-radius: 0px;
-      height: 50px;
+      height: 80px;
     }
     #googlemaps {
-      height: 35%;
+      height: 45%;
       width: 105%;
       left: 0;
       left: 0;
       z-index: 0;
     }
-
     .photo_title {
       font-size: 30px;
     }
-
     .photo_date {
       font-size: 20px;
     }
-    .index_nav_year {
+    #index_nav_year {
       font-size: 40px;
     }
     #top_header {
       margin-left: 0;
       left: 0;
+      height: 80px;
       border-radius: 0px;
       width: 100%;
       background-color: rgba(132, 132, 132, 1);
     }
     .photo {
-      display: inline-block;
+      display: none;
       width: 90%;
-      margin-top: 70px;
+      margin-top: 100px;
       left: 5%;
       background-color: rgba(70, 70, 70, 1);
+    }
+    #photo-1 {
+      display: inline-block;
     }
 }
