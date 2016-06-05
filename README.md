@@ -22,6 +22,8 @@ Requred MVP:
 11. Add Facebook / Insta icons / links
 12. Update "Live Map" buffer at bottom
 13.
+14. Make the mobile version of the photos page scroll like a slideshow instead of vertically.
+
 
 Later Date:
 1. Automatic URL upload to S3
@@ -31,7 +33,7 @@ Later Date:
 5. Scale google maps pin icon to zoom level
 6. Move map JS to own js file
 
-8. Make the mobile version of the photos page scroll like a slideshow instead of vertically.
+8.
 
 Done:
 1. Landing Page

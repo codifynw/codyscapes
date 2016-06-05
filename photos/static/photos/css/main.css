@@ -218,8 +218,10 @@ a:hover {
       left: 0;
       text-align: center;
       background-color: rgba(100, 100, 100, 1);
-      height: 70%;
+      height: 60%;
       z-index: 100;
+      overflow: hidden;
+      display: inline-block;
     }
     #index_nav_container {
       width: 100%;
@@ -260,5 +262,6 @@ a:hover {
     }
     #photo-1 {
       display: inline-block;
+      height: 70%;
     }
 }

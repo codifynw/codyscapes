@@ -8,12 +8,12 @@
 <div id="googlemaps"></div>
 
 <div id="index">
+	<div id="index_nav_container">
+		<div class="index_nav" id="index_nav_left_arrow"><</div>
+		<div class="index_nav" id="index_nav_year">2016</div>
+		<div class="index_nav" id="index_nav_right_arrow">></div>
+	</div>
 	<div class="photo_container">
-		<div id="index_nav_container">
-			<div class="index_nav" id="index_nav_left_arrow"><</div>
-			<div class="index_nav" id="index_nav_year">2016</div>
-			<div class="index_nav" id="index_nav_right_arrow">></div>
-		</div>
 		{% for photo in photos %}
 			<div class='photo' id='photo-{{ forloop.counter }}'>
 				<div class='photo_title'>
@@ -33,20 +33,18 @@
 						    <iframe width="300" height="169" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>
 						</div>
 					{% endif %}
-
-
 				</div>
 				<div class='purchase_link'>
 					<a href='{{photo.purchase_link}}'>Buy this photo</a>
 				</div>
 			</div>
 		{% endfor %}
-			<div class='photo' id='photo-buffer'>
-				<div class='photo_title'>Thank you for looking!</div>
-				<div class='purchase_link'>
-					<a href='/photos/'>Back to the top</a>
-				</div>
+		<div class='photo' id='photo-buffer'>
+			<div class='photo_title'>Thank you for looking!</div>
+			<div class='purchase_link'>
+				<a href='/photos/'>Back to the top</a>
 			</div>
+		</div>
 	</div>
 </div>
 
@@ -156,8 +154,6 @@
 						map.setCenter(marker.getPosition());
 	    	        };
 	    	    })(marker));
-
-
 			{% endfor %}
 
 			google.maps.event.addListener(map, 'zoom_changed', function() {
@@ -200,17 +196,9 @@
 
 		  		set_the_one_true_marker(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )]);
 			});
-
-
 		}
 
 		google.maps.event.addDomListener(window, 'load', showGoogleMaps);
-
-
-
-
-
-
 	</script>
 </footer>
 
