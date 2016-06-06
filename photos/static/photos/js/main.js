@@ -22,22 +22,25 @@ $( document ).ready(function() {
 	  cycleItems();
 	}, 3000);*/
 
-	$('.next').click(function() {
-	  clearInterval(autoSlide);
+	$('#index_nav_right_arrow').click(function() {
+
 	  currentIndex += 1;
 	  if (currentIndex > itemAmt - 1) {
 	    currentIndex = 0;
 	  }
 	  cycleItems();
+	  console.log(map.markers);
 	});
 
-	$('.prev').click(function() {
-	  clearInterval(autoSlide);
+	$('#index_nav_left_arrow').click(function() {
+
 	  currentIndex -= 1;
 	  if (currentIndex < 0) {
 	    currentIndex = itemAmt - 1;
 	  }
 	  cycleItems();
 	});
+
+
 
 });

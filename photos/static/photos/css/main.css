@@ -117,6 +117,9 @@
 #index_nav_year {
   width: 60%;
 }
+.slide_arrow {
+  display: none;
+}
 .photo_title {
   font-size: 20px;
   text-align: center;
@@ -254,6 +257,11 @@ a:hover {
       border-radius: 0px;
       width: 100%;
       background-color: rgba(132, 132, 132, 1);
+    }
+    .slide_arrow {
+      display: inline-block;
+      color: white;
+      font-size: 20px;
     }
     .photo {
       display: none;

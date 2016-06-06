@@ -9,37 +9,37 @@
 
 <div id="index">
 	<div id="index_nav_container">
-		<div class="index_nav" id="index_nav_left_arrow"><</div>
+		<div class="index_nav" id="index_nav_left_arrow"><a href='#' div='slide_arrow'><</a></div>
 		<div class="index_nav" id="index_nav_year">2016</div>
-		<div class="index_nav" id="index_nav_right_arrow">></div>
+		<div class="index_nav" id="index_nav_right_arrow"><a href='#' div='slide_arrow'>></a></div>
 	</div>
 	<div class="photo_container">
 		{% for photo in photos %}
 			<div class='photo' id='photo-{{ forloop.counter }}'>
-							<div class='photo_title'>
-								<div id='{{photo.title}}_{{photo.id}}'>{{photo.title}}</div>
-							</div>
-							<div class='photo_date'>
-								{{photo.date|date:"Y-m-d"}}
-							</div>
-							<div class='photo_holder'>
-								{% if photo.isphoto %}
-									<img class='photo_photo' src="{{photo.url}}">
-								{% else %}
+				<div class='photo_title'>
+					<div id='{{photo.title}}_{{photo.id}}'>{{photo.title}}</div>
+				</div>
+				<div class='photo_date'>
+					{{photo.date|date:"Y-m-d"}}
+				</div>
+				<div class='photo_holder'>
+					{% if photo.isphoto %}
+						<img class='photo_photo' src="{{photo.url}}">
+					{% else %}
 
-									<!--<iframe  onload="this.width=div.width;this.height=div.height;" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>-->
-									<div class="videoWrapper">
-									    <!-- https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php -->
-									    <iframe width="300" height="169" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>
-									</div>
-								{% endif %}
-
-
-							</div>
-							<div class='purchase_link'>
-								<a href='{{photo.purchase_link}}'>Buy this photo</a>
-							</div>
+						<!--<iframe  onload="this.width=div.width;this.height=div.height;" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>-->
+						<div class="videoWrapper">
+						    <!-- https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php -->
+						    <iframe width="300" height="169" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>
 						</div>
+					{% endif %}
+
+
+				</div>
+				<div class='purchase_link'>
+					<a href='{{photo.purchase_link}}'>Buy this photo</a>
+				</div>
+			</div>
 		{% endfor %}
 		<div class='photo' id='photo-buffer'>
 			<div class='photo_title'>Thank you for looking!</div>
@@ -163,7 +163,6 @@
 
 		    	google.maps.event.addListener(marker,'click', (function(marker){
 	    	        return function() {
-
 	    	        	var scroll_time = 650
 						var child = $('#photo-' + marker.description);
 						var parent = $('#index');
@@ -178,7 +177,6 @@
 						$('#index').animate({
 				          	scrollTop: document.getElementById('index').scrollTop + child.offset().top-parent.offset().top - 45
 				        }, scroll_time)
-
 
 						setTimeout( function() { animating = false }, scroll_time);
 
