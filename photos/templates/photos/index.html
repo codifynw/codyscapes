@@ -14,47 +14,13 @@
 		<div class="index_nav" id="index_nav_right_arrow"><a href='#' class='slide_arrow'>></a></div>
 	</div>
 	<div class="photo_container">
-		{% for photo in photos %}
-			<div class='photo' id='photo-{{ forloop.counter }}'>
-				<div class='photo_title'>
-					<div id='{{photo.title}}_{{photo.id}}'>{{photo.title}}</div>
-				</div>
-				<div class='photo_date'>
-					{{photo.date|date:"Y-m-d"}}
-				</div>
-				<div class='photo_holder'>
-					{% if photo.isphoto %}
-						<img class='photo_photo' src="{{photo.url}}">
-					{% else %}
-
-						<!--<iframe  onload="this.width=div.width;this.height=div.height;" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>-->
-						<div class="videoWrapper">
-						    <!-- https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php -->
-						    <iframe width="300" height="169" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>
-						</div>
-					{% endif %}
-
-
-				</div>
-				<div class='purchase_link'>
-					<a href='{{photo.purchase_link}}'>Buy this photo</a>
-				</div>
-			</div>
-		{% endfor %}
+		{% include "photos/includes/swipe_gallery.html" with photos=photos %}
+		{% include "photos/includes/desktop_index.html" with photos=photos %}
 		<div class='photo' id='photo-buffer'>
 			<div class='photo_title'>Thank you for looking!</div>
 			<div class='purchase_link'>
 				<a href='/photos/'>Back to the top</a>
 			</div>
-		</div>
-	</div>
-	<div class='container'>
-		<div id='slides'>
-			{% for photo in photos %}
-				{% if photo.isphoto %}
-					<img class='photo_photo' src="{{photo.url}}">
-				{% endif %}
-			{% endfor %}
 		</div>
 	</div>
 </div>

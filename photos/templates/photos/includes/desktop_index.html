@@ -1,0 +1,25 @@
+{% for photo in photos %}
+	<div class='photo' id='photo-{{ forloop.counter }}'>
+		<div class='photo_title'>
+			<div id='{{photo.title}}_{{photo.id}}'>{{photo.title}}</div>
+		</div>
+		<div class='photo_date'>
+			{{photo.date|date:"Y-m-d"}}
+		</div>
+		<div class='photo_holder'>
+			{% if photo.isphoto %}
+				<img class='photo_photo' src="{{photo.url}}">
+			{% else %}
+
+				<!--<iframe  onload="this.width=div.width;this.height=div.height;" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>-->
+				<div class="videoWrapper">
+				    <!-- https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php -->
+				    <iframe width="300" height="169" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>
+				</div>
+			{% endif %}
+		</div>
+		<div class='purchase_link'>
+			<a href='{{photo.purchase_link}}'>Buy this photo</a>
+		</div>
+	</div>
+{% endfor %}
