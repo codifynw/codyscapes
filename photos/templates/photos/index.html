@@ -54,19 +54,41 @@
 
 	<script type="text/javascript">
 
+		var animating = false;
+
 		var position = [ '{{ photos.0.latitude }}', '{{ photos.0.longitude }}'];
+		if( $("#photo-2").css('display') == 'none') {
+			var mobile = true;
+		} else {
+			var mobile = false;
+		}
 
 		function make_icon(state, map) {
-			if (map.getZoom() < 5) {
-			    var scale_size = 16;
-			} else if (map.getZoom() < 3) {
-				var scale_size = 8;
-			} else if (map.getZoom() < 2) {
-				var scale_size = 2;
+			if( mobile == true ) {
+				if (map.getZoom() > 10) {
+					var scale_size = 80;
+				} else if (map.getZoom() < 5) {
+				    var scale_size = 32;
+				} else if (map.getZoom() < 3) {
+					var scale_size = 16;
+				} else if (map.getZoom() < 2) {
+					var scale_size = 4;
+				} else {
+					var scale_size = 60;
+				}
 			} else {
-				var scale_size = 30;
+				if (map.getZoom() > 10) {
+					var scale_size = 40;
+				} else if (map.getZoom() < 5) {
+				    var scale_size = 16;
+				} else if (map.getZoom() < 3) {
+					var scale_size = 8;
+				} else if (map.getZoom() < 2) {
+					var scale_size = 2;
+				} else {
+					var scale_size = 30;
+				}
 			}
-
 
 			if (state == 'active') {
 				var icon = {
@@ -90,8 +112,12 @@
 
 		function showGoogleMaps() {
 
-			var zoomlevel = 5
-			var scale_size = 30
+			if ( mobile == true ) {
+				var zoomlevel = 10
+			} else {
+				var zoomlevel = 5
+			}
+
 
 			function set_the_one_true_marker(marker) {
 				for (i = 0; i < markers.length; i++) {
@@ -148,7 +174,14 @@
 							markers[i].setZIndex(1);
 						}
 
-						document.getElementById('index').scrollTop += child.offset().top-parent.offset().top - 45;
+						animating = true;
+
+						$('#index').animate({
+				          scrollTop: child.offset().top-parent.offset().top - 45
+				        }, 500);
+
+						setTimeout( function() { animating = false }, 500);
+
 						marker.setIcon(make_icon('active',map));
 						marker.setZIndex(10);
 						map.setCenter(marker.getPosition());
@@ -188,13 +221,16 @@
 			// listen for scroll events. might want to throttle this
 			var parent = document.getElementById('index')
 			parent.addEventListener("scroll", function(){
-		  	var offset = parent.scrollTop,
+
+		  		var offset = parent.scrollTop,
 	 			minOffset = Object.keys(elmOffsets).reduceRight(function(prev,current){
 		      		return offset < current - 150 ? current : prev;
 	      		});
-		  		map.setCenter(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )].getPosition());
-
-		  		set_the_one_true_marker(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )]);
+	      		console.log(animating);
+		  		if (animating != true) {
+			  		map.setCenter(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )].getPosition());
+			  		set_the_one_true_marker(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )]);
+				}
 			});
 		}
 

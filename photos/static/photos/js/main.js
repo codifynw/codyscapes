@@ -14,13 +14,13 @@ $( document ).ready(function() {
 	  $(items[currentIndex]).css('display','inline-block');
 	}
 
-	var autoSlide = setInterval(function() {
+	/*var autoSlide = setInterval(function() {
 	  currentIndex += 1;
 	  if (currentIndex > itemAmt - 1) {
 	    currentIndex = 0;
 	  }
 	  cycleItems();
-	}, 3000);
+	}, 3000);*/
 
 	$('.next').click(function() {
 	  clearInterval(autoSlide);

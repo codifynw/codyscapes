@@ -69,6 +69,7 @@
   color: white;
   font-family: 'Oxygen', sans-serif;
   font-weight: 700;
+  z-index: 10;
 }
 #googlemaps {
   height: 100%;
@@ -86,6 +87,7 @@
 .photo_container {
   position: relative;
   z-index: 1;
+  height: auto;
 }
 
 .photo {
@@ -255,7 +257,7 @@ a:hover {
     }
     .photo {
       display: none;
-      width: 90%;
+      height: 90%;
       margin-top: 100px;
       left: 5%;
       background-color: rgba(70, 70, 70, 1);
