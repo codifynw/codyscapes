@@ -164,7 +164,6 @@
 		    	google.maps.event.addListener(marker,'click', (function(marker){
 	    	        return function() {
 
-	    	        	var scroll_time = 650
 						var child = $('#photo-' + marker.description);
 						var parent = $('#index');
 
@@ -177,10 +176,10 @@
 
 						$('#index').animate({
 				          	scrollTop: document.getElementById('index').scrollTop + child.offset().top-parent.offset().top - 45
-				        }, scroll_time)
+				        }, 500)
 
 
-						setTimeout( function() { animating = false }, scroll_time);
+						setTimeout( function() { animating = false }, 500);
 
 						marker.setIcon(make_icon('active',map));
 						marker.setZIndex(10);
@@ -226,6 +225,7 @@
 	 			minOffset = Object.keys(elmOffsets).reduceRight(function(prev,current){
 		      		return offset < current - 150 ? current : prev;
 	      		});
+	      		console.log(animating);
 		  		if (animating != true) {
 			  		map.setCenter(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )].getPosition());
 			  		set_the_one_true_marker(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )]);
