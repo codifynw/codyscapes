@@ -39,4 +39,12 @@ $( document ).ready(function() {
 	  }
 	  cycleItems();
 	});
+
+	var swiper = new Swiper('.swiper-container', {
+	    pagination: '.swiper-pagination',
+	    slidesPerView: 1.2,
+	    centeredSlides: true,
+	    paginationClickable: true,
+	    spaceBetween: 5
+	});
 });
