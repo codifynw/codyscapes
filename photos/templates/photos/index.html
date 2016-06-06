@@ -48,11 +48,18 @@
 			</div>
 		</div>
 	</div>
+	<div class='container'>
+		<div id='slides'>
+			{% for photo in photos %}
+				{% if photo.isphoto %}
+					<img class='photo_photo' src="{{photo.url}}">
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
 </div>
 
-
 <footer>
-<script src="http://maps.googleapis.com/maps/api/js"></script>
 
 	<script type="text/javascript">
 		var animating = false;
