@@ -1,3 +1,7 @@
+.swiper-container {
+  display: none;
+}
+
 #top_header {
   z-index: 2;
   position: fixed;
@@ -212,12 +216,12 @@ a:hover {
 }
 
 
-
 @media only screen
   and (min-device-width: 320px)
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    .photo_container {
+
+    .desktop_container {
       display: none;
     }
     #index {
@@ -226,10 +230,9 @@ a:hover {
       left: 0;
       text-align: center;
       background-color: rgba(100, 100, 100, 1);
-      height: 62%;
-      z-index: 100;
+      height: 60%;
       overflow: hidden;
-      display: inline-block;
+      border-radius: 0px;
     }
     #index_nav_container {
       width: 100%;
@@ -286,95 +289,45 @@ a:hover {
     .photo_photo {
       width: auto;
     }
+    .swiper-container {
+      display: block;
+      padding-top: 40px;
+      width: 100%;
+      margin: 20px auto;
+    }
+    .swiper-slide {
+        height: 100%;
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        width: 60%;
+        border-radius: 25px;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        background-color: rgba(132, 132, 132, .5);
+    }
+    .swiper-slide:nth-child(2n) {
+        width: 40%;
+    }
+    .swiper-slide:nth-child(3n) {
+        width: 20%;
+    }
+    .swiper_image {
+        max-width:90%; max-height:90%;
+    }
 }
 
 
-    /* Prevent the slideshow from flashing on load */
-    #slides {
-      display: none
-    }
 
-    /* Center the slideshow */
-    .container {
-      margin: 0 auto;
-      margin-top: 80px;
-    }
 
-    /* Show active item in the pagination */
-    .slidesjs-pagination .active {
-      color:red;
-    }
-
-    /* Media quires for a responsive layout */
-
-    /* For tablets & smart phones */
-    @media (max-width: 767px) {
-      body {
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-      .container {
-        width: auto
-      }
-    }
-
-    /* For smartphones */
-    @media (max-width: 480px) {
-      .container {
-        width: auto
-      }
-    }
-
-    /* For smaller displays like laptops */
-    @media (min-width: 768px) and (max-width: 979px) {
-      .container {
-        width: 724px
-      }
-    }
-
-    /* For larger displays */
-    @media (min-width: 1200px) {
-      .container {
-        width: 1170px
-      }
-    }
-
-.swiper-container {
-  padding-top: 40px;
-}
-
-.swiper-container {
-    width: 100%;
-    height: 300px;
-    margin: 20px auto;
-}
-.swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    width: 60%;
-    border-radius: 25px;
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    background-color: rgba(132, 132, 132, .5);
-}
-.swiper-slide:nth-child(2n) {
-    width: 40%;
-}
-.swiper-slide:nth-child(3n) {
-    width: 20%;
-}
-.swiper_image {
-    max-width:90%; max-height:90%;
-}

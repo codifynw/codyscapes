@@ -1,3 +1,4 @@
+<div class='desktop_container'>
 {% for photo in photos %}
 	<div class='photo' id='photo-{{ forloop.counter }}'>
 		<div class='photo_title'>
@@ -10,7 +11,6 @@
 			{% if photo.isphoto %}
 				<img class='photo_photo' src="{{photo.url}}">
 			{% else %}
-
 				<!--<iframe  onload="this.width=div.width;this.height=div.height;" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>-->
 				<div class="videoWrapper">
 				    <!-- https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php -->
@@ -23,3 +23,4 @@
 		</div>
 	</div>
 {% endfor %}
+</div>
