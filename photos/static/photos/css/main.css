@@ -262,6 +262,13 @@ a:hover {
       display: inline-block;
       color: white;
       font-size: 20px;
+      text-decoration: none;
+    }
+    .slide_arrow :hover {
+      text-decoration: none;
+    }
+    .slide_arrow :visited {
+      color: white;
     }
     .photo {
       display: none;
