@@ -8,6 +8,13 @@
                 <div class="swiper-slide">
                     <img class='swiper_image' src="{{photo.url}}">
                 </div>
+            {% else %}
+                <div class="swiper-slide">
+                    <div class="videoWrapper">
+                        <!-- https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php -->
+                        <iframe width="300" height="169" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
             {% endif %}
         {% endfor %}
     </div>

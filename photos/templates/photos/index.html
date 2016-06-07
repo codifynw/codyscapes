@@ -83,9 +83,24 @@
 			return icon
 		}
 
+		var swiper = new Swiper('.swiper-container', {
+		    pagination: '.swiper-pagination',
+		    slidesPerView: 1.2,
+		    centeredSlides: true,
+		    paginationClickable: true,
+		    spaceBetween: 5,
+		    loop: true
+		});
+
+		function move_swiper(index, time) {
+			swiper.slideTo(index, time, true);
+		}
+
 		function showGoogleMaps() {
+
 			if ( mobile == true ) {
-				var zoomlevel = 10
+				var zoomlevel = 5
+				//Change back to ten when done testing.
 			} else {
 				var zoomlevel = 5
 			}
@@ -136,6 +151,7 @@
 
 		    	google.maps.event.addListener(marker,'click', (function(marker){
 	    	        return function() {
+
 	    	        	var scroll_time = 650
 						var child = $('#photo-' + marker.description);
 						var parent = $('#index');
@@ -144,8 +160,10 @@
 							markers[i].setIcon(make_icon('inactive',map));
 							markers[i].setZIndex(1);
 						}
-
 						animating = true;
+
+						move_swiper(marker.description, scroll_time);
+
 
 						$('#index').animate({
 				          	scrollTop: document.getElementById('index').scrollTop + child.offset().top-parent.offset().top - 45
@@ -201,6 +219,15 @@
 			  		map.setCenter(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )].getPosition());
 			  		set_the_one_true_marker(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )]);
 				}
+			});
+
+			//console.log(swiper.activeIndex)
+
+
+			swiper.on('slideChangeEnd', function () {
+			    console.log(swiper.activeIndex);
+			    set_the_one_true_marker(markers[swiper.activeIndex-1]);
+		  		map.setCenter(markers[swiper.activeIndex-1].getPosition());
 			});
 		}
 

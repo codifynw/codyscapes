@@ -329,5 +329,10 @@ a:hover {
 }
 
 
-
-
+/* Disabling for now */
+#index_nav_left_arrow {
+  display: none;
+}
+#index_nav_right_arrow {
+  display: none;
+}
