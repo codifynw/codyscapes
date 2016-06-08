@@ -4,6 +4,10 @@ from django.shortcuts import render
 from .models import Photo
 
 def index(request):
-	photos = Photo.objects.all().order_by('-date')
+	photos = Photo.objects.all().filter(visible="true").order_by('-date')
 	return render(request, 'photos/index.html', {'photos': photos})
+
+#	def index(request):
+#		photos = Photo.objects.all().order_by('-date').filter(date__year='2016')
+#		return render(request, 'photos/index.html', {'photos': photos})
 

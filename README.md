@@ -11,19 +11,19 @@ The app will serve as a homepage for my photography.  There will be three main a
 Requred MVP:
 1.
 2. Build out "About Me"
-
+3.
 4. Enter Data
 5. Backup database
 6.
-
+7.
 8. Purchase Link Logic and layout
-
+9.
 10. Filter Years
 11. Add Facebook / Insta icons / links
 12. Update "Live Map" buffer at bottom
 13.
-14. Make the mobile version of the photos page scroll like a slideshow instead of vertically.
-
+14.
+15. Fix blank space below slider in mobile display
 
 Later Date:
 1. Automatic URL upload to S3
@@ -32,7 +32,7 @@ Later Date:
 4. CLick photo on live map index column, show bigger image
 5. Scale google maps pin icon to zoom level
 6. Move map JS to own js file
-
+7.
 8.
 
 Done:
@@ -53,3 +53,4 @@ Done:
 15. Clean up static files
 16. Use a better way to scale video iframe (http://stackoverflow.com/questions/11122249/scale-iframe-css-width-100-like-an-image)
 17. Initial Mobile Layout for "Live Map" page
+18. Make the mobile version of the photos page scroll like a slideshow instead of vertically.
