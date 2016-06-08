@@ -17,7 +17,18 @@
 		<div class='photo' id='photo-buffer'>
 			<div class='photo_title'>Thank you for looking!</div>
 			<div class='purchase_link'>
-				<a href='/photos/'>Back to the top</a>
+				<a href='#photo-1'>Back to the top</a>
+			</div>
+			<div id='social_media_icons_container'>
+				<div class='social_media_icon'>
+					<a href='https://500px.com/codywilson'>500px</a>
+				</div>
+				<div class='social_media_icon'>
+					<a href='https://www.facebook.com/cody.wilson.5815'>Facebook</a>
+				</div>
+				<div class='social_media_icon'>
+					<a href='https://www.instagram.com/codyscapes/'>Instagram</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -223,6 +234,7 @@
 
 
 			swiper.on('slideChangeEnd', function () {
+				//Swiper will set the last image loaded to index 0 because we're looping and swiper sets the end loop as the first slide shown to the left of the active slide.  This is a work around.
 				if (swiper.activeIndex == 0) {
 					index = markers.length - 1
 				//Swiper builds one extra slide every time it loads.  This is a work around
@@ -231,8 +243,6 @@
 				} else {
 					index = swiper.activeIndex - 1
 				}
-
-				console.log(index);
 
 			    set_the_one_true_marker(markers[index]);
 		  		map.setCenter(markers[index].getPosition());

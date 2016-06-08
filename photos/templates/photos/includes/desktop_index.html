@@ -5,6 +5,9 @@
 			<div id='{{photo.title}}_{{photo.id}}'>{{photo.title}}</div>
 		</div>
 		<div class='photo_date'>
+			{{photo.location_string}}
+		</div>
+		<div class='photo_location'>
 			{{photo.date|date:"Y-m-d"}}
 		</div>
 		<div class='photo_holder'>
@@ -19,7 +22,7 @@
 			{% endif %}
 		</div>
 		<div class='purchase_link'>
-			<a href='{{photo.purchase_link}} target="_blank"'>Buy this photo</a>
+			<a href='{{photo.purchase_link}}' target="_blank">Buy this photo</a>
 		</div>
 	</div>
 {% endfor %}

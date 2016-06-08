@@ -2,11 +2,9 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 1);
 }
-
 .swiper-container {
   display: none;
 }
-
 #top_header {
   z-index: 2;
   position: fixed;
@@ -21,12 +19,10 @@ body {
   left: 2.5%;
   border-radius: 25px;
 }
-
 #header_inner {
   height: 100%;
   position: relative;
 }
-
 #header_left {
   display: inline-block;
   width: 50%;
@@ -47,7 +43,6 @@ body {
   float: right;
   margin-top: 15px;
 }
-
 #index {
   top: 75px;
   position: fixed;
@@ -88,17 +83,14 @@ body {
   left: 0;
   z-index: 0;
 }
-
 ::-webkit-scrollbar {
     display: none;
 }
-
 .photo_container {
   position: relative;
   z-index: 1;
   height: auto;
 }
-
 .photo {
   border-radius: 25px;
   background-color: rgba(132, 132, 132, .5);
@@ -119,7 +111,6 @@ body {
 #index_nav_left_arrow {
   width: 15%;
 }
-
 #index_nav_right_arrow {
   width: 15%;
 }
@@ -133,7 +124,18 @@ body {
   font-size: 20px;
   text-align: center;
 }
+.purchase_link {
+  color: white;
+}
+.purchase_link a{
+  color: white;
+  text-decoration: none;
+}
 .photo_date {
+  font-size: 11px;
+  text-align: center;
+}
+.photo_location {
   font-size: 11px;
   text-align: center;
 }
@@ -150,11 +152,9 @@ body {
   padding-top: 15px;
   text-align: center;
 }
-
 a:visited {
   color: white;
 }
-
 .nav_link {
   color: white;
 }
@@ -182,7 +182,14 @@ a:hover {
   width: 100%;
   height: 100%;
 }
-
+#social_media_icons_container {
+  margin-top: 100px;
+  text-align: center;
+}
+.social_media_icon {
+  display: inline-block;
+  width: 30%;
+}
 @media (max-width: 750px) {
   #index {
     width: 100%;
