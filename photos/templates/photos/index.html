@@ -223,9 +223,19 @@
 
 
 			swiper.on('slideChangeEnd', function () {
-			    console.log(swiper.activeIndex);
-			    set_the_one_true_marker(markers[swiper.activeIndex-1]);
-		  		map.setCenter(markers[swiper.activeIndex-1].getPosition());
+				if (swiper.activeIndex == 0) {
+					index = markers.length - 1
+				//Swiper builds one extra slide every time it loads.  This is a work around
+				} else if (swiper.activeIndex == markers.length + 1) {
+					index = markers.length
+				} else {
+					index = swiper.activeIndex - 1
+				}
+
+				console.log(index);
+
+			    set_the_one_true_marker(markers[index]);
+		  		map.setCenter(markers[index].getPosition());
 			});
 		}
 
