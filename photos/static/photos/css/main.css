@@ -141,6 +141,7 @@ body {
 }
 .photo_photo {
   width: 95%;
+  max-height: 400px;
 }
 
 .purchase_link {
@@ -300,6 +301,7 @@ a:hover {
     }
     .photo_photo {
       width: auto;
+      max-height: 600px;
     }
     .swiper-container {
       display: block;
