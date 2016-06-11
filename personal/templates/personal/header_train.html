@@ -7,7 +7,12 @@
 	{% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'personal/css/bootstrap.min.css' %}" type = "text/css"/>
 	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
-	
+	<style>
+		.social_media_icon {
+			display: inline-block;
+		}
+	</style>
+
 	<style type="text/css">
 		html,
 		body {
@@ -49,20 +54,30 @@
 			</div> <!--well bs-sidebar affix-->
 		  </div> <!--col-sm-2-->
 		  <div class="col-sm-10">
-		  
+
 			<div class='container-fluid'>
 			<br><br>
 			   {% block content %}
-			   {% endblock %}	
+			   {% endblock %}
 			</div>
 		  </div>
-		</div> 
+		</div>
 	</div>
 	<footer>
 		<div class="container-fluid" style='margin-left:15px'>
-			<p><a href="#" target="blank">Contact</a> | <a href="#" target="blank">LinkedIn</a> | <a href="#" target="blank">Twitter</a> | <a href="#" target="blank">Google+</a></p>
+			<p><div id='social_media_icons_container'>
+				<div class='social_media_icon'>
+					<a href='https://500px.com/codywilson'>500px</a>
+				</div>
+				<div class='social_media_icon'>
+					<a href='https://www.facebook.com/cody.wilson.5815'>Facebook</a>
+				</div>
+				<div class='social_media_icon'>
+					<a href='https://www.instagram.com/codyscapes/'>Instagram</a>
+				</div>
+			</div></p>
 		</div>
-	</footer>	
-	
+	</footer>
+
 </body>
 </html>
