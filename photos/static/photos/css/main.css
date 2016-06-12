@@ -13,7 +13,7 @@ html, body {
   margin:0px;
   padding:0px;
   top:0;
-  background-color: rgba(18, 18, 18, .5);
+  background-color: rgba(18, 18, 18, .8);
   color: white;
   left: 0;
   border-radius: 5px;
@@ -73,9 +73,9 @@ html, body {
   z-index: 10;
 }
 #googlemaps {
-  height: 40%;
+  height: 100%;
   width: 100%;
-  position:fixed;
+  position:absolute;
   top: 0;
   left: 0;
   z-index: 0;
@@ -148,6 +148,7 @@ html, body {
 .photo_holder {
   padding-top: 15px;
   text-align: center;
+  background-color: transparent;
 }
 a:visited {
   color: white;
@@ -235,7 +236,7 @@ a:hover {
     }
     #index {
       width: 100%;
-      top: 38%;
+      top: 40%;
       left: 0;
       text-align: center;
       background-color: rgba(100, 100, 100, 1);
@@ -245,16 +246,17 @@ a:hover {
     }
     #index_nav_container {
       width: 100%;
-      top: 38%;
+      top: 40%;
       border-radius: 0px;
       height: 80px;
     }
     #googlemaps {
       height: 45%;
-      width: 105%;
+      width: 100%;
       left: 0;
       left: 0;
       z-index: 0;
+      position: fixed;
     }
     .photo_title {
       font-size: 30px;
