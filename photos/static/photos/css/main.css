@@ -39,6 +39,7 @@ html, body {
   height:100%;
   float: right;
   margin-top: 15px;
+  color: #585858;
 }
 #index {
   top: 75px;
@@ -157,6 +158,10 @@ a:visited {
 }
 .nav_link {
   color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700px;
+  padding: 0px 15px;
 }
 
 a:hover {
