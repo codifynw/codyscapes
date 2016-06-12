@@ -28,9 +28,11 @@ html, body {
   padding-left: 5%;
   float: left;
 }
+
 #lot_logo {
   height:100%;
 }
+
 #header_right {
   display: inline-block;
   text-align: right;
@@ -73,9 +75,9 @@ html, body {
   z-index: 10;
 }
 #googlemaps {
-  height: 40%;
+  height: 100%;
   width: 100%;
-  position:fixed;
+  position:absolute;
   top: 0;
   left: 0;
   z-index: 0;
