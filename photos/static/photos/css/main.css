@@ -43,7 +43,7 @@ html, body {
 #index {
   top: 75px;
   position: fixed;
-  border-radius: 25px;
+  border-radius: 3px;
   z-index: 1;
   width: 31%;
   margin: auto 0;
@@ -59,15 +59,15 @@ html, body {
 #index_nav_container {
   top: 75px;
   position:fixed;
-  border-radius: 25px;
+  border-radius: 5px;
   display: block;
   width: 31%;
   height: 40px;
-  background-color: rgba(181,202,133,1);
+  background-color: #ffffff;
   opacity: 1;
   text-align: center;
   padding-top: 0px;
-  color: white;
+  color: #525252;
   font-family: 'Oxygen', sans-serif;
   font-weight: 700;
   z-index: 10;
@@ -90,11 +90,12 @@ html, body {
 }
 .photo {
   border-radius: 25px;
-  background-color: rgba(132, 132, 132, .5);
+  color: 525252;
+  background-color: rgba(255, 255, 255, 1);
   width: 100%;
   margin-top: 50px;
   margin-bottom: -30px;
-  padding-bottom: 25px;
+  padding-bottom: 13px;
 }
 #header_right {
   color: white;
@@ -118,6 +119,7 @@ html, body {
   display: none;
 }
 .photo_title {
+  padding-top: 10px;
   font-size: 20px;
   text-align: center;
 }
@@ -221,7 +223,7 @@ a:hover {
     display: inline-block;
     width: 90%;
     left: 5%;
-    background-color: rgba(70, 70, 70, 1);
+    background-color: rgba(255, 255, 255, .1);
   }
 }
 
