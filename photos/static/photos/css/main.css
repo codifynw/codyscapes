@@ -154,7 +154,7 @@ html, body {
   background-color: transparent;
 }
 a:visited {
-  color: white;
+  color: #585858;
 }
 .nav_link {
   color: white;
@@ -163,17 +163,18 @@ a:visited {
   font-weight: 700px;
   padding: 0px 15px;
 }
-
+a.nav_link:visited {
+    color: white;
+    display: none;
+}
 a:hover {
   color: rgba(181,202,133,1);
 }
-
 #photo-buffer {
   padding-top: 50px;
   height: 200px;
   text-align: middle;
 }
-
 .videoWrapper {
   position: relative;
   padding-bottom: 56.25%; /* 16:9 */
@@ -194,8 +195,15 @@ a:hover {
 }
 .social_media_icon {
   display: inline-block;
+  text-decoration: none;
   width: 30%;
   color: #585858;
+}
+.social_media_icon :visited {
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
 }
 @media (max-width: 750px) {
   #index {
