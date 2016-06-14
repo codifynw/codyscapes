@@ -16,7 +16,6 @@ html, body {
   background-color: rgba(18, 18, 18, .8);
   color: white;
   left: 0;
-  border-radius: 5px;
 }
 #header_inner {
   height: 100%;
