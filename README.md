@@ -23,7 +23,7 @@ Requred MVP:
 12. Update "Live Map" buffer at bottom
 13.
 14.
-15. Fix blank space below slider in mobile display
+15.
 
 Later Date:
 1. Automatic URL upload to S3
@@ -54,3 +54,9 @@ Done:
 16. Use a better way to scale video iframe (http://stackoverflow.com/questions/11122249/scale-iframe-css-width-100-like-an-image)
 17. Initial Mobile Layout for "Live Map" page
 18. Make the mobile version of the photos page scroll like a slideshow instead of vertically.
+19. Fix blank space below slider in mobile display
+20. Style fixes with Sam
+21. Google maps API via os environ / heroku environ
+22. Google analytics
+23. Remove trailing slash on URLs
+
