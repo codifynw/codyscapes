@@ -190,10 +190,12 @@ a:hover {
 #social_media_icons_container {
   margin-top: 100px;
   text-align: center;
+  color: #585858;
 }
 .social_media_icon {
   display: inline-block;
   width: 30%;
+  color: #585858;
 }
 @media (max-width: 750px) {
   #index {
