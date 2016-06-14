@@ -38,7 +38,10 @@
 </div>
 
 <footer>
+
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{key}}"></script>
 	<script type="text/javascript">
+
 		var animating = false;
 		var position = [ '{{ photos.0.latitude }}', '{{ photos.0.longitude }}'];
 		if( $("#photo-2").css('display') == 'none') {
