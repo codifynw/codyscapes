@@ -17,7 +17,7 @@ urlpatterns = [
     url(r'^photos', include('photos.urls')),
     url(r'^gallery', include('gallery.urls')),
     url(r'^', include('personal.urls')),
-    url(r'^api/v1/photos',include('photos.urls',namespace='photos')),
+    url(r'^api',include('photos.urls',namespace='photos')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
