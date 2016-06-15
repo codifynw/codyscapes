@@ -32,9 +32,9 @@ DEBUG = True
 
 INSTALLED_APPS = (
     'photos',
-    'polls',
     'personal',
     'blog',
+    'gallery',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
