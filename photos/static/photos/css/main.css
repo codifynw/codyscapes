@@ -264,6 +264,7 @@ a {
       width: 100%;
       top: 40%;
       border-radius: 0px;
+      background-color: rgba(168,205,122,1);
       height: 80px;
     }
     #googlemaps {
@@ -289,7 +290,7 @@ a {
       height: 80px;
       border-radius: 0px;
       width: 100%;
-      background-color: rgba(132, 132, 132, 1);
+      background-color: rgba(18, 18, 18, .8);
     }
     .slide_arrow {
       display: inline-block;
@@ -342,7 +343,7 @@ a {
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
-        background-color: rgba(132, 132, 132, .5);
+        background-color: rgba(18, 18, 18, .8);
     }
     .swiper-slide:nth-child(2n) {
         width: 40%;
