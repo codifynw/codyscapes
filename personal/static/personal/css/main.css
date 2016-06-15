@@ -216,3 +216,11 @@ width: 100%;
 	display: inline-block;
 	border: .1px solid white;
 }
+
+
+@media (max-width: 920px) {
+	.vert_cta {
+		font-size: 40px;
+	}
+}
+
