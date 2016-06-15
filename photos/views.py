@@ -1,9 +1,12 @@
 import os
 from django.shortcuts import render
 
+from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import status
 
+from .models import Photo
 from . import models
 from . import serializers
 
@@ -22,12 +25,17 @@ def index(request):
 
 
 #API views
-class ListPhotos(APIView):
+class ListCreatePhoto(APIView):
 	def get(self, request, fromat=None):
 		photos = models.Photo.objects.all()
 		serializer = serializers.PhotoSerializer(photos,many=True)
 		return Response(serializer.data)
 
+	def post(self, request, format=None):
+		serializer = serializers.CourseSerializer(data=request.data)
+		serializer.is_valid(raise_exception=True)
+		serializer.save()
+		return Reponse(serializer.data, satus=status.HTTP_201_CREATED)
 
 
 
