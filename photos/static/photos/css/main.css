@@ -210,7 +210,7 @@ a {
     top: 40%;
     left: 0;
     text-align: center;
-    background-color: rgba(100, 100, 100, 1);
+    background-color: rgba(255, 255, 255, 1);
     height: 60%;
     border-radius: 0px;
   }
@@ -218,6 +218,7 @@ a {
     width: 100%;
     top: 40%;
     border-radius: 0px;
+    background-color: rgba(168,205,122,1);
   }
   #googlemaps {
     height: 45%;
@@ -231,7 +232,7 @@ a {
     left: 0;
     border-radius: 0px;
     width: 100%;
-    background-color: rgba(132, 132, 132, 1);
+    background-color: rgba(18, 18, 18, .8);
   }
   .photo {
     display: inline-block;
@@ -255,7 +256,7 @@ a {
       top: 40%;
       left: 0;
       text-align: center;
-      background-color: rgba(34, 34, 34, 1);
+      background-color: rgba(255, 255, 255, 1);
       height: 60%;
       overflow: hidden;
       border-radius: 0px;
@@ -327,7 +328,7 @@ a {
         height: 100%;
         text-align: center;
         font-size: 18px;
-        background: #fff;
+        background-color: rgba(51,51,51,1);
         width: 60%;
         border-radius: 25px;
         /* Center slide text vertically */
@@ -343,7 +344,6 @@ a {
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
-        background-color: rgba(255, 255, 255, 1);
     }
     .swiper-slide:nth-child(2n) {
         width: 40%;
@@ -352,7 +352,7 @@ a {
         width: 20%;
     }
     .swiper_image {
-        max-width:95%; max-height:75%;
+        max-width:95%; max-height:80%;
     }
 }
 
