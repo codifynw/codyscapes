@@ -1,5 +1,10 @@
 $( document ).ready(function() {
 
+
+	$( "#id_year" ).change(function() {
+	  this.form.submit();
+	});
+
 	$(".photo").each(function(index){
 	});
 

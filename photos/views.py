@@ -15,16 +15,18 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 
 def index(request):
-	photos = Photo.objects.all().filter(visible="true").filter(date__year=2012).order_by('-date')
+	photos = Photo.objects.all().filter(visible="true").filter(date__year=2016).order_by('-date')
 	form = forms.SuggestionForm()
 	if request.method == 'POST':
 		form = forms.SuggestionForm(request.POST)
 		if form.is_valid():
 			print("good form")
 			data = request.POST.get('year')
-			print data
 			#return HttpResponseRedirect(reverse('suggest'))
-			photos = Photo.objects.all().filter(visible="true").filter(date__year=data).order_by('-date')
+			if data == "all":
+				photos = Photo.objects.all().filter(visible="true").order_by('-date')
+			else:
+				photos = Photo.objects.all().filter(visible="true").filter(date__year=data).order_by('-date')
 			return render(request, 'photos/index.html', {'photos': photos, 'key': os.environ['MAPS_KEY'], 'form': form})
 	return render(request, 'photos/index.html', {'photos': photos, 'key': os.environ['MAPS_KEY'], 'form': form})
 

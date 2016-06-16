@@ -10,9 +10,15 @@
 
 <div id="index">
 	<div id="index_nav_container">
-		<div class="index_nav" id="index_nav_left_arrow"><a href='#' class='slide_arrow'><</a></div>
+		<!--<div class="index_nav" id="index_nav_left_arrow"><a href='#' class='slide_arrow'><</a></div>
 		<div class="index_nav" id="index_nav_year">2016</div>
-		<div class="index_nav" id="index_nav_right_arrow"><a href='#' class='slide_arrow'>></a></div>
+		<div class="index_nav" id="index_nav_right_arrow"><a href='#' class='slide_arrow'>></a></div>-->
+			<div id='year_form'>
+				<form action="" method="POST">
+					{{ form.as_p }}
+					{% csrf_token %}
+				</form>
+			</div>
 	</div>
 	<div class="photo_container">
 		{% include "photos/includes/swipe_gallery.html" with photos=photos %}
@@ -22,13 +28,6 @@
 			<div class='purchase_link'>
 				<a href='#photo-1'>Back to the top</a>
 			</div>
-				<div class='row'>
-					<form action="" method="POST">
-						{{ form.as_p }}
-						{% csrf_token %}
-						<input type="submit">
-					</form>
-				</div>
 			<div id='social_media_icons_container'>
 				<div class='social_media_icon'>
 					<a href='https://500px.com/codywilson'>500px</a>
