@@ -22,6 +22,13 @@
 			<div class='purchase_link'>
 				<a href='#photo-1'>Back to the top</a>
 			</div>
+				<div class='row'>
+					<form action="" method="POST">
+						{{ form.as_p }}
+						{% csrf_token %}
+						<input type="submit">
+					</form>
+				</div>
 			<div id='social_media_icons_container'>
 				<div class='social_media_icon'>
 					<a href='https://500px.com/codywilson'>500px</a>

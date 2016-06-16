@@ -15,8 +15,18 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 
 def index(request):
-	photos = Photo.objects.all().filter(visible="true").filter(date__year=2016).order_by('-date')
-	return render(request, 'photos/index.html', {'photos': photos, 'key': os.environ['MAPS_KEY']})
+	photos = Photo.objects.all().filter(visible="true").filter(date__year=2012).order_by('-date')
+	form = forms.SuggestionForm()
+	if request.method == 'POST':
+		form = forms.SuggestionForm(request.POST)
+		if form.is_valid():
+			print("good form")
+			data = request.POST.get('year')
+			print data
+			#return HttpResponseRedirect(reverse('suggest'))
+			photos = Photo.objects.all().filter(visible="true").filter(date__year=data).order_by('-date')
+			return render(request, 'photos/index.html', {'photos': photos, 'key': os.environ['MAPS_KEY'], 'form': form})
+	return render(request, 'photos/index.html', {'photos': photos, 'key': os.environ['MAPS_KEY'], 'form': form})
 
 def dev_form(request):
 	form = forms.SuggestionForm()
@@ -38,7 +48,9 @@ def suggestion_view(request):
 			#					'The year has changed')
 			data = request.POST.get('year')
 			print data
-			return HttpResponseRedirect(reverse('suggest'))
+			#return HttpResponseRedirect(reverse('suggest'))
+			photos = Photo.objects.all().filter(visible="true").filter(date__year=data).order_by('-date')
+			return render(request, 'photos/index.html', {'photos': photos, 'key': os.environ['MAPS_KEY']})
 	return render(request, 'photos/suggestion_form.html', {'form': form})
 
 
