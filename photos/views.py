@@ -20,7 +20,7 @@ def index(request):
 	if request.method == 'POST':
 		form = forms.SuggestionForm(request.POST)
 		if form.is_valid():
-			print("good form")
+			#print("good form")
 			data = request.POST.get('year')
 			#return HttpResponseRedirect(reverse('suggest'))
 			if data == "all":

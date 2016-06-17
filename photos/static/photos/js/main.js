@@ -1,12 +1,28 @@
 $( document ).ready(function() {
 
-
+	/* Submit form on select change. */
 	$( "#id_year" ).change(function() {
 	  this.form.submit();
 	});
 
-	$(".photo").each(function(index){
-	});
+
+	/* Show shadow box. (Desktop Only) */
+	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+
+	if(!isMobile) {
+	   	$(	".photo_photo").click(function() {
+		   	index = $( ".photo_photo" ).index($(this))
+		   	html_picture = $('.photo_photo')[index]
+		   	picture_link = $($('.photo_photo')[index]).attr("src")
+		   	console.log(picture_link)
+		   	$('#shadow_box').css('display','block');
+		   	$('#shadow_img').attr('src',picture_link);
+	    });
+	};
+
+	$('#shadow_box').click(function() {
+		$('#shadow_box').css('display','none');
+	})
 
 	var currentIndex = 0,
 	  items = $('.photo').toArray(),
