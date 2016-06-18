@@ -18,9 +18,9 @@ Requred MVP:
 7.
 8. Purchase Link Logic and layout
 9.
-10. Filter Years
+10.
 11. Add Facebook / Insta icons / links
-12. Update "Live Map" buffer at bottom
+12.
 13.
 14.
 15.
@@ -29,8 +29,8 @@ Later Date:
 1. Automatic URL upload to S3
 2. Email list
 3. Add Blog Post ID for an image
-4. CLick photo on live map index column, show bigger image
-5. Scale google maps pin icon to zoom level
+4.
+5.
 6. Move map JS to own js file
 7.
 8.
@@ -59,4 +59,7 @@ Done:
 21. Google maps API via os environ / heroku environ
 22. Google analytics
 23. Remove trailing slash on URLs
-
+24. Filter Years
+25. Update "Live Map" buffer at bottom
+26. Scale google maps pin icon to zoom level
+27. CLick photo on live map index column, show bigger image
