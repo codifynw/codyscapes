@@ -150,7 +150,8 @@ html, body {
   text-align: center;
 }
 .photo_photo {
-  width: 95%;
+  max-width: 95%;
+  max-height: 800px;
 }
 
 .purchase_link {
