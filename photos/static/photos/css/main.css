@@ -72,12 +72,18 @@ html, body {
   font-weight: 700;
   z-index: 10;
 }
+#year_form p {
+  margin: 0px;
+  margin-top: 10px;
+  padding: 0px;
+}
 #year_form select{
   background: transparent;
   color: #525252;
   text-align: center;
-  width: 268px;
-  text-indent: 114px;
+  width: 100%;
+  /*text-indent: 40%;*/
+  text-align-last:center;
   font-size: 16px;
   border: 0;
   border-radius: 0;
