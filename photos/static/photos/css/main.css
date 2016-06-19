@@ -391,6 +391,9 @@ a {
     .swiper_image {
         max-width:95%; max-height:80%;
     }
+    #year_form select {
+      font-size: 40px;
+    }
 }
 
 
