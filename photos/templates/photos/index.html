@@ -1,272 +1,254 @@
 <DOCTYPE html>
 <html lang="en">
 
-{% extends "photos/header.html" %}
+	{% extends "photos/header.html" %}
 
-{% block content %}
-{% load staticfiles %}
+	{% block content %}
+	{% load staticfiles %}
 
-<div id="googlemaps"></div>
-<div id="shadow_box"><img id='shadow_img' src='{{photos.0.url}}'></img></div>
-<div id="index">
-	<div id="index_nav_container">
-		<!--<div class="index_nav" id="index_nav_left_arrow"><a href='#' class='slide_arrow'><</a></div>
-		<div class="index_nav" id="index_nav_year">2016</div>
-		<div class="index_nav" id="index_nav_right_arrow"><a href='#' class='slide_arrow'>></a></div>-->
-			<div id='year_form'>
-				<form action="" method="POST">
-					{{ form.as_p }}
-					{% csrf_token %}
-				</form>
-			</div>
+	<div id="googlemaps"></div>
+	<div id="shadow_box">
+		<img id='shadow_img' src='{{photos.0.url}}'></img>
 	</div>
-	<div class="photo_container">
-		{% include "photos/includes/swipe_gallery.html" with photos=photos %}
-		{% include "photos/includes/desktop_index.html" with photos=photos %}
-		<div class='photo' id='photo-buffer'>
-			<div class='photo_title'>Thank you for looking!</div>
-			<div class='purchase_link'>
-				<a href='#photo-1'>Back to the top</a>
-			</div>
-			<div id='social_media_icons_container'>
-				<div class='social_media_icon'>
-					<a href='https://500px.com/codywilson'>500px</a>
+	<div id="index">
+		<div id="index_nav_container">
+			<!--<div class="index_nav" id="index_nav_left_arrow"><a href='#' class='slide_arrow'><</a></div>
+			<div class="index_nav" id="index_nav_year">2016</div>
+			<div class="index_nav" id="index_nav_right_arrow"><a href='#' class='slide_arrow'>></a></div>-->
+				<div id='year_form'>
+					<form action="" method="POST">
+						{{ form.as_p }}
+						{% csrf_token %}
+					</form>
 				</div>
-				<div class='social_media_icon'>
-					<a href='https://www.facebook.com/cody.wilson.5815'>Facebook</a>
-				</div>
-				<div class='social_media_icon'>
-					<a href='https://www.instagram.com/codyscapes/'>Instagram</a>
-				</div>
-			</div>
+		</div>
+		<div class="photo_container">
+			{% include "photos/includes/swipe_gallery.html" with photos=photos %}
+			{% include "photos/includes/desktop_index.html" with photos=photos %}
 		</div>
 	</div>
-</div>
 
-<footer>
+	<footer>
 
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.14&key={{key}}"></script>
-	<script type="text/javascript">
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.14&key={{key}}"></script>
+		<script type="text/javascript">
 
-		var animating = false;
-		var position = [ '{{ photos.0.latitude }}', '{{ photos.0.longitude }}'];
-		if( $("#photo-2").css('display') == 'none') {
-			var mobile = true;
-		} else {
-			var mobile = false;
-		}
+			var animating = false;
+			var position = [ '{{ photos.0.latitude }}', '{{ photos.0.longitude }}'];
+			if( $("#photo-2").css('display') == 'none') {
+				var mobile = true;
+			} else {
+				var mobile = false;
+			}
 
-		function make_icon(state, map) {
-			if( mobile == true ) {
-				if (map.getZoom() > 10) {
-					var scale_size = 80;
-				} else if (map.getZoom() < 5) {
-				    var scale_size = 32;
-				} else if (map.getZoom() < 3) {
-					var scale_size = 16;
-				} else if (map.getZoom() < 2) {
-					var scale_size = 4;
+			function make_icon(state, map) {
+				if( mobile == true ) {
+					if (map.getZoom() > 10) {
+						var scale_size = 80;
+					} else if (map.getZoom() < 5) {
+					    var scale_size = 32;
+					} else if (map.getZoom() < 3) {
+						var scale_size = 16;
+					} else if (map.getZoom() < 2) {
+						var scale_size = 4;
+					} else {
+						var scale_size = 60;
+					}
 				} else {
-					var scale_size = 60;
+					if (map.getZoom() > 10) {
+						var scale_size = 40;
+					} else if (map.getZoom() < 5) {
+					    var scale_size = 16;
+					} else if (map.getZoom() < 3) {
+						var scale_size = 8;
+					} else if (map.getZoom() < 2) {
+						var scale_size = 2;
+					} else {
+						var scale_size = 30;
+					}
 				}
-			} else {
-				if (map.getZoom() > 10) {
-					var scale_size = 40;
-				} else if (map.getZoom() < 5) {
-				    var scale_size = 16;
-				} else if (map.getZoom() < 3) {
-					var scale_size = 8;
-				} else if (map.getZoom() < 2) {
-					var scale_size = 2;
+
+				if (state == 'active') {
+					var icon = {
+					    url: "{% static "photos/img/map_marker_active.png" %}", // url
+					    scaledSize: new google.maps.Size(scale_size, scale_size), // scaled size
+					    origin: new google.maps.Point(0,0), // origin
+					    anchor: new google.maps.Point(0,0), // anchor
+					    //description: '{{photos.0.title}}',
+			    		//url: "{{photos.0.url}}"
+					};
 				} else {
-					var scale_size = 30;
+				    var icon = {
+					    url: "{% static "photos/img/map_marker_inactive.png" %}", // url
+					    scaledSize: new google.maps.Size(scale_size, scale_size), // scaled size
+					    origin: new google.maps.Point(0,0), // origin
+					    anchor: new google.maps.Point(0,0) // anchor
+					};
 				}
+				return icon
 			}
 
-			if (state == 'active') {
-				var icon = {
-				    url: "{% static "photos/img/map_marker_active.png" %}", // url
-				    scaledSize: new google.maps.Size(scale_size, scale_size), // scaled size
-				    origin: new google.maps.Point(0,0), // origin
-				    anchor: new google.maps.Point(0,0), // anchor
-				    //description: '{{photos.0.title}}',
-		    		//url: "{{photos.0.url}}"
-				};
-			} else {
-			    var icon = {
-				    url: "{% static "photos/img/map_marker_inactive.png" %}", // url
-				    scaledSize: new google.maps.Size(scale_size, scale_size), // scaled size
-				    origin: new google.maps.Point(0,0), // origin
-				    anchor: new google.maps.Point(0,0) // anchor
-				};
-			}
-			return icon
-		}
+			var swiper = new Swiper('.swiper-container', {
+			    pagination: '.swiper-pagination',
+			    slidesPerView: 1.2,
+			    centeredSlides: true,
+			    paginationClickable: true,
+			    spaceBetween: 5,
+			    loop: true
+			});
 
-		var swiper = new Swiper('.swiper-container', {
-		    pagination: '.swiper-pagination',
-		    slidesPerView: 1.2,
-		    centeredSlides: true,
-		    paginationClickable: true,
-		    spaceBetween: 5,
-		    loop: true
-		});
-
-		function move_swiper(index, time) {
-			swiper.slideTo(index, time, true);
-		}
-
-		function showGoogleMaps() {
-
-			if ( mobile == true ) {
-				var zoomlevel = 10
-				//Change back to ten when done testing.
-			} else {
-				var zoomlevel = 5
+			function move_swiper(index, time) {
+				swiper.slideTo(index, time, true);
 			}
 
-			function set_the_one_true_marker(marker) {
-				for (i = 0; i < markers.length; i++) {
-					markers[i].setIcon(make_icon('inactive',map));
-					markers[i].setZIndex(1);
+			function showGoogleMaps() {
+
+				if ( mobile == true ) {
+					var zoomlevel = 10
+					//Change back to ten when done testing.
+				} else {
+					var zoomlevel = 5
 				}
-				marker.setZIndex(10);
-				marker.setIcon(make_icon('active',map));
-			}
 
-		    var mapOptions = {
-		        zoom: zoomlevel, // initialize zoom level - the max value is 21
-		        streetViewControl: false, // hide the yellow Street View pegman
-		        scaleControl: true, // allow users to zoom the Google Map
-		        mapTypeId: google.maps.MapTypeId.ROADMAP,
-		        styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}],
-		        center: new google.maps.LatLng(position[0], position[1]),
-		        mapTypeControl: false,
-		        minzoom: 5
-		    };
+				function set_the_one_true_marker(marker) {
+					for (i = 0; i < markers.length; i++) {
+						markers[i].setIcon(make_icon('inactive',map));
+						markers[i].setZIndex(1);
+					}
+					marker.setZIndex(10);
+					marker.setIcon(make_icon('active',map));
+				}
 
-		    map = new google.maps.Map(document.getElementById('googlemaps'),
-		        mapOptions);
+			    var mapOptions = {
+			        zoom: zoomlevel, // initialize zoom level - the max value is 21
+			        streetViewControl: false, // hide the yellow Street View pegman
+			        scaleControl: true, // allow users to zoom the Google Map
+			        mapTypeId: google.maps.MapTypeId.ROADMAP,
+			        styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}],
+			        center: new google.maps.LatLng(position[0], position[1]),
+			        mapTypeControl: false,
+			        minzoom: 5
+			    };
 
-			var markers = [];
+			    map = new google.maps.Map(document.getElementById('googlemaps'),
+			        mapOptions);
 
-			{% for photo in photos %}
+				var markers = [];
 
-				var lat = {{photo.latitude}}
-				var long = {{photo.longitude}}
-				var add = "{{photo.location_string}}"
+				{% for photo in photos %}
 
-	    	 	latlngset = new google.maps.LatLng(lat, long);
+					var lat = {{photo.latitude}}
+					var long = {{photo.longitude}}
+					var add = "{{photo.location_string}}"
 
-				var marker = new google.maps.Marker({
-				    map: map,
-				    title: "{{photo.title}}",
-				    position: latlngset,
-					icon: {% if forloop.first %}make_icon('active',map){% else %}make_icon('inactive',map){% endif %},
-					description: {{forloop.counter}},
-					zIndex: {% if forloop.first %}10{% else %}1{% endif %}
+		    	 	latlngset = new google.maps.LatLng(lat, long);
+
+					var marker = new google.maps.Marker({
+					    map: map,
+					    title: "{{photo.title}}",
+					    position: latlngset,
+						icon: {% if forloop.first %}make_icon('active',map){% else %}make_icon('inactive',map){% endif %},
+						description: {{forloop.counter}},
+						zIndex: {% if forloop.first %}10{% else %}1{% endif %}
+					});
+
+					markers.push(marker);
+
+			    	google.maps.event.addListener(marker,'click', (function(marker){
+		    	        return function() {
+
+		    	        	var scroll_time = 650
+							var child = $('#photo-' + marker.description);
+							var parent = $('#index');
+
+							for (i = 0; i < markers.length; i++) {
+								markers[i].setIcon(make_icon('inactive',map));
+								markers[i].setZIndex(1);
+							}
+							animating = true;
+
+							move_swiper(marker.description, scroll_time);
+
+
+							$('#index').animate({
+					          	scrollTop: document.getElementById('index').scrollTop + child.offset().top-parent.offset().top - 55
+					        }, scroll_time)
+
+							setTimeout( function() { animating = false }, scroll_time);
+
+							marker.setIcon(make_icon('active',map));
+							marker.setZIndex(10);
+							map.setCenter(marker.getPosition());
+		    	        };
+		    	    })(marker));
+				{% endfor %}
+
+				google.maps.event.addListener(map, 'zoom_changed', function() {
+					if (map.getZoom() < 3) map.setZoom(3);
+
+					if (map.getZoom() < 5) {
+					    var scale_size = 16;
+					} else if (map.getZoom() < 3) {
+						var scale_size = 8;
+					} else if (map.getZoom() < 2) {
+						var scale_size = 2;
+					} else {
+						var scale_size = 30;
+					}
+
+					for (i = 0; i < markers.length; i++) {
+						if (markers[i].getZIndex() == 1) {
+							markers[i].setIcon(make_icon('inactive',map));
+						} else {
+					    	markers[i].setIcon(make_icon('active',map));
+					    }
+					}
 				});
 
-				markers.push(marker);
-
-		    	google.maps.event.addListener(marker,'click', (function(marker){
-	    	        return function() {
-
-	    	        	var scroll_time = 650
-						var child = $('#photo-' + marker.description);
-						var parent = $('#index');
-
-						for (i = 0; i < markers.length; i++) {
-							markers[i].setIcon(make_icon('inactive',map));
-							markers[i].setZIndex(1);
-						}
-						animating = true;
-
-						move_swiper(marker.description, scroll_time);
-
-
-						$('#index').animate({
-				          	scrollTop: document.getElementById('index').scrollTop + child.offset().top-parent.offset().top - 55
-				        }, scroll_time)
-
-						setTimeout( function() { animating = false }, scroll_time);
-
-						marker.setIcon(make_icon('active',map));
-						marker.setZIndex(10);
-						map.setCenter(marker.getPosition());
-	    	        };
-	    	    })(marker));
-			{% endfor %}
-
-			google.maps.event.addListener(map, 'zoom_changed', function() {
-				if (map.getZoom() < 3) map.setZoom(3);
-
-				if (map.getZoom() < 5) {
-				    var scale_size = 16;
-				} else if (map.getZoom() < 3) {
-					var scale_size = 8;
-				} else if (map.getZoom() < 2) {
-					var scale_size = 2;
-				} else {
-					var scale_size = 30;
+				var elms = document.querySelectorAll(".photo"),
+				    elmOffsets = {};
+				for (var i = 0, j = elms.length; i < j; ++i) {
+					var offset = elms[i].offsetTop + elms[i].clientHeight;
+				  elmOffsets[offset] = elms[i];
 				}
 
-				for (i = 0; i < markers.length; i++) {
-					if (markers[i].getZIndex() == 1) {
-						markers[i].setIcon(make_icon('inactive',map));
+				// listen for scroll events. might want to throttle this
+				var parent = document.getElementById('index')
+				parent.addEventListener("scroll", function(){
+
+			  		var offset = parent.scrollTop,
+		 			minOffset = Object.keys(elmOffsets).reduceRight(function(prev,current){
+			      		return offset < current - 150 ? current : prev;
+		      		});
+			  		if (animating != true) {
+				  		map.setCenter(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )].getPosition());
+				  		set_the_one_true_marker(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )]);
+					}
+				});
+
+				//console.log(swiper.activeIndex)
+
+
+				swiper.on('slideChangeEnd', function () {
+					//Swiper will set the last image loaded to index 0 because we're looping and swiper sets the end loop as the first slide shown to the left of the active slide.  This is a work around.
+					if (swiper.activeIndex == 0) {
+						index = markers.length - 1
+					//Swiper builds one extra slide every time it loads.  This is a work around
+					} else if (swiper.activeIndex == markers.length + 1) {
+						index = markers.length
 					} else {
-				    	markers[i].setIcon(make_icon('active',map));
-				    }
-				}
-			});
+						index = swiper.activeIndex - 1
+					}
 
-			var elms = document.querySelectorAll(".photo"),
-			    elmOffsets = {};
-			for (var i = 0, j = elms.length; i < j; ++i) {
-				var offset = elms[i].offsetTop + elms[i].clientHeight;
-			  elmOffsets[offset] = elms[i];
+				    set_the_one_true_marker(markers[index]);
+			  		map.setCenter(markers[index].getPosition());
+				});
 			}
 
-			// listen for scroll events. might want to throttle this
-			var parent = document.getElementById('index')
-			parent.addEventListener("scroll", function(){
+			google.maps.event.addDomListener(window, 'load', showGoogleMaps);
+		</script>
+	</footer>
 
-		  		var offset = parent.scrollTop,
-	 			minOffset = Object.keys(elmOffsets).reduceRight(function(prev,current){
-		      		return offset < current - 150 ? current : prev;
-	      		});
-		  		if (animating != true) {
-			  		map.setCenter(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )].getPosition());
-			  		set_the_one_true_marker(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )]);
-				}
-			});
-
-			//console.log(swiper.activeIndex)
-
-
-			swiper.on('slideChangeEnd', function () {
-				//Swiper will set the last image loaded to index 0 because we're looping and swiper sets the end loop as the first slide shown to the left of the active slide.  This is a work around.
-				if (swiper.activeIndex == 0) {
-					index = markers.length - 1
-				//Swiper builds one extra slide every time it loads.  This is a work around
-				} else if (swiper.activeIndex == markers.length + 1) {
-					index = markers.length
-				} else {
-					index = swiper.activeIndex - 1
-				}
-
-			    set_the_one_true_marker(markers[index]);
-		  		map.setCenter(markers[index].getPosition());
-			});
-		}
-
-		google.maps.event.addDomListener(window, 'load', showGoogleMaps);
-	</script>
-</footer>
-
-{% include "personal/includes/analytics.html" %}
-
-{% endblock %}
-
-
+	{% include "personal/includes/analytics.html" %}
+	{% endblock %}
 </html>

@@ -1,29 +1,56 @@
+{% load staticfiles %}
+
 <div class='desktop_container'>
-{% for photo in photos %}
-	<div class='photo' id='photo-{{ forloop.counter }}'>
-		<div class='photo_title'>
-			<div id='{{photo.title}}_{{photo.id}}'>{{photo.title}}</div>
+	{% for photo in photos %}
+		<div class='photo' id='photo-{{ forloop.counter }}'>
+			<div class='photo_title'>
+				<div id='{{photo.title}}_{{photo.id}}'>{{photo.title}}</div>
+			</div>
+			<div class='photo_date'>
+				{{photo.location_string}}
+			</div>
+			<div class='photo_location'>
+				{{photo.date|date:"Y-m-d"}}
+			</div>
+			<div class='photo_holder'>
+				{% if photo.isphoto %}
+					<img class='photo_photo' src="{{photo.url}}">
+				{% else %}
+					<!--<iframe  onload="this.width=div.width;this.height=div.height;" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>-->
+					<div class="videoWrapper">
+					    <!-- https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php -->
+					    <iframe width="300" height="169" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>
+					</div>
+				{% endif %}
+			</div>
+			<div class='purchase_link'>
+				<a href='{{photo.purchase_link}}' target="_blank">Buy this photo</a>
+			</div>
 		</div>
-		<div class='photo_date'>
-			{{photo.location_string}}
-		</div>
-		<div class='photo_location'>
-			{{photo.date|date:"Y-m-d"}}
-		</div>
-		<div class='photo_holder'>
-			{% if photo.isphoto %}
-				<img class='photo_photo' src="{{photo.url}}">
-			{% else %}
-				<!--<iframe  onload="this.width=div.width;this.height=div.height;" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>-->
-				<div class="videoWrapper">
-				    <!-- https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php -->
-				    <iframe width="300" height="169" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>
-				</div>
-			{% endif %}
-		</div>
+	{% endfor %}
+	<div class='photo' id='photo-buffer'>
+		<div class='photo_title'>Thank you for looking!</div>
 		<div class='purchase_link'>
-			<a href='{{photo.purchase_link}}' target="_blank">Buy this photo</a>
+			<a href='#photo-1'>Back to the top</a>
+		</div>
+		<div id='social_media_icons_container'>
+			<div class='social_media_box'>
+				<a href='https://500px.com/codywilson'>
+					<img class ="social_media_icon" src="{% static "photos/img/500px.png" %}">
+					500px
+				</a>
+			</div>
+			<div class='social_media_box'>
+				<a href='https://www.facebook.com/cody.wilson.5815'>
+					<img class ="social_media_icon" src="{% static "photos/img/facebook.png" %}">
+					Facebook
+				</a>
+			</div>
+			<div class='social_media_box'>
+				<a href='https://www.instagram.com/codyscapes/'>
+					<img class ="social_media_icon" src="{% static "photos/img/instagram.png" %}">Instagram
+				</a>
+			</div>
 		</div>
 	</div>
-{% endfor %}
 </div>
