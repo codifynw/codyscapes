@@ -227,8 +227,8 @@ a:hover {
 .social_media_icon {
   display: block;
   margin: auto;
-  width: 75%;
-  height: auto;
+  width: auto;
+  height: 50px;
 }
 a {
   text-decoration: none;
