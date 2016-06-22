@@ -19,7 +19,7 @@ Requred MVP:
 8. Purchase Link Logic and layout
 9.
 10.
-11. Add Facebook / Insta icons / links
+11.
 12.
 13.
 14.
@@ -63,3 +63,4 @@ Done:
 25. Update "Live Map" buffer at bottom
 26. Scale google maps pin icon to zoom level
 27. CLick photo on live map index column, show bigger image
+28. Add Facebook / Insta icons / links
