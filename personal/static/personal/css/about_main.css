@@ -39,3 +39,16 @@ html, body {
   margin-top: 15px;
   color: #585858;
 }
+a {
+	text-decoration: none;
+	color: white;
+}
+
+#body_container {
+	position: fixed;
+	width: 100%;
+	top: 50px;
+}
+#body_container h1 {
+	text-align: center;
+}
