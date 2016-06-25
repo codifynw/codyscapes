@@ -47,7 +47,7 @@ a {
 #body_container {
 	position: fixed;
 	width: 100%;
-	top: 50px;
+	top: 20%;
 	}
 #body_container h1 {
 	text-align: center;
