@@ -14,7 +14,6 @@ $( document ).ready(function() {
 		   	index = $( ".photo_photo" ).index($(this))
 		   	html_picture = $('.photo_photo')[index]
 		   	picture_link = $($('.photo_photo')[index]).attr("src")
-		   	console.log(picture_link)
 		   	$('#shadow_box').css('display','block');
 		   	$('#shadow_img').attr('src',picture_link);
 	    });
