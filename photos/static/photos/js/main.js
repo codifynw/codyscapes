@@ -17,6 +17,14 @@ $( document ).ready(function() {
 		   	$('#shadow_box').css('display','block');
 		   	$('#shadow_img').attr('src',picture_link);
 	    });
+	   	$(	".swiper_image").click(function() {
+		   	index = $( ".swiper_image" ).index($(this))
+		   	html_picture = $('.swiper_image')[index]
+		   	picture_link = $($('.swiper_image')[index]).attr("src")
+		   	$('#shadow_box').css('display','block');
+		   	$('#shadow_img').attr('src',picture_link);
+	    });
+
 
 	$('#shadow_box').click(function() {
 		$('#shadow_box').css('display','none');
