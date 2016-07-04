@@ -7,7 +7,7 @@ $( document ).ready(function() {
 
 
 	/* Show shadow box. (Desktop Only) */
-	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
+	/* var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false; */
 
 
 	   	$(	".photo_photo").click(function() {
@@ -17,6 +17,7 @@ $( document ).ready(function() {
 		   	$('#shadow_box').css('display','block');
 		   	$('#shadow_img').attr('src',picture_link);
 	    });
+
 	   	$(	".swiper_image").click(function() {
 		   	index = $( ".swiper_image" ).index($(this))
 		   	html_picture = $('.swiper_image')[index]

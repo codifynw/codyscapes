@@ -45,10 +45,24 @@ a {
 }
 
 #body_container {
-	position: fixed;
-	width: 100%;
+	width: 80%;
 	top: 20%;
+  margin: auto;
+  margin-top: 50px;
 	}
 #body_container h1 {
 	text-align: center;
+}
+#body_left {
+  display: inline-block;
+  width: 45%;
+}
+#body_right {
+  display: inline-block;
+  width: 45%;
+  vertical-align: top;
+}
+.cody_image {
+  width: 100%;
+  height: auto;
 }
