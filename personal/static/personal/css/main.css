@@ -42,9 +42,9 @@ html, body { margin: 0px;
 	position: relative;
 	display: none;
 	font-size: 0px;
-	height: 90%;
-	height: calc(100% - 45px);
-	top: 45px;
+	height: 100%;
+	/*height: calc(100% - 45px);
+	top: 45px;*/
 	z-index: 2;}
 
 
