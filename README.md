@@ -24,6 +24,9 @@ Requred MVP:
 13.
 14.
 15.
+16. Add arrows to fullscreen images
+17. Finish styling on homescreen
+18. Down res static assets on home screen
 
 Later Date:
 1. Automatic URL upload to S3
@@ -54,13 +57,9 @@ Done:
 16. Use a better way to scale video iframe (http://stackoverflow.com/questions/11122249/scale-iframe-css-width-100-like-an-image)
 17. Initial Mobile Layout for "Live Map" page
 18. Make the mobile version of the photos page scroll like a slideshow instead of vertically.
-19. Fix blank space below slider in mobile display
-20. Style fixes with Sam
-21. Google maps API via os environ / heroku environ
-22. Google analytics
-23. Remove trailing slash on URLs
-24. Filter Years
-25. Update "Live Map" buffer at bottom
-26. Scale google maps pin icon to zoom level
-27. CLick photo on live map index column, show bigger image
-28. Add Facebook / Insta icons / links
+19. Scale google maps pin icon to zoom level
+20. Add Facebook / Insta icons / links
+21. Filter Years form
+22. Update "Live Map" buffer at bottom
+23. CLick photo on live map index column, show bigger image
+24. Fix blank space below slider in mobile display

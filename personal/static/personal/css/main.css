@@ -6,6 +6,7 @@ html, body { margin: 0px;
 			height: 100%;  }
 
 .page-header {
+	display: none;
 	position: fixed;
 	height: 45px;
 	width: 100%;
@@ -15,13 +16,25 @@ html, body { margin: 0px;
 	z-index: 99;
 }
 
+.page-footer {
+	display: none;
+	position: fixed;
+	bottom: 0px;
+	height: 50px;
+	width: 100%;
+	z-index: 99;
+	background-color: #060607;
+}
+
 .options-container-desktop {
 	position: relative;
 	display: block;
 	font-size: 0px;
 	height: 90%;
-	height: calc(100% - 45px);
-	top: 45px;
+	/*top: 45px;
+	height: calc(100% - 45px);*/
+	height: 100%;
+	top: 0px;
 	z-index: 2;
 }
 
@@ -137,11 +150,11 @@ html, body { margin: 0px;
 }
 
 .option-wrapper {
-width: 100%;
-	  text-align: center;
-	  display: flex;
-	  flex-flow: row nowrap;
-	  justify-content: space-between;
+	width: 100%;
+	text-align: center;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
 }
 
 .option-text {
