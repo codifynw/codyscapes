@@ -45,22 +45,30 @@ a {
 }
 
 #body_container {
-	width: 80%;
-	top: 20%;
+  margin: 0% 10% 0% 10%;
+	width: 100%;
+  height: 100%;
+}
+#row1 {
+  position: fixed;
+  height: 500px;
+  top: 50px;
+  width: 100%;
   margin: auto;
-  margin-top: 50px;
-	}
+}
 #body_container h1 {
 	text-align: center;
 }
 #body_left {
   display: inline-block;
-  width: 45%;
+  width: 40%;
 }
 #body_right {
   display: inline-block;
   width: 45%;
   vertical-align: top;
+  padding: 10px;
+  text-align: center;
 }
 .cody_image {
   width: 100%;

@@ -15,3 +15,5 @@ def home(request):
 def index(request):
 	return render(request, 'personal/index.html')
 
+def license(request):
+	return render(request, 'personal/license.html')

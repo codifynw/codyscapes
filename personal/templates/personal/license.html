@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	{% include "personal/about_header.html" %}
+
+
+	{% block content %}
+	{% load staticfiles %}
+
+
+	<div id='body_container'>
+		<h1>Licensing</h1>
+		<p>
+			I've adopted the philosophy best summarized by Trey Ratcliff and Stuck in Customs that art is meant to be seen and not hoarded. Thus, anything on this site is available under the creative commens license.
+		</p>
+
+		<h2>Creative Commons License</h2>
+		<p>With Creative Commons you are free:<br>
+
+		<strong>To Share:</strong> Copy, Distribute, and Transmit the image<br>
+		<strong>To Remix:</strong> Create Derivative works of the image
+		Under these conditions:<br>
+
+		<li>Attribution: Attribution to Cody Wilson must be made along with the image.</li>
+		<li>Non-Commercial: The image must not be used for commercial purposes under any circumstances. For clarity on what defines commercial use, please see the Sample </li>
+		</p>
+
+	</div>
+
+<!--
+	<div id='body_container'>
+			<h1>Coming Soon!</h1>
+
+		</div>
+
+	</div>
+-->
+
+	{% include "personal/includes/analytics.html" %}
+	{% endblock %}
+</html>
