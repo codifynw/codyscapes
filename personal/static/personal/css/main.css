@@ -73,7 +73,7 @@ html, body { margin: 0px;
 	box-sizing: border-box;
 	width: 100%;
 	height: 33.33%;
-	background-image: url("https://s3.amazonaws.com/codyscapes-assets/static_assets/iredale.jpg");
+	background-image: url("https://photos.smugmug.com/Gallery/i-jwxk8J6/1/XL/Lost%20ship%20fixes%2012x24-XL.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
     -moz-transition: all 3s;
@@ -85,12 +85,12 @@ html, body { margin: 0px;
 }
 
 .option-two {
-	background-image: url("https://photos.smugmug.com/Gallery/i-2M9FmVB/0/XL/Carpet%20Leaves-XL.jpg");
+	background-image: url("https://photos.smugmug.com/Gallery/i-2M9FmVB/0/XL/Carpet%20Leaves-M.jpg");
 
 }
 
 .option-two-mobile {
-	background-image: url("https://s3.amazonaws.com/codyscapes-assets/static_assets/wallowa.jpg");
+	background-image: url("https://photos.smugmug.com/Gallery/i-s3j5B9S/1/M/Wallowa%20Sunrise%2036x24-M.jpg");
 
 }
 
@@ -101,7 +101,7 @@ html, body { margin: 0px;
 
 .option-three-mobile {
 	border-right: none;
-	background-image: url("https://s3.amazonaws.com/codyscapes-assets/static_assets/cape.jpg");
+	background-image: url("https://photos.smugmug.com/Gallery/i-H5xxwtj/0/M/Cape%20Surfer%20Huts-M.jpg");
 }
 
 @media (min-width: 950px) {
