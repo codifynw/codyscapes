@@ -102,6 +102,20 @@ $( document ).ready(function() {
 		$('#shadow_box').css('display','none');
 	})
 
+	/*Fade Out 'buy button'
+	var timer;
+	$(document).mousemove(function() {
+	    if (timer) {
+	        clearTimeout(timer);
+	        timer = 0;
+	    }
+
+	    $('#shadow_buy:visible').fadeIn();
+	    timer = setTimeout(function() {
+	        $('#shadow_buy').fadeOut()
+	    }, 1000)
+	})*/
+
 	var currentIndex = 0,
 	  items = $('.photo').toArray(),
 	  itemAmt = items.length;
