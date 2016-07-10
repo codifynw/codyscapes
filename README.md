@@ -25,7 +25,7 @@ Requred MVP:
 14.
 15.
 16. Add arrows to fullscreen images
-17. Finish styling on homescreen
+17.
 18. Down res static assets on home screen
 
 Later Date:
@@ -63,3 +63,4 @@ Done:
 22. Update "Live Map" buffer at bottom
 23. CLick photo on live map index column, show bigger image
 24. Fix blank space below slider in mobile display
+25. Finish styling on homescreen

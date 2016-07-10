@@ -245,6 +245,35 @@ a {
   vertical-align: middle;
   text-align: center;
 }
+#shadow_x {
+  position: fixed;
+  color: rgba(255,255,255,.72);
+  top:0;
+  right: 20px;
+  font-size: 25px;
+}
+#shadow_x:hover {
+  font-weight: bold;
+  color: white;
+}
+.shadow_arrow {
+  font-size: 40px;
+  color: rgba(255,255,255,.72);
+  position: fixed;
+  top: 50%;
+  height: 100px;
+  width: 30px;
+}
+.shadow_arrow:hover {
+  font-weight: bold;
+  color: white;
+}
+#shadow_box_left {
+  left: 0;
+}
+#shadow_box_right {
+  right: 0;
+}
 #shadow_img {
   max-height: 90%;
   max-width: 90%;

@@ -1,7 +1,5 @@
 $( document ).ready(function() {
 
-	console.log($( ".photo_photo" ).toArray().length)
-
 	/* Submit form on select change. */
 	$( "#id_year" ).change(function() {
 	  this.form.submit();
