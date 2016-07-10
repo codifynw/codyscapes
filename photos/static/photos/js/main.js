@@ -45,13 +45,6 @@ $( document ).ready(function() {
 	    		if (index == -1) {
 	    			index = 0;
 	    		}
-
-	    		picture_link = $($('.photo_photo')[index]).attr("src");
-				purchase_link = $(".photo_link").toArray()[index].href;
-
-	        	$('#shadow_img').attr('src',picture_link);
-	        	$('#shadow_box').data('index',index);
-	        	$('#shadow_buy_link').attr('href',purchase_link);
 	    	}
 
 	    	/* Right Arrow */
@@ -62,11 +55,17 @@ $( document ).ready(function() {
 	    		if (index == $( ".photo_photo" ).toArray().length ) {
 	    			index = index - 1
 	    		}
+	    	}
 
+	    	if ( (e.keyCode == 37) || (e.keyCode == 39) ) {
+	    		console.log(index);
 	    		picture_link = $($('.photo_photo')[index]).attr("src");
+				purchase_link = $(".photo_link").toArray()[index].href;
 
 	        	$('#shadow_img').attr('src',picture_link);
 	        	$('#shadow_box').data('index',index);
+	        	$('#shadow_buy_link').attr('href',purchase_link);
+
 	    	}
 	    }
     });
@@ -78,10 +77,12 @@ $( document ).ready(function() {
 			index = index - 1
 		}
 
+		purchase_link = $(".photo_link").toArray()[index].href;
 		picture_link = $($('.photo_photo')[index]).attr("src");
         if  ($('#shadow_box').css('display') == 'block') {
         	$('#shadow_img').attr('src',picture_link);
         	$('#shadow_box').data('index',index);
+        	$('#shadow_buy_link').attr('href',purchase_link);
         }
     	event.stopPropagation();
     })
@@ -93,10 +94,13 @@ $( document ).ready(function() {
 			index = 0;
 		}
 
+		purchase_link = $(".photo_link").toArray()[index].href;
 		picture_link = $($('.photo_photo')[index]).attr("src");
+
         if  ($('#shadow_box').css('display') == 'block') {
         	$('#shadow_img').attr('src',picture_link);
         	$('#shadow_box').data('index',index);
+        	$('#shadow_buy_link').attr('href',purchase_link);
         }
     	event.stopPropagation();
     })
