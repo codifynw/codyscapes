@@ -2,6 +2,12 @@ html, body {
   background-color: rgba(0, 0, 0, 1);
   margin: 0px;
 }
+a {
+  color: #585858;
+}
+a:hover {
+  color: rgba(181,202,133,1);
+}
 .swiper-container {
   display: none;
 }
@@ -184,9 +190,6 @@ a.nav_link:visited {
     color: white;
     display: none;
 }
-a:hover {
-  color: rgba(181,202,133,1);
-}
 #photo-buffer {
   padding-top: 50px;
   height: 200px;
@@ -258,6 +261,7 @@ a {
 #shadow_x:hover {
   font-weight: bold;
   color: white;
+  cursor: pointer;
 }
 .shadow_arrow {
   z-index: 1005;
@@ -277,6 +281,7 @@ a {
 .shadow_arrow:hover {
   font-weight: bold;
   color: white;
+  cursor: pointer;
 }
 #shadow_box_left {
   left: 0;
@@ -305,6 +310,9 @@ a {
   left: 50%;
   margin-top: -10px; /* Negative half of height. */
   margin-left: -50px; /* Negative half of width. */
+}
+#shadow_buy a:hover {
+  color: white;
 }
 #photo-1 {
   margin-top: 55px;
