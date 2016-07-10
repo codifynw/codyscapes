@@ -1,5 +1,7 @@
 $( document ).ready(function() {
 
+	console.log($( ".photo_photo" ).toArray().length)
+
 	/* Submit form on select change. */
 	$( "#id_year" ).change(function() {
 	  this.form.submit();
@@ -13,7 +15,6 @@ $( document ).ready(function() {
 	/* Show Light Boxes */
    	$(	".photo_photo").click(function() {
 	   	index = $( ".photo_photo" ).index($(this))
-	   	html_picture = $('.photo_photo')[index]
 	   	picture_link = $($('.photo_photo')[index]).attr("src")
 	   	$('#shadow_box').css('display','block');
 	   	$('#shadow_img').attr('src',picture_link);
@@ -22,7 +23,6 @@ $( document ).ready(function() {
 
    	$(	".swiper_image").click(function() {
 	   	index = $( ".swiper_image" ).index($(this))
-	   	html_picture = $('.swiper_image')[index]
 	   	picture_link = $($('.swiper_image')[index]).attr("src")
 	   	$('#shadow_box').css('display','block');
 	   	$('#shadow_img').attr('src',picture_link);
@@ -30,18 +30,40 @@ $( document ).ready(function() {
     });
 
     /* Move lightbox with key press */
-    $(document).keyup(function(e) {
-    	index = $('#shadow_box').data('index') + 1;
-    	console.log(index);
-    	html_picture = $('.photo_photo')[index];
-    	picture_link = $($('.photo_photo')[index]).attr("src");
+    $(document).keydown(function(e) {
 
-        if  ($('#shadow_box').css('display') == 'block') {
-        	$('#shadow_img').attr('src',picture_link);
-        	$('#shadow_box').data('index',index);
-        } else {
-        	console.log('goodbye');
-        }
+
+    	if (e.keyCode == 37) {
+    		index = $('#shadow_box').data('index') - 1;
+
+    		if (index == -1) {
+    			index = 0;
+    		}
+
+    		picture_link = $($('.photo_photo')[index]).attr("src");
+	        if  ($('#shadow_box').css('display') == 'block') {
+	        	$('#shadow_img').attr('src',picture_link);
+	        	$('#shadow_box').data('index',index);
+	        }
+    	}
+
+    	if (e.keyCode == 39) {
+    		index = $('#shadow_box').data('index') + 1;
+
+    		/* Don't let index exceed length */
+    		if (index == $( ".photo_photo" ).toArray().length ) {
+    			index = index - 1
+    		}
+
+    		picture_link = $($('.photo_photo')[index]).attr("src");
+	        if  ($('#shadow_box').css('display') == 'block') {
+	        	$('#shadow_img').attr('src',picture_link);
+	        	$('#shadow_box').data('index',index);
+	        }
+    	}
+
+
+
     });
 
 
