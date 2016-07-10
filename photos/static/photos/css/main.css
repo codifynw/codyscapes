@@ -248,21 +248,31 @@ a {
 #shadow_x {
   position: fixed;
   color: rgba(255,255,255,.72);
-  top:0;
-  right: 20px;
+  top:5px;
+  right: 10px;
+  width: 5%;
+  height: 5%;
   font-size: 25px;
+  z-index: 1007;
 }
 #shadow_x:hover {
   font-weight: bold;
   color: white;
 }
 .shadow_arrow {
+  z-index: 1005;
   font-size: 40px;
   color: rgba(255,255,255,.72);
   position: fixed;
+  height: 100%;
+  width: 100px;
+}
+.shadow_inner {
+  position: fixed;
   top: 50%;
-  height: 100px;
-  width: 30px;
+}
+#shadow_inner_right {
+  right: 0px;
 }
 .shadow_arrow:hover {
   font-weight: bold;
@@ -289,6 +299,27 @@ a {
 #photo-1 {
   margin-top: 55px;
 }
+.shadow_box.noSelect {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+}
+.shadow_arrow.noSelect {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+}
+.shadow_img.noSelect {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+}
+.shadow_inner.noSelect {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+}
+
 
 @media (max-width: 750px) {
   #index {

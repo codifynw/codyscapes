@@ -30,7 +30,12 @@ $( document ).ready(function() {
     /* Move lightbox with key press */
     $(document).keydown(function(e) {
 
+    	/* Escape */
+    	if (e.keyCode == 27) {
+    		$('#shadow_box').css('display','none');
+    	}
 
+    	/* Left Arrow */
     	if (e.keyCode == 37) {
     		index = $('#shadow_box').data('index') - 1;
 
@@ -45,6 +50,7 @@ $( document ).ready(function() {
 	        }
     	}
 
+    	/* Right Arrow */
     	if (e.keyCode == 39) {
     		index = $('#shadow_box').data('index') + 1;
 
@@ -59,10 +65,37 @@ $( document ).ready(function() {
 	        	$('#shadow_box').data('index',index);
 	        }
     	}
-
-
-
     });
+
+    $('#shadow_box_right').click(function() {
+    	index = $('#shadow_box').data('index') + 1;
+		/* Don't let index exceed length */
+		if (index == $( ".photo_photo" ).toArray().length ) {
+			index = index - 1
+		}
+
+		picture_link = $($('.photo_photo')[index]).attr("src");
+        if  ($('#shadow_box').css('display') == 'block') {
+        	$('#shadow_img').attr('src',picture_link);
+        	$('#shadow_box').data('index',index);
+        }
+    	event.stopPropagation();
+    })
+
+    $('#shadow_box_left').click(function() {
+    	index = $('#shadow_box').data('index') - 1;
+		/* Don't let index exceed length */
+		if (index == -1) {
+			index = 0;
+		}
+
+		picture_link = $($('.photo_photo')[index]).attr("src");
+        if  ($('#shadow_box').css('display') == 'block') {
+        	$('#shadow_img').attr('src',picture_link);
+        	$('#shadow_box').data('index',index);
+        }
+    	event.stopPropagation();
+    })
 
 
 	$('#shadow_box').click(function() {
