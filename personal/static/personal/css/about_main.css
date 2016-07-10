@@ -61,14 +61,14 @@ a {
 }
 #body_left {
   display: inline-block;
-  width: 40%;
-}
-#body_right {
-  display: inline-block;
   width: 45%;
   vertical-align: top;
   padding: 10px;
   text-align: center;
+}
+#body_right {
+  display: inline-block;
+  width: 40%;
 }
 .cody_image {
   width: 100%;
