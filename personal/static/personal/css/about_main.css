@@ -2,7 +2,12 @@ html, body {
   background-color: rgba(0, 0, 0, 1);
   margin: 0px;
   color: white;
+  font-family: 'Roboto', Arial, sans-serif;
+  padding: 0px;
+  height: 100%;
 }
+
+
 #top_header {
   z-index: 2;
   position: fixed;
@@ -44,6 +49,9 @@ a {
 	color: white;
 }
 
+p a {
+  color: #a8cd7a;
+}
 #body_container {
   margin: 0% 10% 0% 10%;
 	width: 100%;
