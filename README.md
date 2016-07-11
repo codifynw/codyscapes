@@ -10,13 +10,13 @@ The app will serve as a homepage for my photography.  There will be three main a
 
 Requred MVP:
 1.
-2. Build out "About Me"
+2.
 3.
 4. Enter Data
 5. Backup database
 6.
 7.
-8. Purchase Link Logic and layout
+8.
 9.
 10.
 11.
@@ -24,9 +24,10 @@ Requred MVP:
 13.
 14.
 15.
-16. Add arrows to fullscreen images
+16.
 17.
-18. Down res static assets on home screen
+18.
+19. Take away arrows on 1 and last.
 
 Later Date:
 1. Automatic URL upload to S3
@@ -64,3 +65,7 @@ Done:
 23. CLick photo on live map index column, show bigger image
 24. Fix blank space below slider in mobile display
 25. Finish styling on homescreen
+26. Build out "About Me"
+27. Purchase Link Logic and layout
+28. Add arrows to fullscreen images
+29. Down res static assets on home screen

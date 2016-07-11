@@ -41,7 +41,6 @@ $( document ).ready(function() {
 	    	/* Left Arrow */
 	    	if (e.keyCode == 37) {
 	    		index = $('#shadow_box').data('index') - 1;
-
 	    		if (index == -1) {
 	    			index = 0;
 	    		}
@@ -66,6 +65,17 @@ $( document ).ready(function() {
 	        	$('#shadow_box').data('index',index);
 	        	$('#shadow_buy_link').attr('href',purchase_link);
 
+	        	if (index == 0) {
+	        		$('#shadow_box_left').css('display','none');
+	        	} else {
+	        		$('#shadow_box_left').css('display','block');
+	        	}
+
+	        	if (index == $(".photo_photo" ).toArray().length - 1) {
+	        		$('#shadow_box_right').css('display','none');
+	        	} else {
+	        		$('#shadow_box_right').css('display','block');
+	        	}
 	    	}
 	    }
     });
@@ -153,7 +163,6 @@ $( document ).ready(function() {
 	    currentIndex = 0;
 	  }
 	  cycleItems();
-	  console.log(map.markers);
 	});
 
 	$('#index_nav_left_arrow').click(function() {
