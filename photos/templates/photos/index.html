@@ -28,9 +28,6 @@
 	</div>
 	<div id="index">
 		<div id="index_nav_container">
-			<!--<div class="index_nav" id="index_nav_left_arrow"><a href='#' class='slide_arrow'><</a></div>
-			<div class="index_nav" id="index_nav_year">2016</div>
-			<div class="index_nav" id="index_nav_right_arrow"><a href='#' class='slide_arrow'>></a></div>-->
 				<div id='year_form'>
 					<form action="" method="POST">
 						{{ form.as_p }}
@@ -51,6 +48,7 @@
 
 			var animating = false;
 			var position = [ '{{ photos.0.latitude }}', '{{ photos.0.longitude }}'];
+			/* photo-2 will not be visible for mobile views because the swiper gallery will be shown. */
 			if( $("#photo-2").css('display') == 'none') {
 				var mobile = true;
 			} else {

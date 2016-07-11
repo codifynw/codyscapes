@@ -27,7 +27,7 @@ Requred MVP:
 16.
 17.
 18.
-19. Take away arrows on 1 and last.
+19.
 
 Later Date:
 1. Automatic URL upload to S3
@@ -38,6 +38,7 @@ Later Date:
 6. Move map JS to own js file
 7.
 8.
+9. Refactor js (specifically indexes on shadow box)
 
 Done:
 1. Landing Page
@@ -69,3 +70,4 @@ Done:
 27. Purchase Link Logic and layout
 28. Add arrows to fullscreen images
 29. Down res static assets on home screen
+30. Take away arrows on 1 and last.
