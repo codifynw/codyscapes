@@ -5,15 +5,16 @@ $( document ).ready(function() {
 	  this.form.submit();
 	});
 
-
 	/* Show shadow box. (Desktop Only) */
 	/* var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false; */
 
 	/* Show Light Boxes */
    	$(	".photo_photo").click(function() {
 	   	index = $( ".photo_photo" ).index($(this))
+	   	console.log(index);
 	   	purchase_link = $(".photo_link").toArray()[index].href;
 	   	picture_link = $($('.photo_photo')[index]).attr("src")
+
 	   	$('#shadow_box').css('display','block');
 	   	$('#shadow_img').attr('src',picture_link);
 	   	$('#shadow_box').data('index',index);
@@ -36,7 +37,6 @@ $( document ).ready(function() {
 	   		$('#shadow_box_right').css('display','block');
 	   		$('#shadow_box_left').css('display','block');
 	   	}
-
     });
 
    	$(	".swiper_image").click(function() {
@@ -52,11 +52,10 @@ $( document ).ready(function() {
     $(document).keydown(function(e) {
     	if  ($('#shadow_box').css('display') == 'block') {
 
-	    	/* Escape */
+    		/* Escape */
 	    	if (e.keyCode == 27) {
 	    		$('#shadow_box').css('display','none');
 	    	}
-
 	    	/* Left Arrow */
 	    	if (e.keyCode == 37) {
 	    		index = $('#shadow_box').data('index') - 1;
@@ -64,7 +63,6 @@ $( document ).ready(function() {
 	    			index = 0;
 	    		}
 	    	}
-
 	    	/* Right Arrow */
 	    	if (e.keyCode == 39) {
 	    		index = $('#shadow_box').data('index') + 1;
