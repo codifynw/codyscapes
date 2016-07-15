@@ -20,23 +20,19 @@ $( document ).ready(function() {
 	   	$('#shadow_box').data('index',index);
 	   	$('#shadow_buy_link').attr('href',purchase_link);
 
+
 	   	/* Hide right arrow for first photo */
 	   	if (index == 0) {
 	   		$('#shadow_box_left').css('display','none');
 	   		$('#shadow_box_right').css('display','block');
-	   	} else {
-	   		$('#shadow_box_right').css('display','block');
-	   		$('#shadow_box_left').css('display','block');
-	   	}
-
-	   	/* Hide left arrow for last photo */
-	   	if (index == $( ".photo_photo" ).toArray().length ) {
+	   	} else if (index + 1 == $( ".photo_photo" ).toArray().length ) {
 	   		$('#shadow_box_right').css('display','none');
 	   		$('#shadow_box_left').css('display','block');
 	   	} else {
 	   		$('#shadow_box_right').css('display','block');
 	   		$('#shadow_box_left').css('display','block');
 	   	}
+
     });
 
    	$(	".swiper_image").click(function() {
