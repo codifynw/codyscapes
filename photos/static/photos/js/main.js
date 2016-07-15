@@ -9,6 +9,9 @@ $( document ).ready(function() {
 	/* var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false; */
 
 	function update_shadowbox(index, step) {
+
+		console.log(index)
+
 		if (step == 0) {
 			$('#shadow_box').css('display','block');
 			$('#shadow_img').attr('src',$($('.photo_photo')[index]).attr("src"));
@@ -36,12 +39,7 @@ $( document ).ready(function() {
     });
 
    	$(	".swiper_image").click(function() {
-	   	index = $( ".swiper_image" ).index($(this))
-	   	picture_link = $($('.swiper_image')[index]).attr("src")
-	   	$('#shadow_box').css('display','block');
-	   	$('#shadow_img').attr('src',picture_link);
-	   	$('#shadow_box').data('index',index);
-	   	$('#shadow_buy_link').attr('href',purchase_link);
+	   	update_shadowbox( $( ".swiper_image" ).index($(this)) - 1, 0 )
     });
 
     /* Move lightbox with key press */
