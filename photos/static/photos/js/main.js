@@ -8,31 +8,31 @@ $( document ).ready(function() {
 	/* Show shadow box. (Desktop Only) */
 	/* var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false; */
 
+	function update_shadowbox(index, step) {
+		if (step == 0) {
+			$('#shadow_box').css('display','block');
+			$('#shadow_img').attr('src',$($('.photo_photo')[index]).attr("src"));
+			$('#shadow_box').data('index',index);
+			$('#shadow_buy_link').attr('href',$(".photo_link").toArray()[index].href);
+		}
+
+		/* Hide right arrow for first photo */
+		if (index == 0) {
+			$('#shadow_box_left').css('display','none');
+			$('#shadow_box_right').css('display','block');
+		} else if (index + 1 == $( ".photo_photo" ).toArray().length ) {
+			$('#shadow_box_right').css('display','none');
+			$('#shadow_box_left').css('display','block');
+		} else {
+			$('#shadow_box_right').css('display','block');
+			$('#shadow_box_left').css('display','block');
+		}
+	}
+
+
 	/* Show Light Boxes */
    	$(	".photo_photo").click(function() {
-	   	index = $( ".photo_photo" ).index($(this))
-	   	console.log(index);
-	   	purchase_link = $(".photo_link").toArray()[index].href;
-	   	picture_link = $($('.photo_photo')[index]).attr("src")
-
-	   	$('#shadow_box').css('display','block');
-	   	$('#shadow_img').attr('src',picture_link);
-	   	$('#shadow_box').data('index',index);
-	   	$('#shadow_buy_link').attr('href',purchase_link);
-
-
-	   	/* Hide right arrow for first photo */
-	   	if (index == 0) {
-	   		$('#shadow_box_left').css('display','none');
-	   		$('#shadow_box_right').css('display','block');
-	   	} else if (index + 1 == $( ".photo_photo" ).toArray().length ) {
-	   		$('#shadow_box_right').css('display','none');
-	   		$('#shadow_box_left').css('display','block');
-	   	} else {
-	   		$('#shadow_box_right').css('display','block');
-	   		$('#shadow_box_left').css('display','block');
-	   	}
-
+	   	update_shadowbox( $( ".photo_photo" ).index($(this)), 0 )
     });
 
    	$(	".swiper_image").click(function() {
@@ -70,7 +70,6 @@ $( document ).ready(function() {
 	    	}
 
 	    	if ( (e.keyCode == 37) || (e.keyCode == 39) ) {
-	    		console.log(index);
 	    		picture_link = $($('.photo_photo')[index]).attr("src");
 				purchase_link = $(".photo_link").toArray()[index].href;
 
