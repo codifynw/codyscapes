@@ -55,12 +55,12 @@ html, body { margin: 0px;
 	box-sizing: border-box;
 	width: 33.333%;
 	height: 100%;
-	background-image: url("https://photos.smugmug.com/Gallery/i-93KkkBP/0/X2/verTooth-X2.jpg");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
     -moz-transition: all 3s;
     -webkit-transition: all 3s;
     transition: all 3s;
+	background-image: url("https://photos.smugmug.com/Gallery/i-93KkkBP/0/X2/verTooth-X2.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
     background-position: center center;
     border-right: solid 5px #060607;
     cursor: default;
@@ -178,7 +178,7 @@ html, body { margin: 0px;
 	background-color: rgba(0,0,0,0.4); z-index: 2;  -moz-transition: opacity 2s; -webkit-transition: opacity 2s; transition: opacity 2s;
 }
 
-.option:hover { background-size: 110% 110%; }
+/*.option:hover { background-size: 110% 110%; }*/
 .option:hover .option-shadow { opacity: 0.3; }
 /*.option:hover .option-text { top: 45%; font-size: 55px; }*/
 .option:hover .option-btn { top: 60%; top: calc(50% + 80px); opacity: 1; -webkit-transform: translate(-50%,-50%) scale(1,1); transform: translate(-50%,-50%) scale(1,1); }
