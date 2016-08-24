@@ -28,6 +28,7 @@ a:hover {
   position: relative;
 }
 #header_left {
+  height: 100%;
   display: inline-block;
   width: 50%;
   padding-left: 5%;
@@ -113,7 +114,7 @@ a:hover {
 }
 .photo {
   border-radius: 5px;
-  color: 525252;
+  color: #525252;
   background-color: rgba(255, 255, 255, 1);
   width: 100%;
   margin-top: 50px;
@@ -150,7 +151,7 @@ a:hover {
   color: white;
 }
 .purchase_link a{
-  color: white;
+  color: #585858;
   text-decoration: none;
 }
 .photo_date {
