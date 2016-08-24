@@ -1,10 +1,12 @@
 <DOCTYPE html>
 <html lang="en">
 
-	{% extends "photos/header.html" %}
+	{% include "photos/header.html" %}
 
 	{% block content %}
 	{% load staticfiles %}
+
+	<body>
 
 	<div id="googlemaps"></div>
 	<div id="shadow_box">
@@ -40,6 +42,8 @@
 			{% include "photos/includes/desktop_index.html" with photos=photos %}
 		</div>
 	</div>
+
+	</body>
 
 	<footer>
 
