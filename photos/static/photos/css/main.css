@@ -164,6 +164,7 @@ a:hover {
   text-align: center;
 }
 .photo_photo {
+  cursor: pointer;
   max-width: 95%;
   max-height: 800px;
 }

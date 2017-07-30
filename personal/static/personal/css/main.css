@@ -60,7 +60,7 @@ html, body { margin: 0px;
     transition: all 3s;
 	background-image: url("https://photos.smugmug.com/Gallery/i-93KkkBP/0/X2/verTooth-X2.jpg");
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
+	background-size: auto 100%;
     background-position: center center;
     border-right: solid 5px #060607;
     cursor: default;
@@ -75,7 +75,7 @@ html, body { margin: 0px;
 	height: 33.33%;
 	background-image: url("https://photos.smugmug.com/Gallery/i-jwxk8J6/1/XL/Lost%20ship%20fixes%2012x24-X2.jpg");
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
+	background-size: 100% auto;
     -moz-transition: all 3s;
     -webkit-transition: all 3s;
     transition: all 3s;
@@ -158,10 +158,18 @@ html, body { margin: 0px;
 }
 
 .option-text {
+	top: 65%;
+	left: 50%;
+	z-index: 3;
+	width: 100%;
+	color: white;
+	font-size: 60px;
+	position: absolute;
+	text-align: center;
 	text-align: justify;
-	position: absolute; display: inline-block; top: 65%; left: 50%; color: white; font-size: 60px; width: 100%;
-	-webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%); z-index: 3;
-	-moz-transition: all 2s; -webkit-transition: all 2s; transition: all 2s; text-align: center;
+	display: inline-block;
+	-moz-transition: all 2s; -webkit-transition: all 2s; transition: all 2s;
+	-webkit-transform: translate(-50%,-50%); transform: translate(-50%,-50%);
 }
 
 .option-btn {
@@ -183,7 +191,7 @@ html, body { margin: 0px;
 /*.option:hover .option-text { top: 45%; font-size: 55px; }*/
 .option:hover .option-btn { top: 60%; top: calc(50% + 80px); opacity: 1; -webkit-transform: translate(-50%,-50%) scale(1,1); transform: translate(-50%,-50%) scale(1,1); }
 
-.option-mobile:hover { background-size: 110% 110%; }
+.option-mobile:hover { background-size: 110% auto; }
 .option-mobile:hover .option-shadow { opacity: 0.3; }
 /*.option:hover .option-text { top: 45%; font-size: 55px; }*/
 .option-mobile:hover .option-btn { top: 60%; top: calc(50% + 80px); opacity: 1; -webkit-transform: translate(-50%,-50%) scale(1,1); transform: translate(-50%,-50%) scale(1,1); }
@@ -231,9 +239,8 @@ html, body { margin: 0px;
 }
 
 
-@media (max-width: 920px) {
+@media (max-width: 1100px) {
 	.vert_cta {
 		font-size: 40px;
 	}
 }
-
