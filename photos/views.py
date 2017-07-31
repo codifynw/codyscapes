@@ -15,7 +15,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 
 def index(request):
-	photos = Photo.objects.all().filter(visible="true").filter(date__year=2016).order_by('-date')
+	photos = Photo.objects.all().filter(visible="true").filter(date__year=2017).order_by('-date')
 	#photos = Photo.objects.all().filter(visible="true").order_by('-date')
 	form = forms.SuggestionForm()
 	if request.method == 'POST':
