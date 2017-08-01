@@ -23,6 +23,7 @@ html, body {
 }
 #header_inner {
   padding-top: 20px;
+  font-size: 20px;
   position: relative;
 }
 #header_left {
