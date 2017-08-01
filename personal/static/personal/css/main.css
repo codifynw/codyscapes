@@ -58,7 +58,7 @@ html, body { margin: 0px;
     -moz-transition: all 3s;
     -webkit-transition: all 3s;
     transition: all 3s;
-	background-image: url("https://photos.smugmug.com/Gallery/i-93KkkBP/0/X2/verTooth-X2.jpg");
+	background-image: url("https://photos.smugmug.com/Gallery/i-wX5LVLg/1/1f4e25a8/X2/5mincaroner-X2.jpg");
 	background-repeat: no-repeat;
 	background-size: auto 100%;
     background-position: center center;
@@ -73,7 +73,8 @@ html, body { margin: 0px;
 	box-sizing: border-box;
 	width: 100%;
 	height: 33.33%;
-	background-image: url("https://photos.smugmug.com/Gallery/i-jwxk8J6/1/XL/Lost%20ship%20fixes%2012x24-X2.jpg");
+	background-image: url("https://photos.smugmug.com/Gallery/i-xFn4kp3/0/1b77437d/XL/subway-XL.jpg");
+
 	background-repeat: no-repeat;
 	background-size: 100% auto;
     -moz-transition: all 3s;
@@ -85,12 +86,12 @@ html, body { margin: 0px;
 }
 
 .option-two {
-	background-image: url("https://photos.smugmug.com/Gallery/i-2M9FmVB/0/XL/Carpet%20Leaves-M.jpg");
-
+	background-image: url("https://photos.smugmug.com/Gallery/i-f7xrRvN/0/9c671c49/X2/HelensFlowers-X2.jpg");
 }
 
 .option-two-mobile {
-	background-image: url("https://photos.smugmug.com/Gallery/i-s3j5B9S/1/M/Wallowa%20Sunrise%2036x24-M.jpg");
+	background-image: url("https://photos.smugmug.com/Gallery/i-sjvj7C7/0/1c714d96/XL/DVtedSunnyStormSand-XL.jpg");
+
 
 }
 
@@ -100,8 +101,8 @@ html, body { margin: 0px;
 }
 
 .option-three-mobile {
+	background-image: url("https://photos.smugmug.com/Gallery/i-N8x27sj/0/e46a0224/XL/hamnoycopyryan-XL.jpg");
 	border-right: none;
-	background-image: url("https://photos.smugmug.com/Gallery/i-H5xxwtj/0/M/Cape%20Surfer%20Huts-M.jpg");
 }
 
 @media (min-width: 950px) {
