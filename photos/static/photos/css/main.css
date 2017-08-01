@@ -341,7 +341,7 @@ a {
 @media (max-width: 750px) {
   #index {
     width: 100%;
-    top: 40%;
+    top: 60%;
     left: 0;
     text-align: center;
     background-color: rgba(255, 255, 255, 1);
@@ -350,12 +350,12 @@ a {
   }
   #index_nav_container {
     width: 100%;
-    top: 40%;
+    top: 60%;
     border-radius: 0px;
     background-color: rgba(168,205,122,1);
   }
   #googlemaps {
-    height: 55%;
+    height: 75%;
     width: 100%;
     left: 0;
     left: 0;
