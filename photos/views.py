@@ -35,8 +35,8 @@ def dev_form(request):
 	form = forms.SuggestionForm()
 	return render(request, 'photos/index2.html', {'form': form})
 
-def photo_details(request, pk):
-	photo = Photo.objects.get(pk=pk)
+def photo_details(request, slug):
+	photo = Photo.objects.get(slug=slug)
 	return render(request, 'photos/details.html', {'photo': photo, 'key': os.environ['MAPS_KEY']})
 
 

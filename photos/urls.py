@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 #from django.contrib import admin
 
 urlpatterns = [
-	url(r'^/(?P<pk>[0-9]+)/$',views.photo_details, name="photo_details"),
+	url(r'(?P<slug>[\w-]+)$',views.photo_details, name="photo_details"),
 	url(r'dev_form', views.dev_form, name='dev_form'),
 	url(r'suggest', views.suggestion_view, name='suggest'),
 	url(r'v1/photos(?P<pk>\d+)$',
