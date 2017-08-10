@@ -9,7 +9,7 @@ class Photo(models.Model):
     latitude = models.FloatField(default=32.7833333)
     longitude = models.FloatField(default=-96.7970)
     date = models.DateTimeField()
-    caption = models.TextField(default="", blank=True)
+    caption = models.TextField(default="")
     slug = models.SlugField(default="", blank=True)
     #photo_file = models.ImageField(upload_to="photos/media/",
     #	null=False,
