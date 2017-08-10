@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	{% include "photos/header.html" %}
+
+	{% block content %}
+  <h1>{{photo.title}}</h1>
+
+  <iframe frameborder="0"
+          src="https://www.google.com/maps/embed/v1/place?key={{key}}&q=paris"
+          allowfullscreen>
+  </iframe>
+
+	{% include "personal/includes/analytics.html" %}
+	{% endblock %}
+</html>
