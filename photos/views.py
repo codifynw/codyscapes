@@ -13,6 +13,8 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404
+
 
 def index(request):
 	photos = Photo.objects.all().filter(visible="true").filter(date__year=2017).order_by('-date')
@@ -36,7 +38,7 @@ def dev_form(request):
 	return render(request, 'photos/index2.html', {'form': form})
 
 def photo_details(request, slug):
-	photo = Photo.objects.get(slug=slug)
+	photo = get_object_or_404(Photo, slug=slug)
 	return render(request, 'photos/details.html', {'photo': photo, 'key': os.environ['MAPS_KEY']})
 
 
