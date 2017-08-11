@@ -26,7 +26,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 #PASS_KEY = os.environ['PASS_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # Application definition
 

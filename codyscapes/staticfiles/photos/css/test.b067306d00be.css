@@ -1,0 +1,349 @@
+html, body {
+  background-color: rgba(0, 0, 0, 1);
+  margin: 0px;
+}
+.swiper-container {
+  display: none;
+}
+#top_header {
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  margin:0px;
+  padding:0px;
+  top:0;
+  background-color: rgba(18, 18, 18, .5);
+  color: white;
+  left: 0;
+  border-radius: 5px;
+}
+#header_inner {
+  height: 100%;
+  position: relative;
+}
+#header_left {
+  display: inline-block;
+  width: 50%;
+  padding-left: 5%;
+  float: left;
+}
+
+#lot_logo {
+  height:100%;
+}
+
+#header_right {
+  display: inline-block;
+  text-align: right;
+  padding-right: 5%;
+  width: 40%;
+  height:100%;
+  float: right;
+  margin-top: 15px;
+}
+#index {
+  top: 75px;
+  position: fixed;
+  border-radius: 25px;
+  z-index: 1;
+  width: 31%;
+  margin: auto 0;
+  color: white;
+  margin-left: 0px;
+  background-color: rgba(0,0,0,0);
+  left: 2%;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 700;
+  overflow: auto;
+  height: calc(100% - 100px);
+}
+#index_nav_container {
+  top: 75px;
+  position:fixed;
+  border-radius: 25px;
+  display: block;
+  width: 31%;
+  height: 40px;
+  background-color: rgba(181,202,133,1);
+  opacity: 1;
+  text-align: center;
+  padding-top: 0px;
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 700;
+  z-index: 10;
+}
+#googlemaps {
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.photo_container {
+  position: relative;
+  z-index: 1;
+  height: auto;
+}
+.photo {
+  border-radius: 25px;
+  background-color: rgba(132, 132, 132, .5);
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: -30px;
+  padding-bottom: 25px;
+}
+#header_right {
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+}
+.index_nav {
+  display: inline-block;
+  top: 25%;
+  position: relative;
+}
+#index_nav_left_arrow {
+  width: 15%;
+}
+#index_nav_right_arrow {
+  width: 15%;
+}
+#index_nav_year {
+  width: 60%;
+}
+.slide_arrow {
+  display: none;
+}
+.photo_title {
+  font-size: 20px;
+  text-align: center;
+}
+.purchase_link {
+  color: white;
+}
+.purchase_link a{
+  color: white;
+  text-decoration: none;
+}
+.photo_date {
+  font-size: 11px;
+  text-align: center;
+}
+.photo_location {
+  font-size: 11px;
+  text-align: center;
+}
+.photo_photo {
+  width: 95%;
+}
+
+.purchase_link {
+  text-align: center;
+  font-size: 10px;
+}
+
+.photo_holder {
+  padding-top: 15px;
+  text-align: center;
+}
+a:visited {
+  color: white;
+}
+.nav_link {
+  color: white;
+}
+
+a:hover {
+  color: rgba(181,202,133,1);
+}
+
+#photo-buffer {
+  padding-top: 50px;
+  height: 200px;
+  text-align: middle;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#social_media_icons_container {
+  margin-top: 100px;
+  text-align: center;
+}
+.social_media_icon {
+  display: inline-block;
+  width: 30%;
+}
+@media (max-width: 750px) {
+  #index {
+    width: 100%;
+    top: 40%;
+    left: 0;
+    text-align: center;
+    background-color: rgba(100, 100, 100, 1);
+    height: 60%;
+    border-radius: 0px;
+  }
+  #index_nav_container {
+    width: 100%;
+    top: 40%;
+    border-radius: 0px;
+  }
+  #googlemaps {
+    height: 45%;
+    width: 100%;
+    left: 0;
+    left: 0;
+    z-index: 0;
+  }
+  #top_header {
+    margin-left: 0;
+    left: 0;
+    border-radius: 0px;
+    width: 100%;
+    background-color: rgba(132, 132, 132, 1);
+  }
+  .photo {
+    display: inline-block;
+    width: 90%;
+    left: 5%;
+    background-color: rgba(70, 70, 70, 1);
+  }
+}
+
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    .desktop_container {
+      display: none;
+    }
+    #index {
+      width: 100%;
+      top: 38%;
+      left: 0;
+      text-align: center;
+      background-color: rgba(100, 100, 100, 1);
+      height: 60%;
+      overflow: hidden;
+      border-radius: 0px;
+    }
+    #index_nav_container {
+      width: 100%;
+      top: 38%;
+      border-radius: 0px;
+      height: 80px;
+    }
+    #googlemaps {
+      height: 45%;
+      width: 105%;
+      left: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .photo_title {
+      font-size: 30px;
+    }
+    .photo_date {
+      font-size: 20px;
+    }
+    #index_nav_year {
+      font-size: 40px;
+    }
+    #top_header {
+      margin-left: 0;
+      left: 0;
+      height: 80px;
+      border-radius: 0px;
+      width: 100%;
+      background-color: rgba(132, 132, 132, 1);
+    }
+    .slide_arrow {
+      display: inline-block;
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+    }
+    .slide_arrow :hover {
+      text-decoration: none;
+    }
+    .slide_arrow :visited {
+      color: white;
+    }
+    .photo {
+      display: none;
+      height: 90%;
+      margin-top: 100px;
+      left: 5%;
+      background-color: rgba(70, 70, 70, 1);
+    }
+    #photo-1 {
+      display: inline-block;
+    }
+    .photo_photo {
+      width: auto;
+    }
+    .swiper-container {
+      display: block;
+      padding-top: 40px;
+      width: 100%;
+      margin: 20px auto;
+    }
+    .swiper-slide {
+        height: 100%;
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        width: 60%;
+        border-radius: 25px;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        background-color: rgba(132, 132, 132, .5);
+    }
+    .swiper-slide:nth-child(2n) {
+        width: 40%;
+    }
+    .swiper-slide:nth-child(3n) {
+        width: 20%;
+    }
+    .swiper_image {
+        max-width:90%; max-height:90%;
+    }
+}
+
+
+/* Disabling for now */
+#index_nav_left_arrow {
+  display: none;
+}
+#index_nav_right_arrow {
+  display: none;
+}

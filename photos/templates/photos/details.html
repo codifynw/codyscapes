@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  {% include "photos/header.html" %}
+  {% include "photos/details-head.html" %}
 
   {% block content %}
-    <body>
-      <div id="container">
-        <h1>{{photo.title}}</h1>
+  {% load staticfiles %}
 
-        {% if photo.isphoto %}
-          <img class='photo_photo' src="{{photo.url}}">
-        {% else %}
-          <div class="videoWrapper">
-            <iframe width="300" height="169" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>
+    <body>
+      <div id="details-container">
+
+        <div id="feature">
+          {% if photo.isphoto %}
+            <img class='photo_photo' src="{{photo.url}}">
+          {% else %}
+            <div class="videoWrapper">
+              <iframe width="300" height="169" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>
+            </div>
+          {% endif %}
+        </div>
+
+        <div id="info">
+          <div id="flex-left">
+            <h1>{{photo.title}}</h1>
+            <p>{{photo.caption}}</p>
+            <p>Taken: {{photo.date}}</p>
+            <a class='photo_link' href='{{photo.purchase_link}}' target="_blank">Buy this photo</a>
           </div>
-        {% endif %}
-        <iframe frameborder="0"
-                src="https://www.google.com/maps/embed/v1/place?key={{key}}&q={{photo.latitude}},{{photo.longitude}}"
-                allowfullscreen>
-        </iframe>
+          <div id="flex-right">
+            <div id="googlemaps"></div>
+            <iframe frameborder="0"
+                    src="https://www.google.com/maps/embed/v1/place?key={{key}}&q={{photo.latitude}},{{photo.longitude}}"
+                    allowfullscreen>
+            </iframe>
+          </div>
+        </div>
       </div>
     </body>
   {% endblock %}

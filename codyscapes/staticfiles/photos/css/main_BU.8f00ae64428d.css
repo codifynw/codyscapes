@@ -1,0 +1,146 @@
+#top_header {
+  z-index: 2;
+  position: fixed;
+  width: 95%;
+  height: 50px;
+  margin:0px;
+  margin-left: -8px;
+  padding:0px;
+  top:0;
+  background-color: rgba(132, 132, 132, 1);
+  color: white;
+  left: 2.5%;
+  border-radius: 25px;
+}
+
+#header_inner {
+  height: 100%;
+  position: relative;
+}
+
+#header_left {
+  display: inline-block;
+  width: 50%;
+  padding-left: 5%;
+  float: left;
+}
+
+#lot_logo {
+  height:100%;
+}
+
+#header_right {
+  display: inline-block;
+  text-align: right;
+  padding-right: 5%;
+  width: 40%;
+  height:100%;
+  float: right;
+  margin-top: 15px;
+}
+
+#index {
+  position: fixed;
+  border-radius: 25px;
+  z-index: 1;
+  width: 31%;
+  margin: 60px auto 0;
+  padding: 10px;
+  background-color: rgba(132, 132, 132, 1);
+  height: auto;
+  color: white;
+  margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  max-height: 80vh;
+  overflow: auto;
+  left: 2%;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 700;
+}
+
+#index_nav {
+  position:fixed;
+  border-radius: 25px;
+  display: block;
+  width: 32.4%;
+  height: 40px;
+  /*background-color: rgba(64,4,132,1);*/
+  background-color: rgba(181,202,133,1);
+  opacity: 1;
+  text-align: center;
+  margin-top: -10px;
+  margin-right: -6px;
+  margin-left: -9px;
+  padding-top: 0px;
+  color: white;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 700;
+}
+
+#index_nav_year {
+  height:100%;
+  /* Internet Explorer 10 */
+  display:-ms-flexbox;
+  -ms-flex-pack:center;
+  -ms-flex-align:center;
+  /* Firefox */
+  display:-moz-box;
+  -moz-box-pack:center;
+  -moz-box-align:center;
+  /* Safari, Opera, and Chrome */
+  display:-webkit-box;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+  /* W3C */
+  display:box;
+  box-pack:center;
+  box-align:center;
+}
+
+.photo_title {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.photo_date {
+  font-size: 11px;
+  text-align: center;
+}
+
+#googlemaps {
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.photo_photo {
+  width: 300px;
+}
+
+.photo_holder {
+  padding-top: 15px;
+  text-align: center;
+}
+
+a:visited {
+  color: white;
+}
+
+.nav_link {
+  color: white;
+}
+
+a:hover {
+  color: rgba(181,202,133,1);
+}
+
+
+
+
+
