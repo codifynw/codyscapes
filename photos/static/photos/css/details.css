@@ -40,7 +40,7 @@ html, body {
   width: 60%;
 }
 
-#flext-left p {
+#flex-left p {
   padding-right: 50px
 }
 
@@ -52,6 +52,12 @@ html, body {
   width: 100%;
   margin-top: 20px;
   height: 90%;
+}
+
+footer {
+  height: 75px;
+  margin-top: 50px;
+  background-color: rgba(21,21,23,1);
 }
 
 
@@ -74,7 +80,7 @@ html, body {
       min-height: 300px;
     }
 
-    #flext-left p {
+    #flex-left p {
       padding-right: 0px
     }
 }
