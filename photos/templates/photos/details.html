@@ -3,21 +3,24 @@
   {% include "photos/header.html" %}
 
   {% block content %}
-    <h1>{{photo.title}}</h1>
+    <body>
+      <div id="container">
+        <h1>{{photo.title}}</h1>
 
-    {% if photo.isphoto %}
-      <img class='photo_photo' src="{{photo.url}}">
-    {% else %}
-      <div class="videoWrapper">
-        <iframe width="300" height="169" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>
+        {% if photo.isphoto %}
+          <img class='photo_photo' src="{{photo.url}}">
+        {% else %}
+          <div class="videoWrapper">
+            <iframe width="300" height="169" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>
+          </div>
+        {% endif %}
+        <iframe frameborder="0"
+                src="https://www.google.com/maps/embed/v1/place?key={{key}}&q={{photo.latitude}},{{photo.longitude}}"
+                allowfullscreen>
+        </iframe>
       </div>
-    {% endif %}
-
-    <iframe frameborder="0"
-            src="https://www.google.com/maps/embed/v1/place?key={{key}}&q={{photo.latitude}},{{photo.longitude}}"
-            allowfullscreen>
-    </iframe>
-
-    {% include "personal/includes/analytics.html" %}
+    </body>
   {% endblock %}
+
+  {% include "personal/includes/analytics.html" %}
 </html>
