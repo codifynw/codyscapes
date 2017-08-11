@@ -182,6 +182,9 @@ a:visited {
   padding: 0px 15px;
   vertical-align: top;
 }
+a.nav_link:hover {
+  color: #b6de84;
+}
 a.nav_link:visited {
     color: white;
     display: none;
@@ -512,4 +515,9 @@ a {
 }
 #index_nav_right_arrow {
   display: none;
+}
+
+
+a.nav_link:hover {
+  color: #b6de84;
 }
