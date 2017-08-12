@@ -496,6 +496,15 @@ a {
     .swiper_image {
         max-width:95%; max-height:80%;
     }
+    .swiper-title {
+      width: 100%;
+      font-size: 48px;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      color: white;
+      transform: translate(-50%,-50%);
+    }
     #year_form select {
       font-size: 40px;
     }

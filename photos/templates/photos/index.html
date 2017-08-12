@@ -6,28 +6,27 @@
 	{% load staticfiles %}
 
 	<body>
-
-	<div id="googlemaps" style=></div>
-	<div id="shadow_box">
-		<div id='shadow_x'>
-			x
-		</div>
-		<div class='shadow_arrow' id='shadow_box_left'>
-			<div class='shadow_inner'>
-				<
+		<div id="googlemaps"></div>
+		<div id="shadow_box">
+			<div id='shadow_x'>
+				x
+			</div>
+			<div class='shadow_arrow' id='shadow_box_left'>
+				<div class='shadow_inner'>
+					<
+				</div>
+			</div>
+			<img id='shadow_img' src='{{photos.0.url}}'></img>
+			<div class='shadow_arrow' id='shadow_box_right'>
+				<div class='shadow_inner' id='shadow_inner_right'>
+					>
+				</div>
+			</div>
+			<div id='shadow_buy'>
+				<a id='shadow_buy_link' target='_blank' href=''>Buy Print</a>
 			</div>
 		</div>
-		<img id='shadow_img' src='{{photos.0.url}}'></img>
-		<div class='shadow_arrow' id='shadow_box_right'>
-			<div class='shadow_inner' id='shadow_inner_right'>
-				>
-			</div>
-		</div>
-		<div id='shadow_buy'>
-			<a id='shadow_buy_link' target='_blank' href=''>Buy Print</a>
-		</div>
-	</div>
-	<div id="index">
+		<div id="index">
 		<div id="index_nav_container">
 				<div id='year_form'>
 					<form action="" method="POST">
@@ -41,7 +40,6 @@
 			{% include "photos/includes/desktop_index.html" with photos=photos %}
 		</div>
 	</div>
-
 	</body>
 
 	<footer>
@@ -204,7 +202,7 @@
 			    	google.maps.event.addListener(marker,'click', (function(marker){
 		    	        return function() {
 
-		    	        	var scroll_time = 650
+  	        	var scroll_time = 650
 							var child = $('#photo-' + marker.description);
 							var parent = $('#index');
 
