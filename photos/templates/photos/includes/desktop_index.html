@@ -4,7 +4,7 @@
 	{% for photo in photos %}
 		<div class='photo' id='photo-{{ forloop.counter }}'>
 			<div class='photo_title'>
-				<div id='{{photo.title}}_{{photo.id}}'>{{photo.title}}</div>
+				<div id='{{photo.title}}_{{photo.id}}'><a href="/photos/{{photo.slug}}">{{photo.title}}</a></div>
 			</div>
 			<div class='photo_date'>
 				{{photo.location_string}}

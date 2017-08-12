@@ -10,7 +10,7 @@
 
         <div id="feature">
           {% if photo.isphoto %}
-            <img class='photo_photo' src="{{photo.url}}">
+            <img src="{{photo.url}}">
           {% else %}
             <div class="videoWrapper">
               <iframe width="300" height="169" src="{{photo.url}}" frameborder="0" allowfullscreen></iframe>
@@ -26,18 +26,25 @@
             <a class='photo_link' href='{{photo.purchase_link}}' target="_blank">Buy this photo</a>
           </div>
           <div id="flex-right">
-            <div id="googlemaps"></div>
             <iframe frameborder="0"
                     src="https://www.google.com/maps/embed/v1/place?key={{key}}&q={{photo.latitude}},{{photo.longitude}}"
                     allowfullscreen>
             </iframe>
+            <!-- <div id="googlemaps"></div> -->
+
           </div>
         </div>
       </div>
+
+      <div id="date-nav">
+
+      </div>
+
     </body>
 
-    <footer>
 
+
+    <footer>
     </footer>
   {% endblock %}
 

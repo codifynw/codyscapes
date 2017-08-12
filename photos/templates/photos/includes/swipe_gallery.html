@@ -7,6 +7,9 @@
             {% if photo.isphoto %}
                 <div class="swiper-slide">
                     <img class='swiper_image' src="{{photo.url}}">
+                    <div style="font-size: 48px; position: absolute; top: 80%; color: white;" id="swiper-title">
+                      <a style="color: white !important" href="/photos/{{photo.slug}}">{{photo.title}}</a>
+                    </div>
                 </div>
             {% else %}
                 <div class="swiper-slide">

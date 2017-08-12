@@ -10,7 +10,6 @@ html, body {
   width: 100%;
   background-color: #f3f5f6;
   margin: 50px auto 0px;
-  margin-top: 50px;
   min-height: 100vh;
 }
 
@@ -18,15 +17,34 @@ html, body {
   color: #464646;
 }
 
+#details-container h1 {
+  font-size: 2.7vw;
+}
+
+#details-container p, a {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+#details-container a:hover {
+  cursor: pointer;
+}
+
+
 #feature {
   padding: 20px 0px;
-  background-color: #1f1f21;
+  /*background-color: #1f1f21;*/
+  background-color: #3a3a3a;
   width: 100%;
   text-align: center;
+  height: 100%;
+  min-height: 40vh;
 }
 
 #feature img {
-  max-height: 65vh;
+  height: 90%;
+  max-height: 40vh;
 }
 
 #info {
@@ -62,6 +80,7 @@ footer {
 
 
 
+/*TABLET*/
 @media (max-width: 750px) {
     #info {
       flex-direction: column;
@@ -75,18 +94,28 @@ footer {
       width: 90%;
       margin: 0 auto;
     }
-
-    #flex-right iframe {
-      min-height: 300px;
+    #flex-right {
+      min-height: 30vh;
     }
-
+    #flex-left {
+      margin-bottom: 30px;
+    }
     #flex-left p {
       padding-right: 0px
+    }
+    #flex-right iframe {
+      min-height: 30vh;
+    }
+    #details-container h1 {
+      font-size: 5vw;
+    }
+    #details-container p, a {
+      font-size: 3vw;
     }
 }
 
 
-
+/*MOBILE*/
 @media only screen
   and (min-device-width: 320px)
   and (max-device-width: 480px)
@@ -95,22 +124,30 @@ footer {
     #info {
       flex-direction: column;
     }
-
     #details-container h1 {
       text-align: center;
     }
-
     #flex-left, #flex-right {
       width: 90%;
       margin: 0 auto;
     }
-
-    #flex-right iframe {
-      min-height: 300px;
+    #flex-right {
+      min-height: 30vh;
     }
-
-    #flext-left p {
+    #flex-left {
+      margin-bottom: 30px;
+    }
+    #flex-right iframe {
+      min-height: 30vh;
+    }
+    #flex-left p {
       padding-right: 0px
+    }
+    #details-container h1 {
+      font-size: 6vw;
+    }
+    #details-container p, a {
+      font-size: 4vw;
     }
 
 }
