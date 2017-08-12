@@ -39,7 +39,9 @@ def dev_form(request):
 
 def photo_details(request, slug):
 	photo = get_object_or_404(Photo, slug=slug)
-	return render(request, 'photos/details.html', {'photo': photo, 'key': os.environ['MAPS_KEY']})
+	next_photo = photo.get_next_by_date()
+	prev_photo = photo.get_previous_by_date()
+	return render(request, 'photos/details.html', {'photo': photo,'next_photo': next_photo,'prev_photo': prev_photo, 'key': os.environ['MAPS_KEY']})
 
 
 def suggestion_view(request):
