@@ -430,7 +430,6 @@ a {
     #top_header {
       margin-left: 0;
       left: 0;
-      height: 80px;
       border-radius: 0px;
       width: 100%;
       background-color: rgba(18, 18, 18, .8);
@@ -509,10 +508,10 @@ a {
       font-size: 40px;
     }
     .nav_link {
-      font-size: 38px;
+      font-size: 18px;
     }
     .divider {
-      font-size: 45px;
+      /*font-size: 45px;*/
     }
 
 }
@@ -530,3 +529,7 @@ a {
 a.nav_link:hover {
   color: #b6de84;
 }
+
+
+
+/*and min(min-width: 700px) and (orientation: landscape) */
