@@ -2,9 +2,11 @@
 <html lang="en">
   {% include "photos/details-head.html" %}
   <meta name=viewport content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre" rel="stylesheet">
 
   {% block content %}
   {% load staticfiles %}
+
 
     <body>
       <div id="details-container">
@@ -37,12 +39,12 @@
       </div>
 
       <div id="date-nav">
-        <div id="nav-flex">
           <div class="nav-flexes" id="nav-previous">
-            <div class="flex-title"><a href="/photos/{{prev_photo.slug}}">Previous Photo</a></div>
-            <div class="flex-date">{{prev_photo.date}}</div>
+            <div class="flex-title"><a href="/photos/{{prev_photo.slug}}">Previous</a></div>
+            <div class="flex-date">{{prev_photo.date|date:"M d Y"}}</div>
+            <!-- <div class="flex-date flex-time">{{prev_photo.date|time:"h:i A"}}</div> -->
             {% if prev_photo.isphoto %}
-              <img src="{{prev_photo.url}}">
+              <a href="/photos/{{prev_photo.slug}}"><img src="{{prev_photo.url}}"></a>
             {% else %}
               <div class="videoWrapper">
                 <iframe width="300" height="169" src="{{prev_photo.url}}" frameborder="0" allowfullscreen></iframe>
@@ -51,7 +53,8 @@
           </div>
           <div class="nav-flexes" id="nav-current">
             <div class="flex-title">This Photo</div>
-            <div class="flex-date">{{photo.date}}</div>
+            <div class="flex-date">{{photo.date|date:"M d Y"}}</div>
+            <!-- <div class="flex-date flex-time">{{photo.date|time:"h:i A"}}</div> -->
             {% if photo.isphoto %}
               <img src="{{photo.url}}">
             {% else %}
@@ -61,18 +64,18 @@
             {% endif %}
           </div>
           <div class="nav-flexes" id="nav-next">
-            <div class="flex-title"><a href="/photos/{{next_photo.slug}}">Next Photo</a></div>
-            <div class="flex-date">{{next_photo.date|date:"m-d-Y"}}</div>
-            <div class="flex-date flex-time">{{next_photo.date|time:"H:i A"}}</div>
+            <div class="flex-title"><a href="/photos/{{next_photo.slug}}">Next</a></div>
+            <div class="flex-date">{{next_photo.date|date:"M d Y"}}</div>
+            <!-- <div class="flex-date flex-time">{{next_photo.date|time:"h:i A"}}</div> -->
             {% if next_photo.isphoto %}
-              <img src="{{next_photo.url}}">
+              <a href="/photos/{{next_photo.slug}}"><img src="{{next_photo.url}}"></a>
             {% else %}
               <div class="videoWrapper">
                 <iframe width="300" height="169" src="{{next_photo.url}}" frameborder="0" allowfullscreen></iframe>
               </div>
             {% endif %}
           </div>
-        </div>
+
       </div>
 
     </body>
@@ -83,5 +86,6 @@
     </footer>
   {% endblock %}
 
+  <script src="{% static 'photos/js/details.js' %}"></script>
   {% include "personal/includes/analytics.html" %}
 </html>
