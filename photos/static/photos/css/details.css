@@ -5,6 +5,9 @@ html, body {
   background-color: #f3f5f6;
   font-family: 'Averia Serif Libre', cursive;
 }
+div, img {
+  transition: all 0.9s ease;
+}
 
 #top_header {
   background-color: rgba(21,21,23,1);
@@ -145,7 +148,7 @@ html, body {
   width: 100%;
   min-height: 40vh;
 }
-.timeline-bar {
+#timeline .timeline-bar {
   border-bottom: 11px solid #b6de84;
   position: absolute;
   top: 110px;
@@ -172,13 +175,16 @@ html, body {
   background: #b6de84;
 }
 #timeline-flex-container .timeline-inner-circle {
-  top: 102px;
+  left: 50%;
+  top: 50%;
   width: 25px;
   height: 25px;
   border-radius: 50%;
+  position: absolute;
   background: #3a3a3a;
+  transform: translate(-50%,-50%);
 }
-#timeline-flex-container .middle-align {
+#timeline-flex-container .middle-to-left {
   left: 50%;
   position: absolute;
   transform: translate(-50%,0%);
@@ -202,19 +208,72 @@ html, body {
 #timeline-flex-container #flex-previous .flex-date, #timeline-flex-container #flex-next .flex-date {
   font-size: 1.1em;
 }
-}
 #timeline-flex-container #flex-previous .flex-time, #timeline-flex-container #flex-next .flex-time {
   font-size: 0.9em;
 }
 
 /* END TIMELINE*/
-
-
 footer {
   height: 75px;
   margin-top: 50px;
   background-color: rgba(21,21,23,1);
 }
+
+
+
+
+
+/* TIMELINE 900PX FIX*/
+@media (max-width: 900px) {
+  #timeline-flex-container .timeline-flex img {
+    top: 68%;
+  }
+}
+
+
+
+/*TIMELINE 750px behavior*/
+@media (max-width: 750px) {
+  #timeline-flex-container {
+    flex-direction: column;
+  }
+  #timeline .timeline-bar {
+    height: 100%;
+    top: 0px;
+    left: 40%;
+    border-left: 11px solid #b6de84;
+    border-bottom: none;
+  }
+  #timeline-flex-container .timeline-flex {
+    width: 100%;
+    text-align: left;
+  }
+  #timeline-flex-container .middle-to-left {
+    top: auto;
+    left: 40%;
+  }
+  #timeline-flex-container .timeline-circle {
+    top: 50%;
+    transform: translate(-40%,-50%);
+  }
+  #timeline-flex-container .flex-text {
+    top: 50%;
+    left: 8px;
+    position: absolute;
+    transform: translate(0,-50%);
+  }
+  #timeline-flex-container .timeline-flex img {
+    left: 78%;
+    max-height: 75%;
+    max-width: 65%;
+    top: 50%;
+  }
+}
+
+
+
+
+
 
 
 

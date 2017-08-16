@@ -85,12 +85,15 @@
         <div class="timeline-bar"></div>
         <div id="timeline-flex-container">
           <div class="timeline-flex" id="flex-previous">
-            <div class="timeline-circle middle-align"></div>
-            <div class="timeline-inner-circle middle-align"></div>
-            <a href="/photos/{{prev_photo.slug}}">
-              <div class="flex-date">{{prev_photo.date|date:"M d Y"}}</div>
-              <div class="flex-time">{{prev_photo.date|time:"h:i A"}}</div>
-            </a>
+            <div class="timeline-circle middle-to-left">
+              <div class="timeline-inner-circle"></div>
+            </div>
+            <div class="flex-text">
+              <a href="/photos/{{prev_photo.slug}}">
+                <div class="flex-date">{{prev_photo.date|date:"M d Y"}}</div>
+                <div class="flex-time">{{prev_photo.date|time:"h:i A"}}</div>
+              </a>
+            </div>
             {% if prev_photo.isphoto %}
               <a href="/photos/{{prev_photo.slug}}"><img src="{{prev_photo.url}}"></a>
             {% else %}
@@ -100,10 +103,13 @@
             {% endif %}
           </div>
           <div class="timeline-flex">
-            <div class="timeline-circle middle-align"></div>
-            <div class="timeline-inner-circle middle-align"></div>
-            <div class="flex-date">{{prev_photo.date|date:"M d Y"}}</div>
-            <div class="flex-date flex-time">{{prev_photo.date|time:"h:i A"}}</div>
+            <div class="timeline-circle middle-to-left">
+              <div class="timeline-inner-circle"></div>
+            </div>
+            <div class="flex-text">
+              <div class="flex-date">{{prev_photo.date|date:"M d Y"}}</div>
+              <div class="flex-date flex-time">{{prev_photo.date|time:"h:i A"}}</div>
+            </div>
             {% if photo.isphoto %}
               <img src="{{photo.url}}">
             {% else %}
@@ -113,12 +119,15 @@
             {% endif %}
           </div>
           <div class="timeline-flex" id="flex-next">
-            <div class="timeline-circle middle-align"></div>
-            <div class="timeline-inner-circle middle-align"></div>
-            <a href="/photos/{{next_photo.slug}}">
-              <div class="flex-date">{{next_photo.date|date:"M d Y"}}</div>
-              <div class="flex-time">{{next_photo.date|time:"h:i A"}}</div>
-            </a>
+            <div class="timeline-circle middle-to-left">
+              <div class="timeline-inner-circle"></div>
+            </div>
+            <div class="flex-text">
+              <a href="/photos/{{next_photo.slug}}">
+                <div class="flex-date">{{next_photo.date|date:"M d Y"}}</div>
+                <div class="flex-time">{{next_photo.date|time:"h:i A"}}</div>
+              </a>
+            </div>
             {% if next_photo.isphoto %}
               <a href="/photos/{{next_photo.slug}}"><img src="{{next_photo.url}}"></a>
             {% else %}
