@@ -17,21 +17,21 @@ html, body {
   min-height: 100vh;
 }
 
-#details-container h1, p {
+#info h1, p {
   color: #464646;
 }
 
-#details-container p, a {
+#info p, a {
   font-weight: 500;
   font-size: 18px;
   line-height: 1.4;
 }
 
-#details-container a {
+#info a {
   font-weight: 800;
 }
 
-#details-container a:hover {
+#info a:hover {
   cursor: pointer;
   color: #b6de84;
 }
@@ -94,20 +94,20 @@ html, body {
   padding: 15px 0px;
   position: relative;
   text-align: center;
-  padding-bottom: 40%;
+  padding-bottom: 35%;
 }
 
 #date-nav .nav-flexes .flex-date {
   color: white;
   position: absolute;
-  bottom: 2%;
+  bottom: 8%;
   left: 50%;
   white-space: nowrap;
   transform: translate(-50%, 0%);
 }
 
 #date-nav .nav-flexes .flex-time {
-  bottom: -10%;
+  bottom: 3%;
 }
 #date-nav .nav-flexes .flex-title {
   color: white;
@@ -135,6 +135,81 @@ html, body {
   transform: translate(-50%,-50%);
 }
 
+
+
+
+/*TIMELINE*/
+#timeline {
+  position: relative;
+  background-color: #3a3a3a;
+  width: 100%;
+  min-height: 40vh;
+}
+.timeline-bar {
+  border-bottom: 11px solid #b6de84;
+  position: absolute;
+  top: 110px;
+  width: 100%;
+}
+#timeline-flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+#timeline-flex-container .timeline-flex {
+  color: white;
+  width: 33.3333%;
+  padding: 15px 0px;
+  position: relative;
+  text-align: center;
+  padding-bottom: 35%;
+}
+#timeline-flex-container .timeline-circle {
+  top: 90px;
+	width: 50px;
+	height: 50px;
+  position: absolute;
+  border-radius: 50%;
+  background: #b6de84;
+}
+#timeline-flex-container .timeline-inner-circle {
+  top: 102px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #3a3a3a;
+}
+#timeline-flex-container .middle-align {
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,0%);
+}
+#timeline-flex-container .timeline-flex img {
+  top: 62%;
+  left: 50%;
+  max-width: 80%;
+  max-height: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+}
+#timeline-flex-container .flex-date {
+  color: white;
+  font-size: 1.5em;
+}
+#timeline-flex-container .flex-time {
+  color: white;
+  font-size: 1.1em;
+}
+#timeline-flex-container #flex-previous .flex-date, #timeline-flex-container #flex-next .flex-date {
+  font-size: 1.1em;
+}
+}
+#timeline-flex-container #flex-previous .flex-time, #timeline-flex-container #flex-next .flex-time {
+  font-size: 0.9em;
+}
+
+/* END TIMELINE*/
+
+
 footer {
   height: 75px;
   margin-top: 50px;
@@ -148,7 +223,7 @@ footer {
     #info {
       flex-direction: column;
     }
-    #details-container h1 {
+    #info h1 {
       text-align: center;
     }
     #flex-left, #flex-right {
@@ -177,6 +252,7 @@ footer {
       padding-left: 5px;
       padding-right: 5px;
       text-align: left;
+      padding-bottom: 45%;
     }
     #date-nav .nav-flexes .flex-title {
       display: none;
@@ -191,10 +267,14 @@ footer {
     }
     #date-nav .nav-flexes .flex-date {
       top: 50%;
-      left: 0px;
+      left: 10px;
       bottom: auto;
       color: white;
       transform: translate(0,-50%);
+    }
+    #date-nav .nav-flexes #nav-previous img {
+      max-width: 75%;
+      max-height: 50%;
     }
 }
 
@@ -208,7 +288,7 @@ footer {
     #info {
       flex-direction: column;
     }
-    #details-container h1 {
+    #info h1 {
       text-align: center;
     }
     #flex-left, #flex-right {
