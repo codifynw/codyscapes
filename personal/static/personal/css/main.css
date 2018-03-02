@@ -60,10 +60,10 @@ html, body { margin: 0px;
     transition: all 3s;
 	background-image: url("https://photos.smugmug.com/Gallery/i-wX5LVLg/1/1f4e25a8/X2/5mincaroner-X2.jpg");
 	background-repeat: no-repeat;
-	background-size: auto 100%;
-    background-position: center center;
-    border-right: solid 5px #060607;
-    cursor: default;
+  background-position: center center;
+  border-right: solid 5px #060607;
+  cursor: default;
+  background-size: cover;
 }
 
 .option-mobile {
@@ -190,7 +190,7 @@ html, body { margin: 0px;
 /*.option:hover .option-text { top: 45%; font-size: 55px; }*/
 .option:hover .option-btn { top: 60%; top: calc(50% + 80px); opacity: 1; -webkit-transform: translate(-50%,-50%) scale(1,1); transform: translate(-50%,-50%) scale(1,1); }
 
-.option-mobile:hover { background-size: 110% auto; }
+/*.option-mobile:hover { background-size: 110% auto; }*/
 .option-mobile:hover .option-shadow { opacity: 0.3; }
 /*.option:hover .option-text { top: 45%; font-size: 55px; }*/
 .option-mobile:hover .option-btn { top: 60%; top: calc(50% + 80px); opacity: 1; -webkit-transform: translate(-50%,-50%) scale(1,1); transform: translate(-50%,-50%) scale(1,1); }
