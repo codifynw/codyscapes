@@ -1,0 +1,370 @@
+html, body {
+  font-size: 1em;
+  line-height: 1.4;
+  box-sizing: border-box;
+  background-color: #f3f5f6;
+  font-family: 'Averia Serif Libre', cursive;
+}
+div, img {
+  transition: all 0.9s ease;
+}
+
+#top_header {
+  background-color: rgba(21,21,23,1);
+}
+
+#details-container {
+  width: 100%;
+  background-color: #f3f5f6;
+  margin: 50px auto 0px;
+  min-height: 100vh;
+}
+
+#info h1, p {
+  color: #464646;
+}
+
+#info p, a {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+#info a {
+  font-weight: 800;
+}
+
+#info a:hover {
+  cursor: pointer;
+  color: #b6de84;
+}
+
+
+#feature {
+  padding: 20px 0px;
+  background-color: #3a3a3a;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  position: relative;
+  min-height: 60vh;
+}
+
+#feature img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 95%;
+  max-height: 92%;
+  transform: translate(-50%,-50%);
+}
+
+#info {
+  display: flex;
+  margin: 0 auto;
+  min-height: 300px;
+  max-width: 1000px;
+  padding: 0px 10px 30px;
+}
+
+#flex-left {
+  width: 60%;
+}
+
+#flex-left p {
+  padding-right: 50px
+}
+
+#flex-right {
+  width: 40%;
+}
+
+#flex-right iframe {
+  width: 100%;
+  margin-top: 20px;
+  height: 90%;
+}
+
+#date-nav {
+  display: flex;
+  background-color: #3a3a3a;
+  width: 100%;
+  min-height: 40vh;
+}
+
+#date-nav .nav-flexes {
+  width: 33.33%;
+  padding: 15px 0px;
+  position: relative;
+  text-align: center;
+  padding-bottom: 35%;
+}
+
+#date-nav .nav-flexes .flex-date {
+  color: white;
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  white-space: nowrap;
+  transform: translate(-50%, 0%);
+}
+
+#date-nav .nav-flexes .flex-time {
+  bottom: 3%;
+}
+#date-nav .nav-flexes .flex-title {
+  color: white;
+}
+
+#date-nav .nav-flexes .flex-title a {
+  color: #fff;
+}
+
+#date-nav .nav-flexes .flex-title a:hover {
+  color: #b6de84;
+  cursor: pointer;
+}
+
+#nav-current {
+  font-size: 1.3em;
+}
+
+#date-nav .nav-flexes img {
+  top: 50%;
+  left: 50%;
+  max-width: 90%;
+  max-height: 60%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+}
+
+
+
+
+/*TIMELINE*/
+#timeline {
+  position: relative;
+  background-color: #3a3a3a;
+  width: 100%;
+  min-height: 40vh;
+}
+#timeline .timeline-bar {
+  border-bottom: 11px solid #b6de84;
+  position: absolute;
+  top: 110px;
+  width: 100%;
+}
+#timeline-flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+#timeline-flex-container .timeline-flex {
+  color: white;
+  width: 33.3333%;
+  padding: 15px 0px;
+  position: relative;
+  text-align: center;
+  padding-bottom: 35%;
+}
+#timeline-flex-container .timeline-circle {
+  top: 90px;
+	width: 50px;
+	height: 50px;
+  position: absolute;
+  border-radius: 50%;
+  background: #b6de84;
+}
+#timeline-flex-container .timeline-inner-circle {
+  left: 50%;
+  top: 50%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  background: #3a3a3a;
+  transform: translate(-50%,-50%);
+}
+#timeline-flex-container .middle-to-left {
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%,0%);
+}
+#timeline-flex-container .timeline-flex img {
+  top: 62%;
+  left: 50%;
+  max-width: 80%;
+  max-height: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+}
+#timeline-flex-container .flex-date {
+  color: white;
+  font-size: 1.5em;
+}
+#timeline-flex-container .flex-time {
+  color: white;
+  font-size: 1.1em;
+}
+#timeline-flex-container #flex-previous .flex-date, #timeline-flex-container #flex-next .flex-date {
+  font-size: 1.1em;
+}
+#timeline-flex-container #flex-previous .flex-time, #timeline-flex-container #flex-next .flex-time {
+  font-size: 0.9em;
+}
+
+/* END TIMELINE*/
+footer {
+  height: 75px;
+  margin-top: 50px;
+  background-color: rgba(21,21,23,1);
+}
+
+
+
+
+
+/* TIMELINE 900PX FIX*/
+@media (max-width: 900px) {
+  #timeline-flex-container .timeline-flex img {
+    top: 68%;
+  }
+}
+
+
+
+/*TIMELINE 750px behavior*/
+@media (max-width: 750px) {
+  #timeline-flex-container {
+    flex-direction: column;
+  }
+  #timeline .timeline-bar {
+    height: 100%;
+    top: 0px;
+    left: 40%;
+    border-left: 11px solid #b6de84;
+    border-bottom: none;
+  }
+  #timeline-flex-container .timeline-flex {
+    width: 100%;
+    text-align: left;
+  }
+  #timeline-flex-container .middle-to-left {
+    top: auto;
+    left: 40%;
+  }
+  #timeline-flex-container .timeline-circle {
+    top: 50%;
+    transform: translate(-40%,-50%);
+  }
+  #timeline-flex-container .flex-text {
+    top: 50%;
+    left: 8px;
+    position: absolute;
+    transform: translate(0,-50%);
+  }
+  #timeline-flex-container .timeline-flex img {
+    left: 78%;
+    max-height: 75%;
+    max-width: 65%;
+    top: 50%;
+  }
+}
+
+
+
+
+
+
+
+
+/*TABLET*/
+@media (max-width: 750px) {
+    #info {
+      flex-direction: column;
+    }
+    #info h1 {
+      text-align: center;
+    }
+    #flex-left, #flex-right {
+      width: 90%;
+      margin: 0 auto;
+    }
+    #flex-right {
+      min-height: 30vh;
+    }
+    #flex-left {
+      margin-bottom: 30px;
+    }
+    #flex-left p {
+      padding-right: 0px
+    }
+    #flex-right iframe {
+      min-height: 30vh;
+    }
+    #date-nav {
+      padding: 20px 5px;
+      text-align: center;
+      flex-direction: column;
+    }
+    #date-nav .nav-flexes {
+      width: 100%;
+      padding-left: 5px;
+      padding-right: 5px;
+      text-align: left;
+      padding-bottom: 45%;
+    }
+    #date-nav .nav-flexes .flex-title {
+      display: none;
+    }
+    #date-nav .nav-flexes img {
+      top: 50%;
+      left: auto;
+      right: 8%;
+      max-height: 80%;
+      position: absolute;
+      transform: translate(-0%,-50%);
+    }
+    #date-nav .nav-flexes .flex-date {
+      top: 50%;
+      left: 10px;
+      bottom: auto;
+      color: white;
+      transform: translate(0,-50%);
+    }
+    #date-nav .nav-flexes #nav-previous img {
+      max-width: 75%;
+      max-height: 50%;
+    }
+}
+
+
+/*MOBILE*/
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    #info {
+      flex-direction: column;
+    }
+    #info h1 {
+      text-align: center;
+    }
+    #flex-left, #flex-right {
+      width: 90%;
+      margin: 0 auto;
+    }
+    #flex-right {
+      min-height: 30vh;
+    }
+    #flex-left {
+      margin-bottom: 30px;
+    }
+    #flex-right iframe {
+      min-height: 30vh;
+    }
+    #flex-left p {
+      padding-right: 0px
+    }
+
+}

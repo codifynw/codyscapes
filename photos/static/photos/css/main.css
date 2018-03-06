@@ -395,23 +395,23 @@ a {
     }
     #index {
       width: 100%;
-      top: 40%;
+      top: 220px;
       left: 0;
       text-align: center;
       background-color: rgba(255, 255, 255, 1);
-      height: 60%;
+      height: 70%;
       overflow: hidden;
       border-radius: 0px;
     }
     #index_nav_container {
       width: 100%;
-      top: 40%;
+      top: 220px;
       border-radius: 0px;
       background-color: rgba(168,205,122,1);
-      height: 80px;
+      height: 35px;
     }
     #googlemaps {
-      height: 45%;
+      height: 305px;
       width: 100%;
       left: 0;
       left: 0;
@@ -461,7 +461,6 @@ a {
     }
     .swiper-container {
       display: block;
-      padding-top: 40px;
       width: 100%;
       margin: 20px auto;
       height:100%;
@@ -497,15 +496,18 @@ a {
     }
     .swiper-title {
       width: 100%;
-      font-size: 48px;
+      font-size: 24px;
       position: absolute;
       top: 80%;
       left: 50%;
       color: white;
       transform: translate(-50%,-50%);
     }
+    #year_form {
+      margin-top: -7px;
+    }
     #year_form select {
-      font-size: 40px;
+      font-size: 20px;
     }
     .nav_link {
       font-size: 18px;
