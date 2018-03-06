@@ -21,6 +21,7 @@ class Photo(models.Model):
     url = models.CharField(max_length=200, default="http://www.codyscapes.com/gallery/")
     isphoto = models.BooleanField(default=True)
     visible = models.BooleanField(default=True)
+    recent = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

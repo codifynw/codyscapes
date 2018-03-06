@@ -17,7 +17,8 @@ from django.shortcuts import get_object_or_404
 
 
 def index(request):
-	photos = Photo.objects.all().filter(visible="true").filter(date__year=2017).order_by('-date')
+	photos = Photo.objects.all().filter(recent="true").order_by('-date')
+	# photos = Photo.objects.all().filter(visible="true").filter(date__year=2018).order_by('-date')
 	#photos = Photo.objects.all().filter(visible="true").order_by('-date')
 	form = forms.SuggestionForm()
 	if request.method == 'POST':
@@ -28,6 +29,8 @@ def index(request):
 			#return HttpResponseRedirect(reverse('suggest'))
 			if data == "all":
 				photos = Photo.objects.all().filter(visible="true").order_by('-date')
+			elif data == "recent":
+				photos = Photo.objects.all().filter(recent="true").order_by('-date')
 			else:
 				photos = Photo.objects.all().filter(visible="true").filter(date__year=data).order_by('-date')
 			return render(request, 'photos/index.html', {'photos': photos, 'key': os.environ['MAPS_KEY'], 'form': form})
@@ -42,7 +45,7 @@ def photo_details(request, slug):
 	try:
 		next_photo = Photo.get_next_by_date(photo, visible=True)
 	except:
-		next_photo = Photo.objects.filter(visible=True).order_by('date')[0]	
+		next_photo = Photo.objects.filter(visible=True).order_by('date')[0]
 	try:
 		prev_photo = Photo.get_previous_by_date(photo, visible=True)
 	except:
