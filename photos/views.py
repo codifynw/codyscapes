@@ -29,7 +29,7 @@ def index(request):
 			#return HttpResponseRedirect(reverse('suggest'))
 			if data == "all":
 				photos = Photo.objects.all().filter(visible="true").order_by('-date')
-			elif data == "recent":
+			elif data == "Recent":
 				photos = Photo.objects.all().filter(recent="true").order_by('-date')
 			else:
 				photos = Photo.objects.all().filter(visible="true").filter(date__year=data).order_by('-date')
