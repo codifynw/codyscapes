@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html>
+	<html>
+
+	<header>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</header>
+
+
 	{% include "personal/about_header.html" %}
 
 	<style>
@@ -24,7 +30,15 @@
 			color: #1f1f21;
 			right: 0px;
 			margin-right: 5px;
-			background-color: rgba(220,220,220,.95);
+			background-color: rgba(240,240,240,.95);
+		}
+		#about-left img {
+			max-width: 100%;
+		}
+
+		p a {
+		  color: #0c7a07;
+		  text-decoration: underline;
 		}
 
 		#inner-text {
@@ -35,23 +49,51 @@
 			margin: 0px !important;
 		}
 
-
 		@media (max-width: 800px) {
 		  #about-right {
+		  	margin-top: -35px;
 				padding: 5px;
 				width: 98%;
-				top: -100px;
 				left: 0px;
-		    display: block;
+				top: initial;
 		  }
 			.about-container {
-				margin-top: 100px;
 			}
 			#contained {
 				width: 100%;
 				text-align: center;
 				padding-left: 0px;
 			}
+		}
+
+		@media only screen
+		  and (min-device-width: 320px)
+		  and (max-device-width: 480px)
+		  and (-webkit-min-device-pixel-ratio: 2) {
+		  #top_header {
+		    font-size: 30px;
+		    height: 60px;
+		  }
+		  #row1 {
+		    position: relative;
+		    display: block;
+		    margin: auto;
+		    top: 100px;
+		  }
+		  #body_left {
+		    display: block;
+		    height: auto;
+		    width: 90%;
+		    margin: auto;
+		  }
+		  #body_right {
+		    display: block;
+		    height: auto;
+		    width: 90%;
+		    margin: auto;
+		    font-size: 40px;
+		    text-align: justify;
+		  }
 		}
 
 	</style>
@@ -68,17 +110,17 @@
 			</div>
 			<div class="inner" id="about-right">
 				<div id="inner-text">
-					<p>Cody is a published photographer, travel author and guide for multiple workshop companies.  His love for photography has taken him on journeys across the world and now to Kanab, Utah to lead and teach others how to get the best possible photographs of the Southwest.<br><br>  Cody's newest photos and workshop offerings can be found at <a href="www.actionphototours.com">Action Photo Tours</a></p>
+					<p>Cody is a published photographer, travel author and guide for multiple workshop companies.  His love for photography has taken him on journeys across the world and now to Kanab, Utah to lead and teach others how to get the best possible photographs of the Southwest.<br><br>  Cody's newest photos and workshop offerings can be found at <a href="https://www.actionphototours.com">Action Photo Tours</a></p>
 				</div>
 			</div>
 
 		</div>
 	</div>
 
-{% comment %}
-	<h1 id="follow">Follow Me!</h1>
-	<p id="follow-p">I'm currently traveling around North America chasing the right seasons and locations to grow my portfolio.  You can follow my attempts on my <a href='/map'>live map</a> page which shows my most recent photo I felt worthy of sharing, on <a href='http://www.instagram.com/codyscapes' target='_blank'>instagram</a>, or watch my latest drone video on <a target='_blank' href='https://www.youtube.com/channel/UCxaDMavRbxT8q30-X4kBBUw'>Youtube</a>.</p>
-{% endcomment %}
+	{% comment %}
+		<h1 id="follow">Follow Me!</h1>
+		<p id="follow-p">I'm currently traveling around North America chasing the right seasons and locations to grow my portfolio.  You can follow my attempts on my <a href='/map'>live map</a> page which shows my most recent photo I felt worthy of sharing, on <a href='http://www.instagram.com/codyscapes' target='_blank'>instagram</a>, or watch my latest drone video on <a target='_blank' href='https://www.youtube.com/channel/UCxaDMavRbxT8q30-X4kBBUw'>Youtube</a>.</p>
+	{% endcomment %}
 
 	{% include "personal/includes/analytics.html" %}
 	{% endblock %}
