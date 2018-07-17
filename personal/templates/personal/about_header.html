@@ -2,9 +2,9 @@
 	<title>About Codyscapes</title>
 	{% load staticfiles %}
 	<!-- CSS -->
-	<link rel="stylesheet" href="{% static 'personal/css/about_main.css' %}" type = "text/css"/>
 	<!-- FONTS -->
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
 	<!-- SCRIPTS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<meta charset="utf-8">
@@ -13,10 +13,50 @@
 	      type="image/png"
 	      href="https://s3.amazonaws.com/codyscapes-assets/static_assets/favicon.png">
 
+	<style>
+		html, body {
+		  background-color: #fff;
+		  margin: 0px;
+		  color: white;
+			font-family: Lato;
+		  padding: 0px;
+		  height: 100%;
+		  width: 100%;
+		}
+
+		#top-header {
+			position: relative;
+			height: 80px;
+			background-color: white;
+			color: #585858;
+		}
+
+		#header-inner {
+			padding-left: 80px;
+		}
+
+		#header-branding {
+			color: #585858;
+			font-size: 1.5em;
+		}
+		.nav-link {
+			padding-right: 30px;
+			text-decoration: none;
+		}
+		.nav-link:visited {
+			color: #585858;
+		}
+		.nav-link:hover {
+			color: #EF233C;
+		}
+	</style>
 </head>
 
-<div id='top_header'>
-	<div id = 'header_inner'>
-		<a class='nav_link' href='/'>Home</a> <span style="font-weight: 100;">|</span> <a class='nav_link' href='/gallery'>Gallery</a> <span style="font-weight: 100;">|</span> <a class='nav_link' href='/map'>Map</a>
+<div id='top-header'>
+	<div id='header-inner' class="abs-vert">
+		<a class='nav-link' href='/'>Home</a> <span style="font-weight: 100;"></span> <a class='nav-link' href='/gallery'>Gallery</a> <span style="font-weight: 100;"></span> <a class='nav-link' href='/map'>Map</a>
+	</div>
+	<div id='header-branding' class="abs-all">
+		<span>CODYSCAPES</span>
 	</div>
 </div>
