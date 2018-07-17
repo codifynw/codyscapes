@@ -6,6 +6,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
 	<link rel="stylesheet" href="{% static 'photos/css/main.css' %}" type = "text/css"/>
 	<link rel="stylesheet" href="{% static 'photos/css/normalize.css' %}" type = "text/css"/>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
 	<!-- FONTS-->
 	<link href='https://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
@@ -59,6 +61,26 @@
     .nav-link:hover {
       color: #EF233C;
     }
+
+		#social-links {
+			right: 80px;
+			color: #585858;
+		}
+
+		#social-links a {
+			color: #585858;
+		}
+		#social-links a:hover {
+			color: #EF233C;
+		}
+		.social-link {
+			display: inline-block;
+			padding-left: 5px;
+		}
+		.social-link a i {
+			padding-left: 5px;
+		}
+
   </style>
 </head>
 
@@ -69,5 +91,13 @@
   <div id='header-branding' class="abs-all">
     <span>CODYSCAPES</span>
   </div>
+  <div id="social-links" class="abs-vert">
+		<div class="social-link social-facebook">
+			<a href="https://www.facebook.com/codyscapes"><i class="fab fa-facebook-f fa-lg"></i></a>
+		</div>
+		<div class="social-link social-instagram">
+			<a href="https://www.instagram.com/codyscapes"><i class="fab fa-instagram fa-lg"></i></a>
+		</div>
+	</div>
 </div>
 
