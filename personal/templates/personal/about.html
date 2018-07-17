@@ -53,18 +53,18 @@
 			padding: 20px 20%;
 			color: #EDF2F4;
 		}
-		#inner-text a, #inner-text a:hover {
+		#banner-inner-text a, #banner-inner-text a:hover {
 			color: #D90429;
 			text-decoration: none;
 		}
-		#inner-text a:visited {
+		#banner-inner-text a:visited {
 			color: #EF233C;
 		}
 		.frame-bottom {
 			left: 0;
-			bottom: -120px;
+			bottom: -920px;
 			width: 100%;
-			height: 200px;
+			height: 1000px;
 			position: absolute;
 			background-color: #fff;
 			z-index: 1;
@@ -122,6 +122,13 @@
  		.h500 {
  			height: 500px;
  		}
+ 		h3 a, h3 a:visited {
+ 			text-decoration: none;
+			color: #2b2D42;
+ 		}
+ 		h3 a:hover {
+ 			color: #D90429;
+ 		}
 
  		#wcpt {
  			background-size: 80%;
@@ -163,7 +170,7 @@
 				<div class="layout-two-col text-left split-50 h500">
 					<div class="section-text split-50-left">
 						<div class="inner-text abs-vert">
-							<h3>World Class Photo Tours</h3>
+							<h3><a href="https://www.worldclassphototours.com">World Class Photo Tours</a></h3>
 							<p>World Class Photo Tours (WCPT) reflects the vision of four landscape photographers: Cody Wilson, Max Foster, Kevin McNeal, and Matt Meisenheimer.  Dedicated to high-quality photo instruction, the group met in the fall of 2017 and created an organization with one goal in mind – to provide the premiere photography experience.</p>
 						</div>
 					</div>
@@ -176,7 +183,7 @@
 					</div>
 					<div class="section-text split-50-right">
 						<div class="inner-text abs-vert">
-							<h3>Upper Left Photo Tours</h3>
+							<h3><a href="https://www.upperleftphototours.com">Upper Left Photo Tours</a></h3>
 							<p>Planning a trip to the North West?  The Upper Left part of continent is home to some of the most saught after landscapes in world.  With roots in Bend, Oregon, Upper Left Photo Tours is offering daily trips to inspiring destinations.</p>
 						</div>
 					</div>
@@ -198,18 +205,12 @@
 				}, 1000);
 			});
 
-
-
 			$(document).on("scroll", function() {
-
-				console.log($(window).scrollTop());
-
 				if ($(window).scrollTop() > 5) {
 					$('.frame-bottom').fadeOut("fast");
 				} else {
 					$('.frame-bottom').fadeIn("fast");
 				}
-
 			});
 
 
