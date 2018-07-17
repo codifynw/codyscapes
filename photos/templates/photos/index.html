@@ -28,6 +28,7 @@
 		</div>
 		<div id="index">
 		<div id="index_nav_container">
+				<!-- <div id="nav-bg"></div> -->
 				<div id='year_form'>
 					<form action="" method="POST">
 						{{ form.as_p }}
@@ -169,7 +170,7 @@
 											        ]
 											    }
 											],
-			        center: new google.maps.LatLng(position[0], position[1] - 8),
+	        		center: new google.maps.LatLng(position[0], position[1] - 8),
 			        mapTypeControl: false,
 			        minzoom: 5,
 			        backgroundColor: '#2B2B2B'
@@ -186,7 +187,7 @@
 					var long = {{photo.longitude}}
 					var add = "{{photo.location_string}}"
 
-		    	 	latlngset = new google.maps.LatLng(lat, long);
+		    	latlngset = new google.maps.LatLng(lat, long);
 
 					var marker = new google.maps.Marker({
 					    map: map,
@@ -216,14 +217,20 @@
 
 
 							$('#index').animate({
-					          	scrollTop: document.getElementById('index').scrollTop + child.offset().top-parent.offset().top - 55
+					      scrollTop: document.getElementById('index').scrollTop + child.offset().top-parent.offset().top - 55
 					        }, scroll_time)
 
-							setTimeout( function() { animating = false }, scroll_time);
+								setTimeout( function() { animating = false }, scroll_time);
 
-							marker.setIcon(make_icon('active',map));
-							marker.setZIndex(10);
-							map.setCenter(marker.getPosition());
+								marker.setIcon(make_icon('active',map));
+								marker.setZIndex(10);
+
+								map.setCenter(marker.getPosition());
+
+								if (!mobile) {
+									map.panBy(-200,0);
+								}
+
 		    	        };
 		    	    })(marker));
 				{% endfor %}
@@ -267,6 +274,9 @@
 		      		});
 			  		if (animating != true) {
 				  		map.setCenter(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )].getPosition());
+								if (!mobile) {
+									map.panBy(-200,0);
+								}
 				  		set_the_one_true_marker(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )]);
 					}
 				});
