@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-	{% include "photos/head.html" %}
+	{% include "photos/map_header.html" %}
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
 	{% block content %}
 	{% load staticfiles %}
 
-	<body>
-		<div id="googlemaps"></div>
+	<body> <div id="googlemaps"></div>
 		<div id="shadow_box">
 			<div id='shadow_x'>
 				x
@@ -30,7 +28,6 @@
 		</div>
 		<div id="index">
 		<div id="index_nav_container">
-				<!-- <div id="nav-bg"></div> -->
 				<div id='year_form'>
 					<form action="" method="POST">
 						{{ form.as_p }}
@@ -143,36 +140,36 @@
 			        scaleControl: true, // allow users to zoom the Google Map
 			        mapTypeId: google.maps.MapTypeId.ROADMAP,
 			        styles: [
-    {
-        "stylers": [
-            {
-                "hue": "#ff1a00"
-            },
-            {
-                "invert_lightness": true
-            },
-            {
-                "saturation": -100
-            },
-            {
-                "lightness": 33
-            },
-            {
-                "gamma": 0.5
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#15171c"
-            }
-        ]
-    }
-],
-			        center: new google.maps.LatLng(position[0], position[1]),
+											    {
+											        "stylers": [
+											            {
+											                "hue": "#ff1a00"
+											            },
+											            {
+											                "invert_lightness": true
+											            },
+											            {
+											                "saturation": -100
+											            },
+											            {
+											                "lightness": 33
+											            },
+											            {
+											                "gamma": 0.5
+											            }
+											        ]
+											    },
+											    {
+											        "featureType": "water",
+											        "elementType": "geometry",
+											        "stylers": [
+											            {
+											                "color": "#15171c"
+											            }
+											        ]
+											    }
+											],
+			        center: new google.maps.LatLng(position[0], position[1] - 8),
 			        mapTypeControl: false,
 			        minzoom: 5,
 			        backgroundColor: '#2B2B2B'
@@ -195,9 +192,9 @@
 					    map: map,
 					    title: "{{photo.title}}",
 					    position: latlngset,
-						icon: {% if forloop.first %}make_icon('active',map){% else %}make_icon('inactive',map){% endif %},
-						description: {{forloop.counter}},
-						zIndex: {% if forloop.first %}10{% else %}1{% endif %}
+							icon: {% if forloop.first %}make_icon('active',map){% else %}make_icon('inactive',map){% endif %},
+							description: {{forloop.counter}},
+							zIndex: {% if forloop.first %}10{% else %}1{% endif %}
 					});
 
 					markers.push(marker);
@@ -273,9 +270,6 @@
 				  		set_the_one_true_marker(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )]);
 					}
 				});
-
-				//console.log(swiper.activeIndex)
-
 
 				swiper.on('slideChangeEnd', function () {
 					//Swiper will set the last image loaded to index 0 because we're looping and swiper sets the end loop as the first slide shown to the left of the active slide.  This is a work around.

@@ -1,7 +1,48 @@
+/*DEFAULTS*/
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 html, body {
   background-color: rgba(0, 0, 0, 1);
   margin: 0px;
   height: 100%;
+}
+.abs-vert {
+  top: 50%;
+  position: absolute;
+  transform: TranslateY(-50%);
+}
+.abs-horiz {
+  left: 50%;
+  position: absolute;
+  transform: TranslateX(-50%);
+}
+.abs-all {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: Translate(-50%,-50%);
+}
+.about-container {
+  margin: 0px 80px;
+  position: relative;
+  height: calc(100vh - 160px);
+}
+#about-left {
+  position: absolute;
+  background-image: url("https://photos.smugmug.com/photos/i-s6r7GZ3/0/77eed98a/O/i-s6r7GZ3.jpg");
+  width: 50%;
+  height: 100%;
+  background-position: 26% 31%;
+}
+#about-right {
+  position: relative;
+  left: 50%;
+  background-color: #2b2D42;
+  height: 100%;
+  width: 50%;
 }
 a {
   color: #585858;

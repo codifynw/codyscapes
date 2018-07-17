@@ -1,7 +1,48 @@
+/*DEFAULTS*/
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 html, body {
   background-color: rgba(0, 0, 0, 1);
   margin: 0px;
   height: 100%;
+}
+.abs-vert {
+  top: 50%;
+  position: absolute;
+  transform: TranslateY(-50%);
+}
+.abs-horiz {
+  left: 50%;
+  position: absolute;
+  transform: TranslateX(-50%);
+}
+.abs-all {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: Translate(-50%,-50%);
+}
+.about-container {
+  margin: 0px 80px;
+  position: relative;
+  height: calc(100vh - 160px);
+}
+#about-left {
+  position: absolute;
+  background-image: url("https://photos.smugmug.com/photos/i-s6r7GZ3/0/77eed98a/O/i-s6r7GZ3.jpg");
+  width: 50%;
+  height: 100%;
+  background-position: 26% 31%;
+}
+#about-right {
+  position: relative;
+  left: 50%;
+  background-color: #2b2D42;
+  height: 100%;
+  width: 50%;
 }
 a {
   color: #585858;
@@ -40,7 +81,7 @@ a:hover {
   font-size: 22px;
 }
 #index {
-  top: 75px;
+  top: 100px;
   position: fixed;
   border-radius: 3px;
   z-index: 1;
@@ -56,12 +97,11 @@ a:hover {
   height: calc(100% - 100px);
 }
 #index_nav_container {
-  top: 75px;
+  top: 100px;
   position:fixed;
   border-radius: 5px;
   display: block;
   width: 31%;
-  height: 35px;
   background-color: #ffffff;
   opacity: 1;
   text-align: center;
@@ -69,12 +109,12 @@ a:hover {
   color: #525252;
   font-family: 'Oxygen', sans-serif;
   font-weight: 700;
+  font-size: 1.2em;
   z-index: 10;
 }
 #year_form p {
   margin: 0px;
-  margin-top: 10px;
-  padding: 0px;
+  padding: 6px 0px;
   text-align: center;
 }
 #year_form select{
