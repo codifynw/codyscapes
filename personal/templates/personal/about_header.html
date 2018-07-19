@@ -92,7 +92,8 @@
 		@media only screen and (max-width: 850px) {
 		#header-nav { display: none; }
 		#header-branding{font-size: 2em;}
-		.nav-link { font-size: 1.4em; }
+		.nav-link { font-size: 1.4em;}
+		.nav-link:hover { background-color: #f9f9f9;}
 
 		/* Hamburger menu button*/
 		.cmn-toggle-switch {
@@ -163,35 +164,19 @@
 		}
 
 		#header-branding.active {
-			top: 5%;
+			top: 7%;
 		}
 		.header-links.active {
-			left: 0;
-			width: 280px;
-			height: 100vh;
-			z-index: 999999;
-			position: fixed;
-			background-color: white;
+			left: 0; width: 280px; height: 100vh; z-index: 999999; position: fixed; background-color: white;
 		}
 		.header-links.active #header-nav {
-     	top: 15%;
-			padding: 0;
-			width: 100%;
-			display: block;
+     	top: 20%; padding: 0; width: 100%; display: block;
 		}
 		.header-links.active #header-nav .nav-link {
-			width: 100%;
-			display: block;
-			padding-left: 15px;
-     	padding-bottom: 5px;
-			border-bottom: 1px solid #ededed;
+			width: 100%; display: block; padding-left: 15px; padding-bottom: 5px; border-bottom: 1px solid #ededed;
 		}
 		.header-links.active #social-links {
-			left: 50%;
-			top: initial;
-			bottom: 25px;
-			font-size: 1.5em;
-			transform: translate(-65%,0);
+			left: 50%; top: initial; bottom: 25px; font-size: 1.5em; transform: translate(-65%,0);
 		}
 	}
 
@@ -210,11 +195,14 @@
 			<a class='nav-link' href='/map'>Map</a>
 		</div>
 		<div id="social-links" class="abs-vert header-options">
+			<div class="social-link social-instagram">
+				<a href="https://www.instagram.com/codyscapes"><i class="fab fa-instagram fa-lg"></i></a>
+			</div>
 			<div class="social-link social-facebook">
 				<a href="https://www.facebook.com/codyscapes"><i class="fab fa-facebook-f fa-lg"></i></a>
 			</div>
-			<div class="social-link social-instagram">
-				<a href="https://www.instagram.com/codyscapes"><i class="fab fa-instagram fa-lg"></i></a>
+			<div class="social-link social-youtube">
+				<a href="https://www.youtube.com/channel/UCxaDMavRbxT8q30-X4kBBUw"><i class="fab fa-youtube fa-lg"></i></a>
 			</div>
 		</div>
 	</div>
