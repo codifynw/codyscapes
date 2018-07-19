@@ -35,23 +35,28 @@
 			position: relative;
 			height: calc(100vh - 160px);
 		}
+
+		.banner-box {
+ 			display: -webkit-box;
+ 			display: -ms-flexbox;
+ 			display: flex;
+     	height: calc(100vh - 80px);
+		}
 		#about-left {
-			position: absolute;
-			background-image: url("https://photos.smugmug.com/photos/i-s6r7GZ3/0/77eed98a/O/i-s6r7GZ3.jpg");
 			width: 50%;
 			height: 100%;
 			background-position: 26% 31%;
+			background-image: url("https://photos.smugmug.com/photos/i-s6r7GZ3/0/77eed98a/O/i-s6r7GZ3.jpg");
 		}
+
 		#about-right {
-			position: relative;
-			left: 50%;
-			background-color: #2b2D42;
-			height: 100%;
 			width: 50%;
+			height: 100%;
+			background-color: #2b2D42;
 		}
 		#banner-inner-text {
 			font-size: 1.2em;
-			padding: 20px 20%;
+			padding: 20px 10%;
 			color: #EDF2F4;
 		}
 		#banner-inner-text a, #banner-inner-text a:hover {
@@ -104,12 +109,12 @@
  		#scroll-down:hover {
  			opacity: .65;
  		}
- 		.split-50 {
+ 		.layout-two-col {
  			display: -webkit-box;
  			display: -ms-flexbox;
  			display: flex;
  		}
- 		.split-50 .split-50-left, .split-50 .split-50-right {
+ 		.layout-two-col .layout-two-col-left, .layout-two-col .layout-two-col-right {
  			width: 50%;
  			position: relative;
  		}
@@ -117,6 +122,12 @@
  			color: #2b2D42;
  			font-size: 18px;
  		}
+ 		.section-img {
+ 			width: 50%;
+ 		}
+	  .section-text {
+	  	width: 50%;
+	  }
  		.inner-text {
  			padding: 25% 7%;
  			max-width: 550px;
@@ -150,18 +161,51 @@
  			background-image: url("https://photos.smugmug.com/photos/i-TwZfJJC/0/91f0e12e/L/i-TwZfJJC-L.png");
  		}
 
- 		@media (max-width: 750px) {
+ 		@media (max-width: 850px) {
  			.about-container {
  				margin: 0px;
+ 			}
+ 			#header-branding{font-size: 2em;}
+ 			.nav-link {
+ 				font-size: 1.4em;
  			}
  		}
 
 
- 		@media only screen
- 		  and (min-device-width: 320px)
- 		  and (max-device-width: 480px)
- 		  and (-webkit-min-device-pixel-ratio: 2) {
-
+ 		@media (max-width: 650px) {
+ 				.banner-box {
+ 		  		flex-direction: column;
+ 		  		-webkit-flex-direction: column;
+ 		  	}
+ 		  	#about-left {
+ 		  		width: 100%;
+ 		  		height: calc(50% - 40px);
+ 		  		background-position: 26% 31%;
+ 		  		background-image: url("https://photos.smugmug.com/photos/i-s6r7GZ3/0/77eed98a/O/i-s6r7GZ3.jpg");
+ 		  	}
+ 		  	#about-right {
+ 		  		height: calc(50% - 40px);
+ 		  		width: 100%;
+ 		  		position: relative;
+ 		  		background-color: #2b2D42;
+ 		  	}
+ 		  	#about-right #banner-inner-text {
+ 		  	}
+ 		  	.split-50 {
+ 		  		flex-direction: column;
+ 		  		-webkit-flex-direction: column;
+ 		  	}
+ 		  	.split-50-reverse {
+	 		  	flex-direction: column-reverse;
+	 		  	-webkit-box-direction: column-reverse;
+	 		  	-webkit-flex-direction: column-reverse;
+	 		  }
+	 		  .section-img {
+	 		  	width: 100%;
+	 		  }
+	 		  .section-text {
+	 		  	width: 100%;
+	 		  }
  		}
 
 	</style>
@@ -175,12 +219,14 @@
 			<div id="scroll-down"></div>
 		</div>
 		<div class="about-container">
-			<div class="inner" id="about-left">
-			</div>
-			<div class="inner" id="about-right">
-				<div id="banner-inner-text" class="abs-vert">
-					<h1 class="section-heading">About Cody</h1>
-					<p>Cody is a published photographer, travel author and guide for multiple workshop companies.  His time is split between coding websites and exploring the outdoors.  Cody's various affiliations can be found below.<br>
+			<div class="banner-box">
+				<div class="inner" id="about-left">
+				</div>
+				<div class="inner" id="about-right">
+					<div id="banner-inner-text" class="abs-vert">
+						<h1 class="section-heading">About Cody</h1>
+						<p>Cody is a published photographer, travel author and guide for multiple workshop companies.  His time is split between coding websites and exploring the outdoors.  Cody's various affiliations can be found below.<br>
+					</div>
 				</div>
 			</div>
 
@@ -192,12 +238,12 @@
 							<p>World Class Photo Tours (WCPT) reflects the vision of four landscape photographers: Cody Wilson, Max Foster, Kevin McNeal, and Matt Meisenheimer.  Dedicated to high-quality photo instruction, the group met in the fall of 2017 and created an organization with one goal in mind – to provide the premiere photography experience.</p>
 						</div>
 					</div>
-					<div class="section-img split-50-right" id="wcpt">
+					<div class="section-img split-50-right h500" id="wcpt">
 					</div>
 				</div>
 
-				<div class="layout-two-col text-left split-50 h500">
-					<div class="section-img split-50-left" id="ulpt">
+				<div class="layout-two-col text-left split-50-reverse h500">
+					<div class="section-img split-50-left h500" id="ulpt">
 					</div>
 					<div class="section-text split-50-right">
 						<div class="inner-text">
@@ -223,13 +269,19 @@
 				}, 1000);
 			});
 
-			$(document).on("scroll", function() {
-				if ($(window).scrollTop() > 5) {
-					$('.frame-bottom').fadeOut("fast");
-				} else {
-					$('.frame-bottom').fadeIn("fast");
-				}
-			});
+			if ($(window).width() > 850) {
+			  $(document).on("scroll", function() {
+			   	if ($(window).scrollTop() > 5) {
+			   		$('.frame-bottom').fadeOut("fast");
+			   	} else {
+			   		$('.frame-bottom').fadeIn("fast");
+			   	}
+			  });
+			}
+			else {
+				$('.frame-bottom').fadeOut("fast");
+			}
+
 
 
 		})
