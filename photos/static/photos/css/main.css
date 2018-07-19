@@ -386,6 +386,16 @@ a {
 }
 
 
+@media (max-width: 1100px) {
+  #index_nav_container {
+    width: 40%;
+  }
+  #index {
+    width: 40%;
+  }
+}
+
+
 @media (max-width: 750px) {
   #index {
     width: 100%;
