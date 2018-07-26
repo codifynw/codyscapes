@@ -152,46 +152,41 @@
 
 <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
 
+
 <script>
-
 	$(document).ready(function() {
-
 		$('a.open_close').on( "click", function() {
-        $('.header-links').toggleClass('active');
-        $('#header-branding').toggleClass('active');
-        $('.layer').toggleClass('layer-is-visible');
-	    });
+      $('.header-links').toggleClass('active');
+      $('#header-branding').toggleClass('active');
+      $('.layer').toggleClass('layer-is-visible');
+    });
 
-	    $('.menu-item-has-children > a').on( "click", function(e) {
-	        e.preventDefault();
-	        $(this).next().toggleClass("show_normal");
-	        return false;
-	    });
+    $('.menu-item-has-children > a').on( "click", function(e) {
+      e.preventDefault();
+      $(this).next().toggleClass("show_normal");
+      return false;
+    });
+    $('.menu-item-has-children-mega > a').on( "click", function() {
+      $(this).next().toggleClass("show_mega");
+    });
+    if( $(window).width() <= 480 ) {
+      $('a.open_close').on( "click", function() {
+        $('.cmn-toggle-switch').removeClass('active')
+      });
+    }
+    /* Hamburger icon*/
+    var toggles = document.querySelectorAll(".cmn-toggle-switch");
 
-	    $('.menu-item-has-children-mega > a').on( "click", function() {
-	        $(this).next().toggleClass("show_mega");
-	    });
+    for (var i = toggles.length - 1; i >= 0; i--) {
+      var toggle = toggles[i];
+      toggleHandler(toggle);
+    };
 
-	    if( $(window).width() <= 480 ) {
-	        $('a.open_close').on( "click", function() {
-	            $('.cmn-toggle-switch').removeClass('active')
-	        });
-	    }
-
-	    /* Hamburger icon*/
-	    var toggles = document.querySelectorAll(".cmn-toggle-switch");
-
-	    for (var i = toggles.length - 1; i >= 0; i--) {
-	        var toggle = toggles[i];
-	        toggleHandler(toggle);
-	    };
-
-	    function toggleHandler(toggle) {
-	        toggle.addEventListener( "click", function(e) {
-	            e.preventDefault();
-	            (this.classList.contains("active") === true) ? this.classList.remove("active") : this.classList.add("active");
-	        });
-	    };
+    function toggleHandler(toggle) {
+      toggle.addEventListener( "click", function(e) {
+        e.preventDefault();
+        (this.classList.contains("active") === true) ? this.classList.remove("active") : this.classList.add("active");
+      });
+    };
 	})
-
 </script>

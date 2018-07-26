@@ -268,16 +268,16 @@
 				var parent = document.getElementById('index')
 				parent.addEventListener("scroll", function(){
 
-			  		var offset = parent.scrollTop,
+			  	var offset = parent.scrollTop,
 		 			minOffset = Object.keys(elmOffsets).reduceRight(function(prev,current){
-			      		return offset < current - 150 ? current : prev;
-		      		});
-			  		if (animating != true) {
-				  		map.setCenter(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )].getPosition());
-								if (!mobile) {
-									map.panBy(-200,0);
-								}
-				  		set_the_one_true_marker(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )]);
+			      return offset < current - 150 ? current : prev;
+		      });
+			  	if (animating != true) {
+			  		map.setCenter(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )].getPosition());
+							if ( mobile !== false) {
+								map.panBy(-1000,0);
+							}
+			  		set_the_one_true_marker(markers[($( ".photo" ).index( elmOffsets[minOffset] ) )]);
 					}
 				});
 
