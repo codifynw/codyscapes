@@ -7,7 +7,10 @@ from django.shortcuts import render
 # 	return render(request, 'personal/basic.html', {'content':['if you would like to contact me, please email me','cody@codyscapes.com']})
 
 def about(request):
-	return render(request, 'personal/about.html')
+  return render(request, 'personal/about.html')
+
+def workshops(request):
+	return render(request, 'personal/workshops.html')
 
 # def home(request):
 # 	return render(request, 'personal/home.html')

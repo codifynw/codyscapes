@@ -6,6 +6,7 @@ urlpatterns = [
     # url(r'home$', views.home, name='home'),
     # url(r'contact$', views.contact, name='contact'),
     url(r'about$', views.about, name='about'),
+    url(r'workshops$', views.workshops, name='workshops'),
     # url(r'licensing$', views.license, name='license'),
     url(r'^$', views.index, name='index'),
 ]

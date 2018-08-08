@@ -33,7 +33,6 @@
 		.about-container {
 			margin: 0px 80px;
 			position: relative;
-			height: calc(100vh - 160px);
 		}
 
 		.banner-box {
@@ -163,7 +162,20 @@
  			background-image: url("https://photos.smugmug.com/photos/i-TwZfJJC/0/91f0e12e/L/i-TwZfJJC-L.png");
  		}
 
- 		@media (max-width: 850px) {
+ 		.lh-15 {
+ 			line-height: 1.5;
+ 		}
+
+ 		@media(min-width: 1400px) {
+ 			.layout-two-col {
+ 				max-height: 800px;
+ 			}
+ 			#wcpt, #ulpt {
+ 				background-size: 60%;
+ 			}
+ 		}
+
+ 		@media (max-width: 960px) {
  			.about-container {
  				margin: 0px;
  			}
@@ -188,6 +200,9 @@
  		  		background-color: #2b2D42;
  		  	}
  		  	#about-right #banner-inner-text {
+ 		  		position: relative;
+ 		  		top: initial;
+ 		  		transform: none;
  		  	}
  		  	.split-50 {
  		  		flex-direction: column;
@@ -220,11 +235,13 @@
 			<div class="banner-box">
 				<div class="inner" id="about-left">
 				</div>
-				<div class="inner" id="about-right">
-					<div id="banner-inner-text" class="abs-vert">
-						<h1 class="section-heading">About Cody</h1>
-						<p>Cody is a published photographer, travel author and guide for multiple workshop companies.  His time is split between coding websites and exploring the outdoors.  Cody's various affiliations can be found below.<br>
-					</div>
+				<div class="inner" id="about-right" style="position: relative;">
+					<div style="height: calc(100vh - 160px);">
+						<div id="banner-inner-text" class="abs-vert">
+								<h1 class="section-heading">About Cody</h1>
+								<p class="lh-15">Cody is a published photographer, travel author and guide for multiple workshop companies.  His time is split between coding websites and exploring the outdoors.  Cody's various affiliations can be found below.<br>
+							</div>
+						</div>
 				</div>
 			</div>
 
@@ -233,7 +250,7 @@
 					<div class="section-text split-50-left">
 						<div class="inner-text">
 							<h3><a href="https://www.worldclassphototours.com">World Class Photo Tours</a></h3>
-							<p>World Class Photo Tours (WCPT) reflects the vision of four landscape photographers: Cody Wilson, Max Foster, Kevin McNeal, and Matt Meisenheimer.  Dedicated to high-quality photo instruction, the group met in the fall of 2017 and created an organization with one goal in mind – to provide the premiere photography experience.</p>
+							<p class="lh-15">World Class Photo Tours (WCPT) reflects the vision of four landscape photographers: Cody Wilson, Max Foster, Kevin McNeal, and Matt Meisenheimer.  Dedicated to high-quality photo instruction, the group met in the fall of 2017 and created an organization with one goal in mind – to provide the premiere photography experience.</p>
 						</div>
 					</div>
 					<div class="section-img split-50-right h500" id="wcpt">
@@ -246,14 +263,773 @@
 					<div class="section-text split-50-right">
 						<div class="inner-text">
 							<h3><a href="https://www.upperleftphototours.com">Upper Left Photo Tours</a></h3>
-							<p>Planning a trip to the North West?  The Upper Left part of continent is home to some of the most saught after landscapes in world.  With roots in Bend, Oregon, Upper Left Photo Tours is offering daily trips to inspiring destinations.</p>
+							<p class="lh-15">Planning a trip to the North West?  The Upper Left part of continent is home to some of the most saught after landscapes in world.  With roots in Bend, Oregon, Upper Left Photo Tours is offering daily trips to inspiring destinations.</p>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<style>
+			#my-story {
+				position: relative;
+				padding: 60px 0px;
+				background-color: #f7f2e6;
+			}
+
+			#more-title {
+				position: relative;
+			}
+
+	 		#more-info {
+	 			padding: 30px;
+	 			color: #292728;
+	 			max-width: 960px;
+	 			margin: auto;
+	 		}
+
+	 		#more-info h2 {
+	 			color: #363F54;
+	 			font-size: 42px;
+	 			position: relative;
+	 			-webkit-transform: translateY(20px);
+	 			-ms-transform: translateY(20px);
+	 			transform: translateY(20px);
+	 			-webkit-transition: all 0.75s ease;
+	 			-o-transition: all 0.75s ease;
+	 			transition: all 0.75s ease;
+	 			-webkit-margin-before: 0em;
+	 			-webkit-margin-after: 0em;
+	 			margin-bottom: 40px;
+	 		}
+
+	 		#more-info h2:before {
+		 		content: '';
+		    position: absolute;
+		    right: calc(100% + 35px);
+		    top: 55%;
+		    -webkit-transform: translateY(-50%) scaleX(0);
+		    -ms-transform: translateY(-50%) scaleX(0);
+		    transform: translateY(-50%) scaleX(0);
+		    height: 2px;
+		    width: 60px;
+		    background-color: #363F54;
+		    -webkit-transition: all 0.75s ease;
+		    -o-transition: all 0.75s ease;
+		    transition: all 0.75s ease;
+		    opacity: 1;
+		    -webkit-transform: translateY(-50%) scaleX(1);
+		    -ms-transform: translateY(-50%) scaleX(1);
+		    transform: translateY(-50%) scaleX(1);
+	  	}
+
+	  	#more-story {
+	  		/*padding-right: 50px;*/
+	  	}
+
+	  	#more-story p {
+	  		line-height: 1.5;
+	  	}
+
+	  	#more-story p a {
+	  		color: #D90429;
+	  	}
+
+	 		#partners {
+	 			background-color: #ED6A5A;
+	 			color: #AEBAC4;
+	 		}
+		</style>
+
+			<section id="my-story">
+				<div id="more-info">
+					<div id="more-title">
+						<h2>My Story</h2>
+					</div>
+					<div id="more-story">
+						<p>
+							In January of 2011, I sat at home in Dallas, Texas ready to return to Lawrence, Kansas to finish the last semester of my Senior year at the University of Kansas.  In order to save money, I lived in a fraternity mostly populated with Freshman and Sophomores.  With my graduation on the horizon, my social interests didn’t align with my rowdy underclassman roommates.  Dreading another semester of late night parties, I decided to purchase a camera as a way to entertain myself away from the fraternity house.
+						</p>
+						<p>
+							What started as an escape, slowly turned into a serious interest.  Immediately, I began watching videos to and replicate the images I found online.  Without any guidance, the first months of my photography journey yielded few keepers.  Noticing the large population of landscape photographers in the Northwest, I set my sights on moving to the area to pursue photography as a serious hobby while working in finance.
+ 						</p>
+						<p>
+							For three years, my work in finance served to fuel my obsession with photography.  I purchased a Jeep to explore the Northwest and attended as many workshops as possible.  My first serious mentors were the visionaries at <a href="http://www.photocascadia.com">Photo Cascadia</a>.  Their affordable workshops and generous members encouraged and challenged me to become a better photographer.
+						</p>
+						<p>
+							In 2013, a chance meeting would eventually become the most impactful event in my photography development.  While shooting in Northern Oregon, I recognized a long-haired photographer I had been admiring on Flickr earlier that day.  I approached him and received instruction I valued enough to eventually hire him as a teacher.  Now a friend, Ryan Dyar of <a href="http://www.ryandyar.com">Ryan Dyar Photography</a> has undoubtedly been the largest influence in my photograph development.  His generosity and guidance has elevated me from workshop participant to workshop leader.
+						</p>
+						<p>
+							With an ever-growing devotion to photography, my career in finance became an obstacle to my true desires.  In order to spend more time photographing, I sought a career with remote capabilities and landed on software development.  From early 2014 to late 2015, I put down my camera to write code and become an asset capable of working remotely.
+						</p>
+						<p>
+							I achieved my goal of working remotely near the end of 2015.  Since then, I've been able to explore much of the Western United States while servicing freelance clients.  As I continue to work as a coder and a photographer, my next goal is to fully transition to a full-time photographer so that all of my effort can go to capturing moments worth sharing.
+						</p>
 					</div>
 				</div>
 			</div>
 
 
-		</div>
+
+
+			<style>
+
+				/*===========================================
+				=            SECTION METHODOLOGY            =
+				===========================================*/
+
+				#section-methodology
+				{
+						padding: 90px 0px;
+				    position:relative;
+						background-color: #2b2D42;
+				}
+				#section-methodology .container-title
+				{
+				    position: absolute;
+				    z-index: 1;
+				    top: 160px;
+				    left: 40%;
+				}
+				#section-methodology .container-title h2
+				{
+				    color: #fff;
+				    font-size: 42px;
+				    line-height: 51px;
+				    -webkit-transform: translateY(20px);
+				        -ms-transform: translateY(20px);
+				            transform: translateY(20px);
+				    -webkit-transition: all 0.75s ease;
+				    -o-transition: all 0.75s ease;
+				    transition: all 0.75s ease;
+				}
+				#section-methodology.anim .container-title h2
+				{
+				    opacity: 1;
+				    -webkit-transform: translateY(0px);
+				        -ms-transform: translateY(0px);
+				            transform: translateY(0px);
+				}
+				#section-methodology .container-title h2:before
+				{
+				    content: '';
+				    position: absolute;
+				    top: 18px;
+				    right: calc(100% + 35px);
+				    height: 2px;
+				    width: 60px;
+				    background-color: #363F54;
+				    -webkit-transform:scaleX(0);
+				        -ms-transform:scaleX(0);
+				            transform:scaleX(0);
+				    -webkit-transition: all 0.75s ease;
+				    -o-transition: all 0.75s ease;
+				    transition: all 0.75s ease;
+				}
+				#section-methodology.anim .container-title h2:before
+				{
+				    -webkit-transform:scaleX(1);
+				        -ms-transform:scaleX(1);
+				            transform:scaleX(1);
+				}
+				#section-methodology .wrapper
+				{
+						padding-top: 30px;
+				    display:-webkit-box;
+				    display:-ms-flexbox;
+				    display:flex;
+				    -webkit-box-pack:justify;
+				        -ms-flex-pack:justify;
+				            justify-content:space-between;
+				    -webkit-box-align:start;
+				        -ms-flex-align:start;
+				            align-items:flex-start;
+				}
+				#section-methodology .wrapper .container-img
+				{
+				    position:relative;
+				    width: 46%;
+				    height: 690px;
+				}
+				#section-methodology .wrapper .container-img .bg
+				{
+				    border-radius: 4px;
+				    position: absolute;
+				    left: 0px;
+				    top: 0px;
+				    width: 100%;
+				    height: 100%;
+				    background-repeat: no-repeat;
+				    background-position: center center;
+				    background-size: cover;
+				    overflow:hidden;
+				}
+				#section-methodology .wrapper .container-img .bg:before
+				{
+				    position: absolute;
+				    right: 0px;
+				    top: 0px;
+				    width: 100%;
+				    height: 100%;
+				    border-radius: 4px;
+				    background-color: #FFF;
+				    -webkit-transform: translateX(0px);
+				    -ms-transform: translateX(0px);
+				    transform: translateX(0px);
+				    -webkit-transition: all 1000ms cubic-bezier(0.694, 0, 0.335, 1);
+				    -o-transition: all 1000ms cubic-bezier(0.694, 0, 0.335, 1);
+				    transition: all 1000ms cubic-bezier(0.694, 0, 0.335, 1);
+				}
+				#section-methodology.anim .wrapper .container-img .bg:before
+				{
+				    -webkit-transform: translateX(calc(-100% - 125px)) skew(20deg);
+				    -ms-transform: translateX(calc(-100% - 125px)) skew(20deg);
+				    transform: translateX(calc(-100% - 125px)) skew(20deg);
+				}
+				#section-methodology .wrapper .container-text
+				{
+				    width: 50%;
+				    padding: 275px 0px 0px 5%;
+				}
+				#section-methodology .wrapper .container-text .text
+				{
+				    color: #fff;
+				    font-size: 16px;
+				    line-height: 1.5;
+				    width: 70%;
+				}
+				#section-methodology .wrapper .wrapper-el
+				{
+				    margin-top: 70px;
+				    position: relative;
+				}
+				#section-methodology .wrapper .wrapper-el .title
+				{
+				    margin-bottom: 50px;
+				    color: #363F54;
+				    font-family:National-Bold;
+				    font-size: 14px;
+				    opacity: 0;
+				    -webkit-transform: translateY(40px);
+				        -ms-transform: translateY(40px);
+				            transform: translateY(40px);
+				    -webkit-transition: all 0.5s ease;
+				    -o-transition: all 0.5s ease;
+				    transition: all 0.5s ease;
+				}
+				#section-methodology.anim .wrapper .wrapper-el .title
+				{
+				    opacity: 1;
+				    -webkit-transform: translateY(0px);
+				        -ms-transform: translateY(0px);
+				            transform: translateY(0px);
+				    -webkit-transition-delay: 0.1s;
+				         -o-transition-delay: 0.1s;
+				            transition-delay: 0.1s;
+				}
+				#section-methodology .wrapper .wrapper-el .container-el
+				{
+				    width: 80%;
+				    display: -webkit-box;
+				    display: -ms-flexbox;
+				    display: flex;
+				    -webkit-box-orient: horizontal;
+				    -webkit-box-direction: normal;
+				        -ms-flex-flow: row wrap;
+				            flex-flow: row wrap;
+				    -webkit-box-pack: start;
+				        -ms-flex-pack: start;
+				            justify-content: flex-start;
+				}
+				#section-methodology .wrapper .wrapper-el .container-el .el
+				{
+				    height: 25px;
+				    margin-right: 70px;
+				    margin-bottom: 40px;
+				    opacity: 0;
+				    -webkit-transform: translateY(20px);
+				        -ms-transform: translateY(20px);
+				            transform: translateY(20px);
+				    -webkit-transition: all 0.25s ease;
+				    -o-transition: all 0.25s ease;
+				    transition: all 0.25s ease;
+				    text-align: left;
+				}
+				#section-methodology .wrapper .wrapper-el .container-el .el:nth-child(1)
+				{
+				    -webkit-transition-delay: 0.1s;
+				         -o-transition-delay: 0.1s;
+				            transition-delay: 0.1s;
+				}
+				#section-methodology .wrapper .wrapper-el .container-el .el:nth-child(2)
+				{
+				    -webkit-transition-delay: 0.15s;
+				         -o-transition-delay: 0.15s;
+				            transition-delay: 0.15s;
+				}
+				#section-methodology .wrapper .wrapper-el .container-el .el:nth-child(3)
+				{
+				    -webkit-transition-delay: 0.2s;
+				         -o-transition-delay: 0.2s;
+				            transition-delay: 0.2s;
+				}
+				#section-methodology .wrapper .wrapper-el .container-el .el:nth-child(4)
+				{
+				    -webkit-transition-delay: 0.25s;
+				         -o-transition-delay: 0.25s;
+				            transition-delay: 0.25s;
+				}
+				#section-methodology .wrapper .wrapper-el .container-el .el:nth-child(5)
+				{
+				    -webkit-transition-delay: 0.3s;
+				         -o-transition-delay: 0.3s;
+				            transition-delay: 0.3s;
+				}
+				#section-methodology .wrapper .wrapper-el .container-el .el:nth-child(6)
+				{
+				    -webkit-transition-delay: 0.35s;
+				         -o-transition-delay: 0.35s;
+				            transition-delay: 0.35s;
+				}
+				#section-methodology .wrapper .wrapper-el .container-el .el:nth-child(7)
+				{
+				    -webkit-transition-delay: 0.4s;
+				         -o-transition-delay: 0.4s;
+				            transition-delay: 0.4s;
+				}
+				#section-methodology .wrapper .wrapper-el .container-el .el:nth-child(8)
+				{
+				    -webkit-transition-delay: 0.45s;
+				         -o-transition-delay: 0.45s;
+				            transition-delay: 0.45s;
+				}
+				#section-methodology .wrapper .wrapper-el .container-el .el:nth-child(9)
+				{
+				    -webkit-transition-delay: 0.5s;
+				         -o-transition-delay: 0.5s;
+				            transition-delay: 0.5s;
+				}
+				#section-methodology .wrapper .wrapper-el .container-el .el:nth-child(10)
+				{
+				    -webkit-transition-delay: 0.55s;
+				         -o-transition-delay: 0.55s;
+				            transition-delay: 0.55s;
+				}
+				#section-methodology .wrapper .wrapper-el .container-el .el:nth-child(11)
+				{
+				    -webkit-transition-delay: 0.6s;
+				         -o-transition-delay: 0.6s;
+				            transition-delay: 0.6s;
+				}
+				#section-methodology.anim .wrapper .wrapper-el .container-el .el
+				{
+				    opacity: 1;
+				    -webkit-transform: translateY(0px);
+				        -ms-transform: translateY(0px);
+				            transform: translateY(0px);
+
+				    display: left;
+				    -webkit-box-pack: center;
+				        -ms-flex-pack: center;
+				            justify-content: center;
+				}
+				#section-methodology .wrapper .wrapper-el .container-el .el img
+				{
+				    height: 100%;
+				}
+				#section-methodology .wrapper .wrapper-el .container-el .el span {
+				    display: none;
+				    position: absolute;
+				    top: calc(-100% - 10px);
+				    left: 50%;
+				    -webkit-transform: translateX(-50%);
+				        -ms-transform: translateX(-50%);
+				            transform: translateX(-50%);
+				    white-space: nowrap;
+				    color: #363F54;
+				    background-color: #FFFFFF;
+				    -webkit-box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
+				            box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
+
+				    height: 26px;
+				    line-height: 26px;
+				    font-size: 14px;
+				    font-weight: bold;
+				    text-align: center;
+
+				    padding-right: 15px;
+				    padding-left: 15px;
+				    border-radius: 3px;
+				}
+				#section-methodology .wrapper .wrapper-el .container-el .el:hover span {
+				    display: block;
+				}
+
+
+
+				@media screen and (max-width: 960px) {
+					#section-methodology .container-title
+					{
+						position: initial;
+						padding: 0px 40px 0px 40px;
+						margin-bottom: 30px;
+					}
+					#section-methodology .container-title h2
+					{
+						font-size: 36px;
+						line-height: 43px;
+					}
+					#section-methodology .container-title h2:before
+					{
+						right: initial;
+						left: 0px;
+						top: initial;
+						width: 30px;
+						bottom: calc(100% + 22px);
+					}
+					#section-methodology .wrapper
+					{
+						-webkit-box-orient: horizontal;
+						-webkit-box-direction: normal;
+						    -ms-flex-flow: row wrap;
+						        flex-flow: row wrap;
+					}
+					#section-methodology .wrapper .container-img
+					{
+						width: 100%;
+						height: 325px;
+					}
+					#section-methodology .wrapper .container-img .bg
+					{
+						width: 90%;
+					}
+					#section-methodology .wrapper .container-text
+					{
+						width: 100%;
+						padding: 45px 45px 0px 45px;
+					}
+					#section-methodology .wrapper .container-text .text
+					{
+						width: 100%;
+					}
+					#section-methodology .wrapper .wrapper-el
+					{
+						margin-top: 40px;
+					}
+					#section-methodology .wrapper .wrapper-el .container-el
+					{
+						width: 100%;
+						-webkit-box-pack: start;
+						    -ms-flex-pack: start;
+						        justify-content: flex-start;
+
+					}
+					#section-methodology .wrapper .wrapper-el .container-el .el
+					{
+						width: calc(100% / 10);
+						height: auto;
+						margin-right: 45px;
+					}
+					#section-methodology .wrapper .wrapper-el .container-el .el img
+					{
+						height: auto;
+						width: 100%;
+					}
+				}
+
+
+				/*=====  End of SECTION METHODOLOGY  ======*/
+			</style>
+
+
+			<section id="section-methodology">
+				<div class="container-title">
+					<h2>Gear I Trust</h2>
+				</div>
+				<div class="wrapper" id="method-wrapper">
+					<div class="container-img">
+						<div class="bg" style="background-image: url(https://photos.smugmug.com/photos/i-z99pvK5/0/18370cd1/O/i-z99pvK5.jpg)"></div>
+					</div>
+					<div class="container-text">
+						<p class="text wrapLine">
+							Originally a Canon shooter, the upgraded dynamic range and impressive landscape lenses offered by Nikon convinced me to sell my Canon system in 2012.  Additionaly, Sony's A7R2 lightweight setup and advanced mirrorless capibilities found a dedicated spot in my camera bag.
+						</p>
+						<p class="text wrapLine">
+							Having years of experience with all three of the largest camera manufacturers, I am qualified to address any camera difficulties experienced in the field.  Additionally, I can confidently say that all manufacturers make cameras capable of producing images suited for publication.
+						</p>
+						<p class="text wrapLine">
+							In 2015, I plunged into aerial photography with a purchase of a DJI Phantom 3.  Since the Phantom, I've purchased the Mavic and anticipate the next DJI drone in late 2018.
+						</p>
+						<p class="text wrapLine">
+							For timelapses and cinematic movements, I have found nothing better than the Rhino Slider.  Durable and light, the Rhino slider has allowed me to create Hollywood-style cinematic movements in my dabbles in filmmaking.
+						</p>
+						<!-- <div class="wrapper-el">
+							<div class="title">WE USING:</div>
+							<div class="container-el">
+								<div class="el">
+									<img src="/AgenceMeV4/img/pages/agency/tools/Slack.svg" alt="">
+									<span>Slack</span>
+								</div>
+								<div class="el">
+									<img src="/AgenceMeV4/img/pages/agency/tools/Sketch.svg" alt="">
+									<span>Sketch</span>
+								</div>
+								<div class="el">
+									<img src="/AgenceMeV4/img/pages/agency/tools/Bitbucket-blue.svg" alt="">
+									<span>Bitbucket</span>
+								</div>
+								<div class="el">
+									<img src="/AgenceMeV4/img/pages/agency/tools/Dropbox.svg" alt="">
+									<span>Dropbox</span>
+								</div>
+								<div class="el">
+									<img src="/AgenceMeV4/img/pages/agency/tools/AfterEffect.svg" alt="">
+									<span>After Effect</span>
+								</div>
+								<div class="el">
+									<img src="/AgenceMeV4/img/pages/agency/tools/Invision.svg" alt="">
+									<span>Invision</span>
+								</div>
+								<div class="el">
+									<img src="/AgenceMeV4/img/pages/agency/tools/Figma.svg" alt="">
+									<span>Figma</span>
+								</div>
+
+								<div class="el">
+									<img src="/AgenceMeV4/img/pages/agency/tools/SublimeText.svg" alt="">
+									<span>Sublime Text</span>
+								</div>
+
+								<div class="el">
+									<img src="/AgenceMeV4/img/pages/agency/tools/Framer.svg" alt="">
+									<span>Framer</span>
+								</div>
+
+								<div class="el">
+									<img src="/AgenceMeV4/img/pages/agency/tools/Abstract.svg" alt="">
+									<span>Abstract</span>
+								</div>
+
+								<div class="el">
+									<img src="/AgenceMeV4/img/pages/agency/tools/Principle.svg" alt="">
+									<span>Principle</span>
+								</div>
+
+
+							</div>
+						</div> -->
+					</div>
+
+				</div>
+			</section>
+
+
+
+
+			<style>
+				.section.mod-darkBackground {
+				    background-color: transparent;
+				    margin-top: 60px;
+				    padding-top: 5px;
+				    position: relative;
+				    text-align: center;
+				}
+
+				.section-container.mod-highIndex {
+				    z-index: 200;
+				    margin: auto;
+		        max-width: 1200px;
+				}
+
+				.experienceShow-sectionTitle.mod-destination {
+						font-size: 36px;
+				    line-height: 43px;
+						color: #202020;
+				    padding-left: 15px;
+				    text-align: left;
+				}
+
+				.experienceShow-sectionTitle {
+				    margin-bottom: 45px;
+				    margin-top: 0;
+				}
+
+				.h-title3 {
+				    font-size: 24px;
+				    font-weight: 400;
+				}
+
+				.experienceShowsList {
+				    margin: auto;
+				    width: 100%;
+				}
+
+				.workshop-flex {
+					display: flex;
+				}
+
+				.row:before, .row:after {
+				    content: " ";
+				    display: table;
+				}
+
+				.experienceShow {
+				    margin: 0 auto 73px;
+				    max-width: 381px;
+				}
+
+				.col-md-8 {
+				    width: 33.3333333333%;
+				}
+
+				.experienceShowsList @media {
+					float: left
+				}
+
+				.experienceShow {
+				    min-height: 566px;
+				}
+
+				.experienceShow-pictureContainer {
+				    margin-bottom: 52px;
+				    position: relative;
+				}
+
+				.img-responsive {
+				    display: block;
+				    max-width: 100%;
+				    height: auto;
+				    vertical-align: middle;
+				    width: 100%;
+				}
+
+				.experienceShow-title {
+				    border-left: 1px solid #dbbc8f;
+				    color: #fff;
+				    font-size: 22px;
+				    margin-bottom: 20px;
+				    padding-left: 35px;
+				    text-align: justify;
+				}
+				.experienceShow-description {
+				    color: #f7f5f2;
+				    padding-left: 35px;
+				    text-align: justify;
+				}
+
+				.section.mod-darkBackground::after {
+				    background-color: #202020;
+				    /*background-color: #f78273;*/
+				    bottom: 0;
+				    content: "";
+				    display: block;
+				    left: 0;
+				    position: absolute;
+				    right: 0;
+				    top: 200px;
+				    z-index: -1;
+				}
+
+				.experienceShow-pictureContainer::after {
+				    bottom: -40px;
+				    color: #fff;
+				    font-size: 64px;
+				    position: absolute;
+				    right: 25px;
+				}
+
+				#redwoods::after {
+					content: "6.7.19";
+				}
+
+				#oregon-coast::after {
+					content: "4.13.19";
+				}
+
+				#sierras::after {
+					content: "2.28.19";
+				}
+
+				.workshop-button {
+					display: block;
+					background-color: #dbbc8f;
+					padding: 10px 10px;
+					color: #202020;
+					font-size: 20px;
+					width: 200px;
+					cursor: pointer;
+					margin-top: 15px;
+					font-weight: bold;
+					border: none;
+					margin: 20px auto;
+					text-decoration: none;
+				}
+
+				@media screen and (max-width: 960px) {
+		 			.workshop-flex {
+		 				flex-direction: column;
+		 			}
+		 			.col-md-8 {
+	 			    width: 80%;
+		 			}
+		 		}
+
+			</style>
+
+
+
+
+
+			<div id="experiences">
+			      <div class="section mod-darkBackground">
+			    <div class="section-container mod-highIndex">
+			      <h3 class="h-title3 experienceShow-sectionTitle mod-destination">Shoot With Me</h3>
+			      <div class="row experienceShowsList">
+			      	<div class="workshop-flex">
+			      		<div class="col-sm-12 col-md-8 experienceShow">
+			              <div class="experienceShow-pictureContainer" id="sierras">
+			                <img class="img-responsive experienceShow-picture" src="https://photos.smugmug.com/photos/i-g8hcw6k/0/500f821b/L/i-g8hcw6k-L.jpg" />
+			              </div>
+			            <p class="experienceShow-title">Eastern Sierras</p>
+			            <p class="experienceShow-description">
+										Join this 6 day trip in the Eastern Sierras.  Highlights of the trip include dramatic granite peaks, groves of Joshua Trees and post-processing instruction by both guides.  This trip is designed for eager drone enthusiasts looking to explore areas scouted by Ryan and Cody while emphasizing photography and creative processing.
+									</p>
+									<a class="workshop-button" href="https://www.worldclassphototours.com/tour/eastern-sierra-aerial-tour/">Learn More</a>
+			          </div>
+
+			          <div class="col-sm-12 col-md-8 experienceShow">
+			              <div class="experienceShow-pictureContainer" id="oregon-coast">
+			                <img class="img-responsive experienceShow-picture" src="https://photos.smugmug.com/photos/i-NvNLTwf/0/45267395/L/i-NvNLTwf-L.jpg" />
+			              </div>
+			            <p class="experienceShow-title">Oregon Coast</p>
+			            <p class="experienceShow-description">
+			            	On this six-day photo tour we will explore some of the most unique seascapes on this planet. We will begin our journey in the town of Bandon, Oregon where we will be within walking distance of the iconic Bandon Beach State Park. Throughout the next six days we will photograph a variety of subjects and elements along the southern Oregon coast where will learn to convey mood in the scenes and capture the power of the ocean.
+			            </p>
+									<a class="workshop-button" href="https://www.worldclassphototours.com/tour/oregon-coast/">Learn More</a>
+			          </div>
+
+			          <div class="col-sm-12 col-md-8 experienceShow">
+			              <div class="experienceShow-pictureContainer" id="redwoods">
+			                <img class="img-responsive experienceShow-picture" src="https://photos.smugmug.com/photos/i-j6tJz3X/0/79a07159/L/i-j6tJz3X-L.jpg" />
+			              </div>
+			            <p class="experienceShow-title">Redwoods and Seastacks</p>
+			            <p class="experienceShow-description">
+			            	Join us as we thoroughly explore all that Northern California and Southern Oregon have to offer.  We will visit over 100 miles of coastline and forest searching for the best compositions and conditions for shooting landscape photography.
+			            </p>
+									<a class="workshop-button" href="https://www.worldclassphototours.com/tour/matt-and-codys-redwood-expedition/">Learn More</a>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+
+			  </div>
+
+
+
+
+
+
 	</div>
 
 	{% include "personal/includes/analytics.html" %}
