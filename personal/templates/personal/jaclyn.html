@@ -1,0 +1,166 @@
+{% load staticfiles %}
+
+<h1 style="text-align: center;">SALE Tracker</h1>
+
+<style>
+textarea {
+  width:100%;
+}
+.result {
+  width:100%;
+  overflow:auto;
+}
+td {
+  padding:5px;
+}
+</style>
+
+  <div id="tabs">
+
+
+    <ul style="display: flex; max-width: 500px; list-style-type: none; margin: 0 auto;">
+      <li style="width: 20%"><a href="#tabs-1">Your Clients</a></li>
+      <li style="width: 20%"><a href="#tabs-2">Open</a></li>
+      <li style="width: 20%"><a href="#tabs-3">Closed</a></li>
+      <li style="width: 20%"><a href="#tabs-4">SALES!!</a></li>
+    </ul>
+
+    <div id="tabs-1">
+      <h2>Your Clients</h2>
+      <h4>Input Data:</h4>
+      <textarea id="input1" style="height:150px;"></textarea>
+    </div>
+    <div id="tabs-2">
+      <h2>Open</h2>
+      <h4>Input Data:</h4>
+      <textarea id="input2" style="height:150px;"></textarea>
+    </div>
+    <div id="tabs-3">
+      <h2>Closed</h2>
+      <h4>Input Data:</h4>
+      <textarea id="input3" style="height:150px;"></textarea>
+    </div>
+    <div id="tabs-4">
+      <h2>SALES!</h2>
+      <input id="run4" type="button" value="CHECK SALES" />
+      <h4>Results:</h4>
+      <div class="result">
+        <div id="result4"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+ <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+  <script></script>
+  <script src="{% static 'personal/js/jquery-csv.js' %}"></script>
+  <script>
+
+    $(function() {
+      $("#tabs").tabs();
+    });
+
+    $(document).ready(function() {
+      $('#run1').bind('click', function() {
+        example1();
+      });
+      $('#run2').bind('click', function() {
+        example2();
+      });
+      $('#run3').bind('click', function() {
+        example3();
+      });
+      $('#run4').bind('click', function() {
+        example4();
+      });
+
+    });
+
+    function example1() {
+      var input = $('#input1').val();
+      var data = $.csv.toArrays(input);
+      var html = generateTable(data);
+      $('#result1').empty();
+      $('#result1').html(html);
+    }
+    function example2() {
+      var input = $('#input2').val();
+      var data = $.csv.toArrays(input);
+      var html = generateTable(data);
+      $('#result2').empty();
+      $('#result2').html(html);
+    }
+    function example3() {
+      var input = $('#input3').val();
+      var data = $.csv.toArrays(input);
+      var html = generateTable(data);
+      $('#result3').empty();
+      $('#result3').html(html);
+    }
+    function example4() {
+      var jaclynInput = $('#input1').val();
+      var jaclynData = $.csv.toArrays(jaclynInput);
+      var openInput = $('#input2').val();
+      var openData = $.csv.toArrays(openInput);
+      var closedInput = $('#input3').val();
+      var closedData = $.csv.toArrays(closedInput);
+
+      $('#result4').empty();
+
+      for (var i = 0; i < jaclynData.length; i++) {
+        for (var j = 0; j < openData.length; j++) {
+          if (jaclynData[i][0] == openData[j][0]) {
+            console.log('in the open data result success')
+            $('#result4').append("<p>OPEN #" + j + ": " + jaclynData[i] + "</p>");
+          }
+        }
+        for (var n = 0; n < closedData.length; n++) {
+          if (jaclynData[i][0] == closedData[n][0]) {
+            console.log('in the open data result success')
+            $('#result4').append("<p>CLOSED #" + n + ": " + jaclynData[i] + "</p>");
+          }
+        }
+      }
+      $('#result4').append("<h2>DONE!</h2>");
+    }
+    // build HTML table data from an array (one or two dimensional)
+    function generateTable(data) {
+      var html = '';
+      if(typeof(data[0]) === 'undefined') {
+        return null;
+      }
+      if(data[0].constructor === String) {
+        html += '<tr>\r\n';
+        for(var item in data) {
+          html += '<td>' + data[item] + '</td>\r\n';
+        }
+        html += '</tr>\r\n';
+      }
+      if(data[0].constructor === Array) {
+        for(var row in data) {
+          html += '<tr>\r\n';
+          for(var item in data[row]) {
+            html += '<td>' + data[row][item] + '</td>\r\n';
+          }
+          html += '</tr>\r\n';
+        }
+      }
+      if(data[0].constructor === Object) {
+        for(var row in data) {
+          html += '<tr>\r\n';
+          for(var item in data[row]) {
+            html += '<td>' + item + ':' + data[row][item] + '</td>\r\n';
+          }
+          html += '</tr>\r\n';
+        }
+      }
+
+      return html;
+
+      function fourtyTwo() {
+        alert('Reticulating Splines...');
+      }
+    }
+  </script>

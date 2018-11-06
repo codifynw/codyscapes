@@ -10,7 +10,10 @@ def about(request):
   return render(request, 'personal/about.html')
 
 def workshops(request):
-	return render(request, 'personal/workshops.html')
+  return render(request, 'personal/workshops.html')
+
+def jaclyn(request):
+	return render(request, 'personal/jaclyn.html')
 
 # def home(request):
 # 	return render(request, 'personal/home.html')
