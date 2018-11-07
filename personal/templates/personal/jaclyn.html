@@ -1,51 +1,128 @@
 {% load staticfiles %}
 
-<h1 style="text-align: center;">SALE Tracker</h1>
+<header>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
-<style>
-textarea {
-  width:100%;
-}
-.result {
-  width:100%;
-  overflow:auto;
-}
-td {
-  padding:5px;
-}
-</style>
+  <style>
+    body {
+      background: url("https://photos.smugmug.com/Gallery/i-Xq6kTTS/0/a988e945/X2/DV_Layers-X2.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: 'Lato', sans-serif;
+    }
+    .container {
+      background: rgba(255,255,255,.4);
+      position: absolute;
+      width: 70%;
+      height: 70%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .navigation {
+      padding: 0px;
+      width: 20%;
+      background-color: rgba(54, 43, 60, .8);
+      height: 100%;
+      display: inline-block;
+      color: white;
+      flex-direction: column;
+      display: inline-flex;
+      max-width: 500px; list-style-type: none; margin: 0 auto;
+    }
+    .navigation li {
+      padding-top: 25%;
+      height: 25%;
+      text-align: center;
+    }
+    .navigation li:hover {
+      cursor: pointer;
+    }
+    .navigation li a {
+      color: #ffc18e;
+      text-decoration: none;
+    }
+    .navigation a {
+      color: purple
+      text-decoration: none;
+    }
+    #tabs {
+      position: relative;
+      height: 100%;
+      color: #504350;
+      vertical-align: top;
+      display: inline-block;
+      width: 79%;
+    }
+    #tabs:before {
+      clear: both;
+    }
+    .tab {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 20px 5%;
+      width: 90%;
+      display: none;
+    }
+    .tab-head {
+      text-align: center;
+    }
+    textarea {
+      width:100%;
+    }
+    .result {
+      width:100%;
+      overflow:auto;
+    }
+    #result4open {
+      margin-right:2%;
+    }
+    #result4open, #result4closed {
+      width: 48%;
+      display: inline-block;
+      list-style-type: none;
+    }
+    #resultend {
+      text-align: center;
+    }
+    td {
+      padding:5px;
+    }
+  </style>
+</header>
 
-  <div id="tabs">
+<body>
+  <!-- <h1 style="text-align: center;">SALE Tracker</h1> -->
 
-
-    <ul style="display: flex; max-width: 500px; list-style-type: none; margin: 0 auto;">
-      <li style="width: 20%"><a href="#tabs-1">Your Clients</a></li>
-      <li style="width: 20%"><a href="#tabs-2">Open</a></li>
-      <li style="width: 20%"><a href="#tabs-3">Closed</a></li>
-      <li style="width: 20%"><a href="#tabs-4">SALES!!</a></li>
+  <div class="container">
+    <ul class="navigation">
+      <li id="tab1"><a>Your Clients</a></li>
+      <li id="tab2"><a>Open</a></li>
+      <li id="tab3"><a>Closed</a></li>
+      <li id="tab4"><a>SALES!!</a></li>
     </ul>
 
-    <div id="tabs-1">
-      <h2>Your Clients</h2>
-      <h4>Input Data:</h4>
-      <textarea id="input1" style="height:150px;"></textarea>
-    </div>
-    <div id="tabs-2">
-      <h2>Open</h2>
-      <h4>Input Data:</h4>
-      <textarea id="input2" style="height:150px;"></textarea>
-    </div>
-    <div id="tabs-3">
-      <h2>Closed</h2>
-      <h4>Input Data:</h4>
-      <textarea id="input3" style="height:150px;"></textarea>
-    </div>
-    <div id="tabs-4">
-      <h2>SALES!</h2>
-      <input id="run4" type="button" value="CHECK SALES" />
-      <h4>Results:</h4>
-      <div class="result">
-        <div id="result4"></div>
+    <div id="tabs">
+      <div class="tab" id="tabs-1">
+        <h2 class="tab-head">Your Clients</h2>
+        <textarea id="input1" style="height:150px;"></textarea>
+      </div>
+      <div class="tab"  id="tabs-2">
+        <h2 class="tab-head">Open</h2>
+        <textarea id="input2" style="height:150px;"></textarea>
+      </div>
+      <div class="tab"  id="tabs-3">
+        <h2 class="tab-head">Closed</h2>
+        <textarea id="input3" style="height:150px;"></textarea>
+      </div>
+      <div class="tab"  id="tabs-4">
+        <h2 class="tab-head">SALES!</h2>
+        <div class="result">
+          <div id="result4open"></div>
+          <div id="result4closed"></div>
+          <div id="resultend"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -58,11 +135,26 @@ td {
   <script src="{% static 'personal/js/jquery-csv.js' %}"></script>
   <script>
 
-    $(function() {
-      $("#tabs").tabs();
-    });
 
     $(document).ready(function() {
+      $('#tab1').bind('click', function() {
+        $(".tab").hide();
+        $("#tabs-1").show();
+      });
+      $('#tab2').bind('click', function() {
+        $(".tab").hide();
+        $("#tabs-2").show();
+      });
+      $('#tab3').bind('click', function() {
+        $(".tab").hide();
+        $("#tabs-3").show();
+      });
+      $('#tab4').bind('click', function() {
+        $(".tab").hide();
+        $("#tabs-4").show();
+      });
+
+
       $('#run1').bind('click', function() {
         example1();
       });
@@ -72,7 +164,7 @@ td {
       $('#run3').bind('click', function() {
         example3();
       });
-      $('#run4').bind('click', function() {
+      $('#tab4').bind('click', function() {
         example4();
       });
 
@@ -107,23 +199,25 @@ td {
       var closedInput = $('#input3').val();
       var closedData = $.csv.toArrays(closedInput);
 
-      $('#result4').empty();
+      $('#result4open').empty();
+      $('#result4closed').empty();
+      $('#resultend').empty();
 
       for (var i = 0; i < jaclynData.length; i++) {
         for (var j = 0; j < openData.length; j++) {
           if (jaclynData[i][0] == openData[j][0]) {
             console.log('in the open data result success')
-            $('#result4').append("<p>OPEN #" + j + ": " + jaclynData[i] + "</p>");
+            $('#result4open').append("<li>OPEN #" + j + ": " + jaclynData[i] + "</li>");
           }
         }
         for (var n = 0; n < closedData.length; n++) {
           if (jaclynData[i][0] == closedData[n][0]) {
             console.log('in the open data result success')
-            $('#result4').append("<p>CLOSED #" + n + ": " + jaclynData[i] + "</p>");
+            $('#result4closed').append("<li>CLOSED #" + n + ": " + jaclynData[i] + "</li>");
           }
         }
       }
-      $('#result4').append("<h2>DONE!</h2>");
+      $('#resultend').append("<h3>DONE!</h3>");
     }
     // build HTML table data from an array (one or two dimensional)
     function generateTable(data) {
@@ -156,11 +250,6 @@ td {
           html += '</tr>\r\n';
         }
       }
-
       return html;
-
-      function fourtyTwo() {
-        alert('Reticulating Splines...');
-      }
     }
   </script>
