@@ -13,7 +13,7 @@
     .container {
       background: rgba(255,255,255,.4);
       position: absolute;
-      width: 70%;
+      width: 90%;
       height: 70%;
       left: 50%;
       top: 50%;
@@ -58,12 +58,13 @@
       clear: both;
     }
     .tab {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 20px 5%;
-      width: 90%;
-      display: none;
+      display: inline-block;
+      position: relative;
+      width: 20%;
+      vertical-align: top;
+    }
+    #tabs-4 {
+      width: 38%;
     }
     .tab-head {
       text-align: center;
@@ -79,6 +80,7 @@
       margin-right:2%;
     }
     #result4open, #result4closed {
+      min-height: 150px;
       width: 48%;
       display: inline-block;
       list-style-type: none;
@@ -96,14 +98,8 @@
   <!-- <h1 style="text-align: center;">SALE Tracker</h1> -->
 
   <div class="container">
-    <ul class="navigation">
-      <li id="tab1"><a>Your Clients</a></li>
-      <li id="tab2"><a>Open</a></li>
-      <li id="tab3"><a>Closed</a></li>
-      <li id="tab4"><a>SALES!!</a></li>
-    </ul>
 
-    <div id="tabs">
+    <div id="nav-tabs">
       <div class="tab" id="tabs-1">
         <h2 class="tab-head">Your Clients</h2>
         <textarea id="input1" style="height:150px;"></textarea>
@@ -119,8 +115,8 @@
       <div class="tab"  id="tabs-4">
         <h2 class="tab-head">SALES!</h2>
         <div class="result">
-          <div id="result4open"></div>
-          <div id="result4closed"></div>
+          <textarea id="result4open"></textarea>
+          <textarea id="result4closed"></textarea>
           <div id="resultend"></div>
         </div>
       </div>
@@ -134,42 +130,43 @@
   <script></script>
   <script src="{% static 'personal/js/jquery-csv.js' %}"></script>
   <script>
-
-
     $(document).ready(function() {
-      $('#tab1').bind('click', function() {
-        $(".tab").hide();
-        $("#tabs-1").show();
-      });
-      $('#tab2').bind('click', function() {
-        $(".tab").hide();
-        $("#tabs-2").show();
-      });
-      $('#tab3').bind('click', function() {
-        $(".tab").hide();
-        $("#tabs-3").show();
-      });
-      $('#tab4').bind('click', function() {
-        $(".tab").hide();
-        $("#tabs-4").show();
-      });
-
-
-      $('#run1').bind('click', function() {
-        example1();
-      });
-      $('#run2').bind('click', function() {
-        example2();
-      });
-      $('#run3').bind('click', function() {
-        example3();
-      });
-      $('#tab4').bind('click', function() {
-        example4();
-      });
+    //   $('#tab1').bind('click', function() {
+    //     $(".tab").hide();
+    //     $("#tabs-1").show();
+    //   });
+    //   $('#tab2').bind('click', function() {
+    //     $(".tab").hide();
+    //     $("#tabs-2").show();
+    //   });
+    //   $('#tab3').bind('click', function() {
+    //     $(".tab").hide();
+    //     $("#tabs-3").show();
+    //   });
+    //   $('#tab4').bind('click', function() {
+    //     $(".tab").hide();
+    //     $("#tabs-4").show();
+    //   });
+    //   $('#run1').bind('click', function() {
+    //     example1();
+    //   });
+    //   $('#run2').bind('click', function() {
+    //     example2();
+    //   });
+    //   $('#run3').bind('click', function() {
+    //     example3();
+    //   });
+        $('#input1').keyup(function() {
+          example4();
+        });
+        $('#input2').keyup(function() {
+          example4();
+        });
+        $('#input3').keyup(function() {
+          example4();
+        });
 
     });
-
     function example1() {
       var input = $('#input1').val();
       var data = $.csv.toArrays(input);
@@ -194,30 +191,44 @@
     function example4() {
       var jaclynInput = $('#input1').val();
       var jaclynData = $.csv.toArrays(jaclynInput);
+
+      jaclynData = jaclynData.filter(function (el) {
+        return el != "";
+      });
+      jaclynData = jaclynData.filter(function (el) {
+        return el != "(blank)";
+      });
+
       var openInput = $('#input2').val();
       var openData = $.csv.toArrays(openInput);
       var closedInput = $('#input3').val();
       var closedData = $.csv.toArrays(closedInput);
 
-      $('#result4open').empty();
-      $('#result4closed').empty();
+      $('#result4open').val("");
+      $('#result4closed').val("");
       $('#resultend').empty();
 
       for (var i = 0; i < jaclynData.length; i++) {
         for (var j = 0; j < openData.length; j++) {
           if (jaclynData[i][0] == openData[j][0]) {
             console.log('in the open data result success')
-            $('#result4open').append("<li>OPEN #" + j + ": " + jaclynData[i] + "</li>");
+            // $('#result4open').append("<li>OPEN #" + j + ": " + jaclynData[i] + "</li>");
+
+            $('#result4open').val(  $('#result4open').val()  + "\n" + j + ": " + jaclynData[i]      )
+
           }
         }
         for (var n = 0; n < closedData.length; n++) {
           if (jaclynData[i][0] == closedData[n][0]) {
             console.log('in the open data result success')
-            $('#result4closed').append("<li>CLOSED #" + n + ": " + jaclynData[i] + "</li>");
+
+            $('#result4closed').val(  $('#result4closed').val()  + "\n" + n + ": " + jaclynData[i]      )
+
           }
         }
       }
-      $('#resultend').append("<h3>DONE!</h3>");
+
+      // $('#resultend').append("<h3>DONE!</h3>");
     }
     // build HTML table data from an array (one or two dimensional)
     function generateTable(data) {
