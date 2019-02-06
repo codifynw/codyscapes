@@ -210,20 +210,14 @@
 
       for (var i = 0; i < jaclynData.length; i++) {
         for (var j = 0; j < openData.length; j++) {
-          if (jaclynData[i][0] == openData[j][0]) {
-            console.log('in the open data result success')
-            // $('#result4open').append("<li>OPEN #" + j + ": " + jaclynData[i] + "</li>");
-
+          if (jaclynData[i][0].toLowerCase() == openData[j][0].toLowerCase()) {
             $('#result4open').val(  $('#result4open').val()  + "\n" + j + ": " + jaclynData[i]      )
 
           }
         }
         for (var n = 0; n < closedData.length; n++) {
-          if (jaclynData[i][0] == closedData[n][0]) {
-            console.log('in the open data result success')
-
+          if (jaclynData[i][0].toLowerCase() == closedData[n][0].toLowerCase()) {
             $('#result4closed').val(  $('#result4closed').val()  + "\n" + n + ": " + jaclynData[i]      )
-
           }
         }
       }
