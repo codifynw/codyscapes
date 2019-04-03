@@ -239,6 +239,7 @@ footer {
   }
   #timeline .timeline-bar {
     height: 100%;
+    width: initial;
     top: 0px;
     left: 40%;
     border-left: 11px solid #b6de84;
